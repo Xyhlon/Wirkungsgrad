@@ -56,6 +56,9 @@ def test_solar_protokoll():
     )
     P.load_data(filepath, loadnew=True)
 
+    flaechesolarzelle = ufloat(10 * 8, 1)
+    bagedeagtflaechesolarzelle = ufloat(10 * 7, 1)
+
     P.plot_data(
         ax,
         U,
@@ -80,6 +83,16 @@ def test_solar_protokoll():
         os.path.dirname(__file__), "../data/solarSerieMitAbdeckung.csv"
     )
     P.load_data(filepath, loadnew=True)
+
+    # Aufgabe 4
+    solarzelleFlaeche = ufloat(2 * 4, 0)
+    duchrmesserPower = ufloat(1.5, 0)
+
+    # Aufgabe 5
+    hellwattlampe = ufloat(0.63, 0.01)
+    hellwattlampe2 = ufloat(3.4, 0.1)
+    hellwattled = ufloat(0.264, 0.003)
+    # Thomas Monet
 
 
 if __name__ == "__main__":
