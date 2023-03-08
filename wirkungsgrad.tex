@@ -1,0 +1,612 @@
+%! TeX program = lualatex
+%---------------------------ALLGEMEINE IMPORTS-------------------------------------
+\documentclass[12pt,english,ngerman]{scrartcl}
+\input{./protokoll_template/template.latex/input/shared_preamble.tex}
+
+% Kopfzeile
+\ihead{WS22\\
+	09.12.2022} \chead{\textsc{Stark} Matthias - 12004907 \\
+	\textsc{Philipp} Maximilian - 11839611}
+\ohead{FLAB 2 \\
+	Leistungsmessung}
+% Fußzeile
+% \addbibresource{leistung.bib}
+\usepackage{luacode}
+
+\DeclareSIUnit\px{px}
+\DeclareSIUnit\strich{|||}
+\DeclareSIUnit\Var{var}
+\DeclareSIUnit\VA{VA}
+
+\begin{document}
+
+\begin{luacode*}
+	luatexbase.add_to_callback("wrapup_run", function()
+	local outfile=io.open("20230308_20A_Philipp_Stark_WIRK_01.pdf", "wb")
+	outfile:write(io.open(tex.jobname..".pdf", "rb"):read("a"))
+	outfile:close()
+	end, "final callback to rename pdf file")
+\end{luacode*}
+
+% \includepdf{./deckblatt.pdf}
+\tableofcontents
+\newpage
+
+\section{Aufgabenstellung\label{Auf}}
+
+\begin{itemize}
+	\item Leistungsmessung einer ohmschen Last in einem Wechselstromkreis
+	\item Wirkleistungsmessung im Drehstromnetz bei einer symmetrischen ohmschen Last in
+	      Stern- und Dreiecksschaltung mit Aronschaltung
+	\item Wirk- und Blindleistungsmessung bei einer allgemeinen Last im Dreiphasennetz
+	\item Bauen eines rudimentärern Asynchron-Drehstrommotors
+\end{itemize}
+
+\section{Grundlagen}\label{Grund}
+
+%TODO Matthias verbessern und bilder bitte 
+\subsection{Solarzelle}
+Eine Solarzelle, die auch als photovoltaische Zelle bezeichnet wird, wandelt
+Sonnenlicht durch den Photoeffekt in elektrische Energie um. Der Photoeffekt
+ist das Phänomen, bei dem ein Material Photonen (Lichtteilchen) absorbiert und
+freie Elektronen und Löcher erzeugt, die zur Erzeugung von elektrischem Strom
+genutzt werden können.
+
+Die Grundstruktur einer Solarzelle besteht aus einer dünnen Halbleiterschicht,
+die in der Regel aus Silizium besteht. Diese Halbleiterschicht befindet sich
+zwischen zwei Metallkontakten, von denen einer auf der Ober- und einer auf der
+Unterseite liegt. Wenn Sonnenlicht auf die Halbleiterschicht fällt, werden die
+Photonen des Sonnenlichts von dem Halbleitermaterial absorbiert. Dies führt
+dazu, dass einige der Elektronen im Material angeregt werden und auf ein
+höheres Energieniveau springen, wobei ein "Loch" im Material zurückbleibt, wo
+das Elektron vorher war.
+
+Die angeregten Elektronen und die durch die absorbierten Photonen entstandenen
+Löcher werden dann durch das elektrische Feld getrennt, das durch den Übergang
+zwischen den beiden Schichten des Halbleiters entsteht. Dieses elektrische Feld
+wird durch Dotierung des Halbleiters mit Verunreinigungen erzeugt, um einen
+p-n-Übergang zu schaffen. Die p-Typ-Halbleiterschicht hat einen Überschuss an
+positiv geladenen Löchern, während die n-Typ-Schicht einen Überschuss an
+negativ geladenen Elektronen hat.
+
+Die angeregten Elektronen werden in Richtung der n-Typ-Schicht gezogen, während
+die Löcher in Richtung der p-Typ-Schicht gezogen werden. Durch diese
+Ladungstrennung entsteht eine Spannungsdifferenz über der Halbleiterschicht,
+die zur Erzeugung elektrischer Energie genutzt werden kann.
+
+Die Shockley-Gleichung beschreibt die Beziehung zwischen dem Stromdurchsatz
+einer Diode und der an ihr anliegenden Spannung. Da eine Solarzelle nichts
+anderes als eine Diode ist, gilt dieses Gesetz auch in diesem Fall. Die
+Shockley-Gleichung kann verwendet werden, um die Diodenkennlinie einer
+Solarzelle anzupassen und wichtige Parameter wie den Fotostrom, den
+Sättigungsrückstrom und den Idealitätsfaktor zu ermitteln. Diese Informationen
+sind nützlich, um die Leistung einer Solarzelle zu bewerten und ihr Design für
+eine maximale Effizienz zu optimieren.
+
+Die Diodenkennlinie einer Solarzelle kann zur Bewertung und Charakterisierung
+der Leistung der Zelle verwendet werden. Durch die Analyse der Diodenkennlinie
+können die folgenden Schlüsselparameter der Solarzelle bestimmt werden:
+
+\begin{enumerate}
+	\item Leerlaufspannung (Voc): Dies ist die Spannung, bei der die Solarzelle keinen
+	      Strom erzeugt, und entspricht der maximalen Ausgangsspannung der Zelle. Die
+	      Leerlaufspannung wird durch die Beleuchtungsstärke und die intrinsischen
+	      Eigenschaften der Zelle bestimmt.
+	\item Kurzschlussstrom (Isc): Dies ist der Strom, der von der Solarzelle erzeugt
+	      wird, wenn die Spannung über der Zelle gleich Null ist, und entspricht der
+	      maximalen Stromabgabe der Zelle. Der Kurzschlussstrom wird durch die
+	      Beleuchtungsstärke und die physikalischen Eigenschaften der Zelle bestimmt.
+	\item Füllungsfaktor (FF): Er ist ein Maß für den Wirkungsgrad der Solarzelle und
+	      wird durch das Verhältnis zwischen der maximalen Ausgangsleistung der Zelle und
+	      dem Produkt aus Leerlaufspannung und Kurzschlussstrom bestimmt. Der Füllfaktor
+	      wird von den physikalischen Eigenschaften der Zelle, wie der Rekombinationsrate
+	      und dem Serien- und Nebenschlusswiderstand, beeinflusst.
+	\item Maximaler Leistungspunkt (MPP): Dies ist der Punkt auf der Diodenkennlinie, an
+	      dem die Solarzelle die maximale Leistung abgibt. Der Punkt maximaler Leistung
+	      wird durch den Schnittpunkt der Lastlinie mit der Diodenkennlinie bestimmt und
+	      wird von der Beleuchtungsstärke und den physikalischen Eigenschaften der Zelle
+	      beeinflusst.
+\end{enumerate}
+
+Durch die Auswertung und Analyse dieser Schlüsselparameter kann die
+Diodenkennlinie wertvolle Erkenntnisse über die Leistung einer Solarzelle
+liefern. Diese Informationen können dazu genutzt werden, das Design der
+Solarzelle zu optimieren und ihren Wirkungsgrad und ihre Leistung zu
+verbessern.
+
+\subsection{Wärmepumpe}
+Eine Wärmepumpe ist ein Gerät, das Wärmeenergie von einem Ort zum anderen
+überträgt. Sie wird sowohl für Heiz- als auch für Kühlzwecke eingesetzt und
+basiert auf den Prinzipien der Thermodynamik.
+
+Im Kühlbetrieb nimmt eine Wärmepumpe Wärme aus dem Innenraum auf und und gibt
+sie nach außen ab. Im Heizbetrieb arbeitet sie umgekehrt, indem sie der
+Außenluft, dem Boden oder dem Wasser Wärme entzieht aus der Außenluft, dem
+Boden oder dem Wasser entzieht und an die Innenräume abgibt. Dies macht eine
+effiziente Möglichkeit, ein Gebäude zu heizen oder zu kühlen, da sie weniger
+Energie zur Wärme zu übertragen als sie zu erzeugen.
+
+Die Effizienz einer Wärmepumpe wird durch ihre Leistungszahl $\epsilon$ (COP)
+gemessen. Die Leistungszahl ist das Verhältnis zwischen der übertragenen
+Wärmemenge und der von der Wärmepumpe verbrauchten Energie. Eine höherer
+Leistungszahl bedeutet eine effizientere Wärmepumpe an, da sie mehr
+Wärmeenergie für die gleiche Energiemenge übertragen kann Energiemenge mehr
+Wärmeenergie übertragen kann (d.\ h.\ mit einem COP von $\epsilon$ kann man
+$\epsilon$ Einheiten an Wärmeenergie Energie für jede verbrauchte
+Energieeinheit übertragen).
+
+\begin{equation}
+	\epsilon = \frac{\dot{Q}}{P_{el}}
+	\label{eq:Leistungszahl}
+\end{equation}
+
+Wobei $\dot{Q}$ der durch die Wärmepumpe verursachte Wärmefluss ist und
+$P_{el}$ die benötigte Leistung ist die Wärmepumpe zu betreiben. Nun lässt sich
+der Gütegrad mittels der Leistungszahl definieren, sie ist die Kenngröße der
+Güte indem sie das Verhältnis der erhaltene Leistungszahl $\epsilon$ zu der
+theoretisch Maximalen $\epsilon_\text{max} = \frac{T_h}{T_h-T_k}$ angibt.
+
+\begin{equation}
+	\eta = \frac{\epsilon}{\epsilon_\text{max}}
+	\label{eq:guetefaktor}
+\end{equation}
+
+Der Kältekreislauf ist ein thermodynamischer Prozess der von einer Wärmepumpe
+durchgeführt wird. Dieser Prozess entzieht Wärme aus einer Umgebung mit
+niedriger Temperatur und gibt sie an eine Umgebung mit hoher Temperatur ab. Der
+Prozess wird in Kältesystemen wie Klimaanlagen und Kühlschränken verwendet.
+Kühlschränke.
+
+Der Kältekreislauf besteht aus vier Hauptstufen:
+
+\begin{enumerate}
+	\item Isentrope Verdichtung: Das Kältemittel wird durch einen Kompressor komprimiert,
+	      wodurch Druck und Temperatur erhöht werden. Druck und Temperatur erhöht. Diese
+	      Stufe wird durch eine Linie dargestellt, die von niedrigem Druck und niedriger
+	      Enthalpie zu hohem Druck und hoher Enthalpie isentrop verläuft.
+	\item Isobare Kondensation: Das unter hohem Druck stehende und auf hohe Temperatur
+	      gebrachte Kältemittel wird dann in einem Verflüssiger abgekühlt, wo es Wärme
+	      abgibt und zu einer Flüssigkeit kondensiert. Diese Stufe wird wird durch eine
+	      horizontale Linie dargestellt, die von hoher Enthalpie zu niedriger Enthalpie
+	      verläuft, während der Druck konstant bleibt.
+	\item Isenthalpe Drosselung: Das flüssige Kältemittel wird dann durch ein
+	      Expansionsventil geleitet, wo sein Druck verringert wird, wodurch es zu einem
+	      Gas mit niedrigem Druck verdampft. Diese Stufe wird durch eine Linie
+	      dargestellt, bei konstanter Enthalpie verläuft, während der Druck abnimmt.
+	\item Isobare Verdampfung: Das Niederdruck-Kältemittel absorbiert Wärme beim
+	      Verdampfer aus der Umgebung auf, die es kühlen soll, und kehrt zum Kompressor
+	      zurück, um den Kreislauf erneut zu starten. Diese Phase wird durch eine Linie
+	      dargestellt, die von niedriger Enthalpie zu hoher Enthalpie verläuft, während
+	      der Druck konstant bleibt.
+\end{enumerate}
+
+\section{Versuchsanordnung}\label{sec:versuchsanordnung}
+
+\subsection{ohmsche Last in Wechselstromkreis}
+
+Um die ohmsche Last einer Glühlampe im Wechselstromkreis zu messen, wird
+folgender Versuchsaufbau aus \autoref{fig:aufbau_ohm} realisiert.
+
+\begin{figure}[H]
+	\centering
+	\caption[Realer Versuchsaufbau für die Messung einer ohmschen Last]{Realer
+		Versuchsaufbau für die Messung einer ohmschen Last \\
+		1 \(\dots\) Transformator                          \\
+		2 \(\dots\) seriell geschaltetes Strommessgerät    \\
+		3 \(\dots\) seriell geschaltetes Leistungsmessgerät mit parallelen Anschluss
+		zum Verbraucher                                    \\
+		4 \(\dots\) ohmscher Verbraucher (Glühlampe)       \\
+		5 \(\dots\) parallel geschaltetes Spannungsmessgerät
+	}\label{fig:aufbau_ohm}
+\end{figure}
+
+\subsection{Symmetrische Last in Dreiecksschaltung}
+
+Um die Wirkleistung von symmetrischen Verbrauchern in einer Dreiecksschaltung
+zu Messen, wird die Aronschaltung nach folgendem Schaltplan aus
+\autoref{fig:aufbau1} realisiert. Der tatsächliche Versuchsaufbau ist in
+\autoref{fig:aufbau1_echt} ersichtlich.
+
+\begin{figure}[H]
+	\begin{center}
+	\end{center}
+	\caption[Schaltplan für die Messung der Wirkleistung mit Aronschaltung für symmetrische
+		Verbraucher in Dreiecksschaltung] {Schaltplan für die Messung der Wirkleistung
+		mit Aronschaltung für symmetrische Verbraucher in $I_i$ \(\dots\) entsprechende
+		Ströme gemessen mit entsprechenden Amperemeter A                                 \\
+		$U_i$ \(\dots\) entsprechende Spannungen gemessen mit entsprechenden Voltmeter V \\
+		$R_i$ \(\dots\) entsprechender Widerstand durch die jeweiligen Verbraucher       \\
+		$P_i$ \(\dots\) Powermeter in Aronschaltung
+	}\label{fig:aufbau1}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+	\end{center}
+	\caption[Realer Versuchsaufbau für die Messung der Wirkleistung mit Aronschaltung für
+		symmetrische Verbraucher in Dreiecksschaltung] {Realer Versuchsaufbau für die
+		Messung der Wirkleistung mit Aronschaltung für symmetrische Verbraucher in
+		Dreiecksschaltung. (Bei den Kabeln wurde ein Farbschema eingehalten, um eine
+		bessere Übersicht zu ermöglichen.)                                  \\
+		1 \(\dots\) Versorgungsspannung ($L_1$ rot, $L_2$ blau, $L_3$ gelb) \\
+		2 \(\dots\) seriell geschaltete Strommessgeräte                     \\
+		3 \(\dots\) seriell geschaltete Leistungsmessgeräte mit parallelen Anschlüssen
+		nach der Aronschaltung (grün)                                       \\
+		4 \(\dots\) parallel geschaltete Spannungsmessgeräte über die entsprechenden
+		Verbraucher (schwarz)                                               \\
+		5 \(\dots\) symmetrisch verteilte ohmsche Verbraucher (Glühlampen)
+	}
+	\label{fig:aufbau1_echt}
+\end{figure}
+
+\subsection{Symmetrische Last in Sternschaltung}
+
+Um die Wirkleistung von symmetrischen Verbrauchern in einer Sternschaltung zu
+Messen, wird die Aronschaltung nach folgendem Schaltplan aus
+\autoref{fig:aufbau2} realisiert. Der tatsächliche Versuchsaufbau ist in
+\autoref{fig:aufbau2_echt} ersichtlich.
+
+\begin{figure}[H]
+	\begin{center}
+	\end{center}
+	\caption[Schaltplan für die Messung der Wirkleistung mit Aronschaltung für symmetrische
+		Verbraucher in Sternschaltung] {Schaltplan für die Messung der Wirkleistung mit
+		Aronschaltung für symmetrische Verbraucher in $I_i$ \(\dots\) entsprechende
+		Ströme gemessen mit entsprechenden Amperemeter A                                 \\
+		$U_i$ \(\dots\) entsprechende Spannungen gemessen mit entsprechenden Voltmeter V \\
+		$R_i$ \(\dots\) entsprechender Widerstand durch die jeweiligen Verbraucher       \\
+		$P_i$ \(\dots\) Powermeter in Aronschaltung
+	}
+	\label{fig:aufbau2}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+	\end{center}
+	\caption[Realer Versuchsaufbau für die Messung der Wirkleistung mit Aronschaltung für
+		symmetrische Verbraucher in Sternschaltung] {Realer Versuchsaufbau für die
+		Messung der Wirkleistung mit Aronschaltung für symmetrische Verbraucher in
+		Sternschaltung. (Bei den Kabeln wurde ein Farbschema eingehalten, um eine
+		bessere Übersicht zu ermöglichen.)                                  \\
+		1 \(\dots\) Versorgungsspannung ($L_1$ rot, $L_2$ blau, $L_3$ gelb) \\
+		2 \(\dots\) seriell geschaltete Strommessgeräte                     \\
+		3 \(\dots\) seriell geschaltete Leistungsmessgeräte mit parallelen Anschlüssen
+		nach der Aronschaltung (grün)                                       \\
+		4 \(\dots\) parallel geschaltete Spannungsmessgeräte über die entsprechenden
+		Verbraucher (schwarz)                                               \\
+		5 \(\dots\) symmetrisch verteilte ohmsche Verbraucher (Glühlampen)  \\
+		6 \(\dots\) Strommessgerät zwischen Sternpunkt und Neutralleiter (grau)
+	}\label{fig:aufbau2_echt}
+\end{figure}
+
+\subsection{Asymmetrische Last in Sternschaltung}
+
+Um eine asymmetrische Last zu erreichen, wird der Aufbau aus
+\autoref{fig:aufbau2} herangezogen, mit dem Unterschied, dass die Glühlampen
+nicht gleichmäßig auf die Leiter aufgeteilt werden. Die gewählte Konfiguration
+ist in \autoref{fig:lampenasym} ersichtlich.
+
+\begin{figure}[H]
+	\begin{center}
+	\end{center}
+	\caption[Entsprechende Konfiguration für eine asymmetrische Verteilung der Last]
+	{Entsprechende Konfiguration für eine asymmetrische Verteilung der Last mit
+		folgenden Verteilungen auf den Strängen: \\
+		$L_1$ \(\dots\) 1 x \SI[]{60}{\watt}     \\
+		$L_2$ \(\dots\) 2 x \SI[]{75}{\watt}     \\
+		$L_3$ \(\dots\) 1 x \SI[]{75}{\watt} und 2 x \SI[]{60}{\watt}
+	}\label{fig:lampenasym}
+\end{figure}
+
+\subsection{Asymmetrische Last in Sternschaltung und simulierten Kabelbruch}
+
+Um einen Kabelbruch zu simulieren, wird der Aufbau aus \autoref{fig:aufbau2}
+herangezogen. Nun wird der Kontakt des Neutralleiters unterbrochen, indem das
+graue Kabel, sichtbar in \autoref{fig:aufbau1_echt}, aus dem Strompfad des
+Multimeters entfernt und in den Spannungsbereich gesteckt wird, um eine
+Spannungsmessung zu ermöglichen.
+
+\subsection{Wirkleistungsmessung}
+
+Um die Wirkleistung von allgemeinen Verbrauchern in Sternschaltung zu
+bestimmen, wird die Schaltung nach folgendem Schaltplan aus
+\autoref{fig:aufbau3} aufgebaut. Der tatsächliche Versuchsaufbau ist in
+\autoref{fig:aufbau3_echt} ersichtlich.
+
+\begin{figure}[H]
+	\begin{center}
+	\end{center}
+	\caption[Schaltplan für die Messung der Wirkleistung für allgemeine Verbraucher in
+		Sternschaltung] {Schaltplan für die Messung der Wirkleistung für allgemeine
+		$I_i$ \(\dots\) entsprechende Ströme gemessen mit entsprechenden Amperemeter A   \\
+		$U_i$ \(\dots\) entsprechende Spannungen gemessen mit entsprechenden Voltmeter V \\
+		$R_i$ \(\dots\) entsprechender Widerstand durch die jeweiligen Verbraucher       \\
+		$P_i$ \(\dots\) Powermeter
+	}
+	\label{fig:aufbau3}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+	\end{center}
+	\caption[Realer Versuchsaufbau für die Messung der Wirkleistung für allgemeine
+		Verbraucher in Sternschaltung] {Realer Versuchsaufbau für die Messung der
+		Wirkleistung für allgemeine Verbraucher in Sternschaltung. (Bei den Kabeln
+		wurde ein Farbschema eingehalten, um eine bessere Übersicht zu ermöglichen.) \\
+		1 \(\dots\) Versorgungsspannung ($L_1$ rot, $L_2$ blau, $L_3$ gelb)          \\
+		2 \(\dots\) seriell geschaltete Strommessgeräte                              \\
+		3 \(\dots\) seriell geschaltete Leistungsmessgeräte mit parallelen Anschlüssen
+		zum Neutralleiter (grün)                                                     \\
+		4 \(\dots\) parallel geschaltete analoge Spannungsmessgeräte über die
+		entsprechenden Verbraucher (schwarz)                                         \\
+		5 \(\dots\) parallel geschaltete digitale Spannungsmessgeräte über die
+		entsprechenden Verbraucher (schwarz/grün)                                    \\
+		6 \(\dots\) Strommessgerät zwischen Sternpunkt und Neutralleiter (grau)      \\
+		7 \(\dots\) Heizwiderstände                                                  \\
+		8 \(\dots\) ohmscher Verbraucher                                             \\
+		9 \(\dots\) Kapazität (Kondensator)                                          \\
+		10 \(\dots\) Induktivität (Spule)                                            \\
+		11 \(\dots\) 2. Kapazität für Bonusaufgabe
+
+	}\label{fig:aufbau3_echt}
+\end{figure}
+
+Für die Bonusaufgabe werden folgende Änderungen vorgenommen:
+
+\begin{itemize}
+	\item $L_1$ bleibt unverändert (Heizwiderstand)
+	\item $L_2$ Schaltung von einem Heizwiderstand und einem Kondensator mit parallel geschalteter Induktivität
+	\item $L_3$ Schaltung von einem Heizwiderstand und einem Kondensator
+\end{itemize}
+
+\subsection{Blindleistungsmessung}
+
+Um die Blindleistung eines allgemeinen Verbrauchers sichtbar zu machen, wird
+nun die Schaltung nach folgendem Schaltplan aus \autoref{fig:aufbau4}
+aufgebaut, indem die grünen Kabel der Powermeter aus \autoref{fig:aufbau3_echt}
+entsprechend modifiziert werden.
+
+\begin{figure}[H]
+	\begin{center}
+	\end{center}
+	\caption[Schaltplan für die Messung der Blindleistung für allgemeine Verbraucher in
+		Sternschaltung] {Schaltplan für die Messung der Blindleistung für allgemeine
+		$I_i$ \(\dots\) entsprechende Ströme gemessen mit entsprechenden Amperemeter A   \\
+		$U_i$ \(\dots\) entsprechende Spannungen gemessen mit entsprechenden Voltmeter V \\
+		$R_i$ \(\dots\) entsprechender Widerstand durch die jeweiligen Verbraucher       \\
+		$P_i$ \(\dots\) Powermeter
+	}
+	\label{fig:aufbau4}
+\end{figure}
+
+\newpage
+\subsection{Bau eines rudimentären Asynchron-Drehstrommotors}
+
+Um den Bau eines rudimentären Asynchron-Drehstrommotors zu realisieren, werden
+3 Spulen mit Eisenkern wie in \autoref{fig:motor} um eine drehbar gelagerte
+Metallscheibe aufgestellt. Die Spulen werden mit vorgeschalteten
+Heizwiderständen an die Versorgungsspannung geschlossen.
+
+\begin{figure}[H]
+	\begin{center}
+	\end{center}
+	\caption[Drehzahlmessung des rudimentären Asynchron-Drehstrommotors]{ Drehzahlmessung
+		des rudimentären Asynchron-Drehstrommotors.
+	}\label{fig:motor}
+\end{figure}
+
+\newpage
+\section{Geräteliste}\label{sec:geraeteliste}
+
+Für den Versuch werden die in \autoref{tab:gerate} aufgelisteten Geräte
+verwendet.
+
+\begin{table}[H]
+	\caption{Verwendete Geräte
+	}
+	\begin{tblr}{lllll}
+		\textbf{Gerätetyp}  & \textbf{Hersteller} & \textbf{Typ}          & \textbf{Inventar-Nr} & \textbf{Anmerkung} \\
+		Transformator       & Thalheimer          & LTS 606               & 0161469              &                    \\
+		{Box  mit                                                                                                     \\ Versorgungsspannung} & & & F1 & \\
+		Strommessgerät      & Norma               & analog                & {VII/1106/9                               \\ VII/1106/6 \\ VII/1106/3} & 3 x \\
+		Spannungsmessgerät  & Norma               & analog                & {VII/1120/2                               \\ VII/1120/1 E3} & 3 x \\
+		Leistungsmessgerät  & Norma               & analog                & F18 F19              & 2 x                \\
+		Leistungsmessgerät  & {Chauvin                                                                                \\ Arnoux} & analog & C.A.505 & \\
+		Multimeter          & UNI-T               & UT51                  &                      & 2 x                \\
+		Multimeter          & METEX               & M-3610B               &                      &                    \\
+		Glühbirnen          &                     & {3x \SI{60}{\watt}                                                \\ 3x \SI{75}{\watt}} & & \\
+		Kondensator         &                     & \SI{12}{\micro\farad} & G5 V                 & 2 x                \\
+		Spule               &                     &                       & P                    &                    \\
+		Heizwiderstand      &                     & 3x \SI{230}{\volt}    & JFR/158/13           & 3 x                \\
+		Bananenstecker      &                     &                       &                      &                    \\
+		Spule mit Eisenkern &                     &                       &                      & 3 x                \\
+		{Metallscheibe auf                                                                                            \\ Sockel} & Hancaner & DT2234C & & \\
+	\end{tblr}\label{tab:gerate}
+\end{table}
+\newpage
+\section{Versuchsdurchführung und Messergebnisse}\label{sec:versuchsdurchfuehrung_messergebnisse}
+
+\subsection{ohmsche Last in Wechselstromkreis}
+
+Um die Leistung der ohmschen Last im Wechselstromkreis zu messen, wird der
+Verbraucher, der in diesem Fall einer \SI[]{75}{\watt} Glühbirne entspricht,
+wie in \autoref{fig:aufbau_ohm} ersichtlich, in den Stromkreis geschlossen.
+Dabei ist besonders darauf zu achten, dass die Geräte richtig in den Stromkreis
+geschlossen sind. Bei einem negativen Zeigerausschlag müssen also die Kabel
+vertauscht werden. Auch sollt bei den Geräten der richtige Messbereich
+ausgewählt werden, um sicherzustellen, dass die Geräte nicht überlastet werden,
+aber dennoch ein genaues Ergebnis anzeigen.
+
+Nun wird mithilfe des Schleifkontakts des Netzgeräts eine Ausgangsspannung von
+\SI[]{20.0(6)}{\volt} erzeugt und diese kontinuierlich erhöht, bis schließlich
+ein Wert von \SI[]{240.0(12)}{\volt} erreicht ist.
+
+Die entsprechenden Werte der Messgeräte werden abgelesen und in folgender
+\autoref{tab:werte_ohm} aufgelistet.
+
+Bei dem vom Leistungsmessungsgerät abgelesenen Wert ist dabei besonders darauf
+zu achten, ob das Gerät über die Verbindung für \SI{1}{\ampere} oder
+\SI{5}{\ampere} verwendet wird.
+
+\begin{table}[H]
+	\caption[Gemessene Werte bei der Variation der ohmschen Last]{Gemessene Werte bei der
+		Variation der ohmschen Last       \\
+		$U \dots$ gemessene Spannung in V \\
+		$I \dots$ gemessener Strom in A   \\
+		$P \dots$ gemessene Leistung in W
+	}\label{tab:werte_ohm}
+	\centering
+\end{table}
+
+\subsection{Symmetrische Last in Dreiecksschaltung}
+
+Um die Leistung eines symmetrischen Verbrauchs bei einer Dreiecksschaltung zu
+betrachten, wird ein Aufbau nach \autoref{fig:aufbau1} herangezogen. Dabei ist
+darauf zu achten, dass die Glühlampen symmetrisch auf die Stränge verteilt
+sind, sich also auf jedem jeweils eine mit \SI[]{75}{\watt} und eine mit
+\SI[]{60}{\watt} befindet. Alle abgelesenen Messwerte der Messgeräte sind in
+folgender \autoref{tab:werte_sym_dreieck} aufgelistet.
+
+\begin{table}[H]
+	\caption[Abgelesene Werte bei symmetrischer Belastung in Dreiecksschaltung] {Abgelesene
+		Werte bei symmetrischer Belastung in Dreiecksschaltung                     \\
+		$I_i \dots$ gemessener Strom am i-ten Strang in A                          \\
+		$I_{31} \dots$ gemessener Strom zwischen Sternpunkt und Neutralleiter in A \\
+		$U_{ij} \dots$ gemessene Spannung zwischen den Strängen i und j in V       \\
+		$P_{i}^M \dots$ gemessene Wirkleistungen in W (für genaue Bezeichnung siehe \autoref{fig:aufbau1})
+	}\label{tab:werte_sym_dreieck}
+	\centering
+\end{table}
+
+\subsection{Symmetrische Last in Sternschaltung}
+
+Nun wird die Schaltung insofern modifiziert, dass nun eine Sternschaltung
+vorliegt, wie in \autoref{fig:aufbau2} sichtbar.
+
+Der besseren Übersicht halber, sind alle abgelesenen Werte der Messgeräte für
+die Sternschaltung in folgender \autoref{tab:wert_stern} aufgelistet.
+
+\begin{table}[H]
+	\caption[Abgelesene Werte bei Sternschaltung] {Abgelesene Werte bei Sternschaltung                                        \\
+		1. Zeile \dots symmetrische Belastung                                      \\
+		2. Zeile \dots asymmetrische Belastung                                     \\
+		3. Zeile \dots asymmetrische Belastung mit simulierten Kabelbruch          \\
+		$I_i \dots$ gemessener Strom am i-ten Strang in A                          \\
+		$I_{31} \dots$ gemessener Strom zwischen Sternpunkt und Neutralleiter in A \\
+		$U_{i} \dots$ gemessene Spannung am i-ten Strang in V                      \\
+		$P_{i}^M \dots$ gemessene Wirkleistungen in W (für genaue Bezeichnung siehe \autoref{fig:aufbau2})
+	}\label{tab:wert_stern}
+	\centering
+\end{table}
+
+\subsection{Asymmetrische Last in Sternschaltung}\label{sec:vers_asy_stern_ohne}
+
+Nun werden die einzelnen Stränge verschieden stark beansprucht, indem die
+Glühlampen asymmetrisch auf die Stränge verteilt werden. Dabei wird, wie
+bereits in \autoref{sec:versuchsanordnung} angeführt, folgende Konfiguration
+verwirklicht:
+
+\begin{itemize}
+	\item $L_1$ \(\dots\) 1 x \SI[]{60}{\watt}
+	\item $L_2$ \(\dots\) 2 x \SI[]{75}{\watt}
+	\item $L_3$ \(\dots\) 1 x \SI[]{75}{\watt} und 2 x \SI[]{60}{\watt}
+\end{itemize}
+
+Alle abgelesenen Werte der Messgeräte sind, wie bereits erwähnt, in
+\autoref{tab:wert_stern} in der 2. Zeile angefügt.
+
+\subsection{Asymmetrische Last in Sternschaltung und simulierten Kabelbruch}\label{sec:vers_asy_stern_mit}
+
+Um nun einen Kabelbruch zu simulieren, wird die Verbindung des Neutralleiters
+unterbrochen. Zusätzlich wird nun auch der Spannungsabfall an jener Stelle
+gemessen, indem das entsprechende Multimeter als Spannungsmessgerät
+umfunktioniert wird. Die so abgelesenen Werte der Messgeräte sind in
+\autoref{tab:wert_stern} in der 3. Zeile aufgelistet.
+
+\subsection{Wirkleistungsmessung}
+Um die Wirkleistung eines realen Verbrauchers zu bestimmen, werden auch
+Kapazitäten und Induktivitäten, wie in \autoref{fig:aufbau3} sichtbar, in die
+Schaltung integriert.
+
+Es sind, der besseren übersicht halber, wieder alle erhaltenen Werte für die
+nächsten Aufgaben in \autoref{tab:werte_wirkleistung} aufgelistet. Die
+gemessenen Werte der realen Verbraucher sind dabei in der 1. Zeile sichtbar.
+
+Nun werden die Außenleiter $L_2$ und $L_3$ vertauscht, wodurch die Werte, aus
+der 2.Zeile der \autoref{tab:werte_wirkleistung} entstehen.
+
+Im Rahmen der Bonusaufgabe wird die Schaltung leicht modifiziert, wie bereits
+in \autoref{sec:versuchsanordnung} angeführt. Dabei ist darauf zu achten, dass
+am 2. Strang eine Parallelschaltung von Kapazität und Induktivität vorliegt.
+
+Alle abgelesenen Werte der Messgeräte sind in der 3. Zeile in
+\autoref{tab:werte_wirkleistung} aufgelistet.
+
+\begin{table}[H]
+	\caption[Abgelesene Werte für die Bestimmung der Wirkleistung] {\footnotesize Abgelesene
+		Werte für die Bestimmung der Wirkleistung, bei den Bezeichnungen der Bauteile
+		ist zu beachten, dass sich Zeile 3 und 6 auf die Bonusaufgabe beziehen und
+		daher andere Bauteile verwendet werden.                                                   \\
+		1. Zeile \dots Aufbau für die Messung der Wirkleistung: eines realen
+		Verbrauchers                                                                              \\
+		2. Zeile \dots Aufbau für die Messung der Wirkleistung: Wirkleistung eines
+		realen Verbrauchers mit vertauschten Außenleitern                                         \\
+		3. Zeile \dots Aufbau für die Messung der Wirkleistung: Wirkleistung bei
+		modifizierter Schaltung                                                                   \\
+		4. Zeile \dots Aufbau für die Messung der Wirkleistung: Blindleistung eines
+		realen Verbrauchers                                                                       \\
+		5. Zeile \dots Aufbau für die Messung der Wirkleistung: Blindleistung eines
+		realen Verbrauchers mit vertauschten Außenleitern                                         \\
+		6. Zeile \dots Aufbau für die Messung der Wirkleistung: Blindleistung bei
+		modifizierter Schaltung                                                                   \\
+		$I_i \dots$ gemessener Strom am i-ten Strang in A                                         \\
+		$I_{31} \dots$ gemessener Strom zwischen Sternpunkt und Neutralleiter in A                \\
+		$U_{i} \dots$ gemessener Spannungsabfall am i-ten Bauteil in V nach \autoref{fig:aufbau3} \\
+		$P_{i}^M \dots$ gemessene Wirkleistungen am i-ten Strang in W
+	}\label{tab:werte_wirkleistung}
+	\centering
+\end{table}
+
+\subsection{Blindleistungsmessung}
+
+Um die Blindleistung der Schaltung messbar zu machen, müssen die parallelen
+Verbindungen der Powermeter, nach \autoref{fig:aufbau4} umgebaut werden.
+
+Alle abgelesenen Werte der Messgeräte sind in der 4. Zeile in
+\autoref{tab:werte_wirkleistung} aufgelistet.
+
+Nun werden die Außenleiter $L_2$ und $L_3$ erneut vertauscht, wodurch die Werte
+aus Zeile 5, aus \autoref{tab:werte_wirkleistung} entstehen.
+
+Im Rahmen der Bonusaufgabe wird auch die leicht modifizierte Schaltung mit der
+Parallelschaltung von Kapazität und Induktivität am 2. Strang aufgebaut.
+
+Alle abgelesenen Werte der Messgeräte sind in der 6. Zeile von
+\autoref{tab:werte_wirkleistung} aufgelistet.
+
+\subsection{Bau eines rudimentärern Asynchron-Drehstrommotors}
+
+Beim Bau des Drehstrommotors ist darauf zu achten, dass die Spulen richtig in
+den Stromkreis geschlossen sind, sodass die maximale Drehzahl erreicht werden
+kann. Auch die Abstände der Eisenkerne sind durch Probieren so einzustellen,
+dass ein möglichst ruhiger Umlauf der Metallscheibe garantiert wird und sind
+nicht bei allen 3 Spulen gleich, da diese bezüglich der Anzahl an Wickelungen
+und Drahtdicke leicht verschieden sind.
+
+Die Anzahl der Umdrehungen wird dabei mithilfe eines digitalen Zählers
+bestimmt, der anhand eines Laserstrahls die Markierung auf der Metallscheibe
+wahrnimmt. Die maximale Drehzahl, die mithilfe des Aufbaus realisiert werden
+konnte war \SI{1691(2)}{\per\minute} Umdrehungen.
+
+\section{Auswertung}\label{sec:auswertung}
+
+\section{Diskussion}\label{sec:diskussion}
+
+\section{Zusammenfassung}\label{sec:zusammenfassung}
+
+\newpage
+
+% \printbibliography
+\listoffigures
+\listoftables
+\end{document}
