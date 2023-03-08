@@ -23,6 +23,8 @@ def test_waermepumpe_protokoll():
         "Tk": r"T_w",
         "DT": r"\Delta T",
         "t": r"t",
+        "eta": r"\eta",
+        "eps": r"\epsilon",
     }
     gv = {
         "pk": r"\si{\bar}",
@@ -31,6 +33,8 @@ def test_waermepumpe_protokoll():
         "Tk": r"\si{\degreeCelsius}",
         "t": r"\si{\second}",
         "DT": r"\si{\kelvin}",
+        "eta": r"1",
+        "eps": r"1",
     }
 
     pd.set_option("display.max_columns", None)
@@ -40,6 +44,7 @@ def test_waermepumpe_protokoll():
     P.figure.set_size_inches((8, 6))
     ax: plt.Axes = P.figure.add_subplot()
     kuebelvolumen = ufloat(4000, 20)
+    leistungKompressor = ufloat(118, 2)
 
     # Aufgabe 3
     filepath = os.path.join(os.path.dirname(__file__), "../data/waermeDruck.csv")
