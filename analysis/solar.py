@@ -11,12 +11,74 @@ from uncertainties import ufloat
 # pyright: reportUndefinedVariable=false
 
 
-def voltmeter(V):
-    return V * 0 + 0.1
+def Voltmeter(V):
+    return V * 0.0015 + 0.002
 
 
-def amperemeter(I):
-    return I * 0 + 0.1
+def Amperemeter(I):
+    return I * 0.01 + 0.003
+
+
+def createStromSpannungsKennlinie(P: Project, file: str):
+    filepath = os.path.join(
+        os.path.dirname(__file__), "../data/solarSerieOhneAbdeckung.csv"
+    )
+    P.load_data(filepath, loadnew=True)
+    P.vload()
+    P.data["dU"] = U.data.apply(Amperemeter)
+    P.data["dI"] = I.data.apply(Voltmeter)
+
+    P.figure.set_size_inches((8, 6))
+    ax: plt.Axes = P.figure.add_subplot()
+    print(I.data)
+    print(U.data)
+
+    P.plot_data(
+        ax,
+        U,
+        I,
+        label="Gemessene Daten",
+        style="#1cb2f5",
+        errors=True,
+    )
+
+    # power = U * I
+    # P.resolve(power)
+    # maxpower = max(power.data)
+    # maxpower = P.data[P.data["power"] == maxpower]
+    # kurzSchlussStrom = P.data[P.data["U"] == 0]
+    # leerLaufSpannung = P.data[P.data["I"] == 0]
+    # ax.plot(
+    #     kurzSchlussStrom.U,
+    #     kurzSchlussStrom.I,
+    #     marker="o",
+    #     markersize=20,
+    #     markeredgecolor="red",
+    #     markerfacecolor="red",
+    #     label="Kurzschlussstrom",
+    # )
+    # ax.plot(
+    #     leerLaufSpannung.U,
+    #     leerLaufSpannung.I,
+    #     marker="o",
+    #     markersize=20,
+    #     markeredgecolor="red",
+    #     markerfacecolor="red",
+    #     label="Leerlaufspannung",
+    # )
+    # ax.plot(
+    #     maxpower.U,
+    #     maxpower.I,
+    #     marker="o",
+    #     markersize=20,
+    #     markeredgecolor="red",
+    #     markerfacecolor="red",
+    #     label="MPP",
+    # )
+
+    ax.set_title("Serienschaltung")
+    P.ax_legend_all(loc=4)
+    ax = P.savefig("serienschaltung.pdf")
 
 
 def test_solar_protokoll():
@@ -27,6 +89,7 @@ def test_solar_protokoll():
         "Ik": r"I_k",
         "DT": r"\Delta T",
         "t": r"t",
+        "power": r"P",
         "eta": r"\eta",
         "eps": r"\epsilon",
     }
@@ -36,6 +99,7 @@ def test_solar_protokoll():
         "I": r"\si{\milli\ampere}",
         "Ik": r"I_k",
         "t": r"\si{\second}",
+        "power": r"\si{\watt}",
         "DT": r"\si{\kelvin}",
         "eta": r"1",
         "eps": r"1",
@@ -51,6 +115,7 @@ def test_solar_protokoll():
     quellenAbstand = ufloat(284, 2)  # mm ist Abstand bis Lampenglas
 
     # Aufgabe 1
+    # createStromSpannungsKennlinie(P, "../data/solarSerieOhneAbdeckung.csv")
     filepath = os.path.join(
         os.path.dirname(__file__), "../data/solarSerieOhneAbdeckung.csv"
     )
@@ -96,4 +161,4 @@ def test_solar_protokoll():
 
 
 if __name__ == "__main__":
-    test_waermepumpe_protokoll()
+    test_solar_protokoll()
