@@ -31,22 +31,25 @@
 % \includepdf{./deckblatt.pdf}
 \tableofcontents
 
-
 \section{Aufgabenstellung\label{Auf}}
 
 \subsection{Wärmepumpe}
 
 \begin{itemize}
-	\item Messung des Temperaturverlaufes in zwei Wasserbehältern, der von der Pumpe 
-	aufgenommenen Leistung und der Drücke nach Kompression bzw. Expansion im Kältemittelkreislauf über 1 Stunde
-	\item Bestimmung der Leistungszahl und des Gütegrades als Funktion der Temperaturdifferenz
-	\item Erstellung des p-H-Diagrammes des Kreisprozesses aufgrund der gemessenen Werte zu Beginn und am Ende der Messung
+	\item Messung des Temperaturverlaufes in zwei Wasserbehältern, der von der Pumpe
+	      aufgenommenen Leistung und der Drücke nach Kompression bzw. Expansion im
+	      Kältemittelkreislauf über 1 Stunde
+	\item Bestimmung der Leistungszahl und des Gütegrades als Funktion der
+	      Temperaturdifferenz
+	\item Erstellung des p-H-Diagrammes des Kreisprozesses aufgrund der gemessenen Werte
+	      zu Beginn und am Ende der Messung
 \end{itemize}
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
-Die Kennlinie des Solarzellenmoduls I(U) ist bei kontanter Temperatur aufzunehmen. 
-Weiters sind ein I(U)- und ein P(U)-Diagramm zu erstellen. Auch werden die Kenndaten Leerlaufspannung (UL), 
-Kurzschlussstrom (IK), sowie am Betriebspunkt maximaler Leistung (MPP) die Spannung (UMPP), den Strom (IMPP), 
+Die Kennlinie des Solarzellenmoduls I(U) ist bei kontanter Temperatur
+aufzunehmen. Weiters sind ein I(U)- und ein P(U)-Diagramm zu erstellen. Auch
+werden die Kenndaten Leerlaufspannung (UL), Kurzschlussstrom (IK), sowie am
+Betriebspunkt maximaler Leistung (MPP) die Spannung (UMPP), den Strom (IMPP),
 die Leistung (PMPP) und schließlich der Füllfaktor bestimmt.
 
 Dies Wird für folgende Schaltungen durchgeführt:
@@ -54,23 +57,27 @@ Dies Wird für folgende Schaltungen durchgeführt:
 \begin{itemize}
 	\item Serienschaltung der beiden Solarzellen
 	\item Parallelschaltung der beiden Solarzellen
-	\item Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird
+	\item Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell
+	      abgeschattet wird
 \end{itemize}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
-Gegeben sind eine einzelne Solarzelle, Lampen als Lichtquelle, ein Leistungsmessgerät, 
-sowie ein Quellenmessgerät (Sourcemeter) zur automatisierten Messung der Kennlinie.
+Gegeben sind eine einzelne Solarzelle, Lampen als Lichtquelle, ein
+Leistungsmessgerät, sowie ein Quellenmessgerät (Sourcemeter) zur
+automatisierten Messung der Kennlinie.
 
-Damit werden folgende SChritte durchgeführt:
+Damit werden folgende Schritte durchgeführt:
 
 \begin{itemize}
-	\item Messung der Dunkelkennlinie: An der einzelnen, abgedeckten Solarzelle wird mit Hilfe des Sourcemeters 
-	automatisiert die Kennlinie aufgenommen. Fitten Sie den I(U)-Verlauf mit der gegebenen Formel und bestimmen 
-	Sie die Parameter der Diode.
-	\item Messung der Hellkennlinie und Bestimmung des Wirkungsgrades: Die einzelne Solarzelle wird mit Hilfe 
-	der Lampen bestrahlt. Aus den aufgenommenen Kennlinien werden die Diodenparameter, sowie im Punkt der 
-	maximalen Leistung (MPP) die Wirkungsgrade ermittelt.
+	\item Messung der Dunkelkennlinie: An der einzelnen, abgedeckten Solarzelle wird mit
+	      Hilfe des Sourcemeters automatisiert die Kennlinie aufgenommen. Fitten Sie den
+	      I(U)-Verlauf mit der gegebenen Formel und bestimmen Sie die Parameter der
+	      Diode.
+	\item Messung der Hellkennlinie und Bestimmung des Wirkungsgrades: Die einzelne
+	      Solarzelle wird mit Hilfe der Lampen bestrahlt. Aus den aufgenommenen
+	      Kennlinien werden die Diodenparameter, sowie im Punkt der maximalen Leistung
+	      (MPP) die Wirkungsgrade ermittelt.
 \end{itemize}
 
 \section{Grundlagen}\label{Grund}
@@ -215,45 +222,49 @@ Der Kältekreislauf besteht aus vier Hauptstufen:
 
 \subsection{Wärmepumpe}
 
-Der reale Versuchsaufbau,\autoref{fig:warmepumpe}, sowie eine schematische Skizze dessen,
-\autoref{fig:skizze_warmepumpe}, sind im folgenden sichtbar.
-
+Der reale Versuchsaufbau,\autoref{fig:warmepumpe}, sowie eine schematische
+Skizze dessen, \autoref{fig:skizze_warmepumpe}, sind im folgenden sichtbar.
 
 %todo i hoffe da is ka fehler mit de figures
 \begin{figure}[H]
 	\centering
-	\captionbox{Versuchsaufbau der Wärmepumpe, am Bild markiert  sind die Kanäle, mit denen die entsprechenden 
-	Temperatursensoren verbunden sind
+	\captionbox{Versuchsaufbau der Wärmepumpe, am Bild markiert  sind die Kanäle, mit denen die entsprechenden
+		Temperatursensoren verbunden sind
 		\label{fig:warmepumpe}}{
 		\includegraphics[width=.45\textwidth]{./figures/warmepumpe_anschlusse.png}
 	}
 	\hfill
 	\captionbox{Skizze des Versuchsaufbaus der Wärmepumpe \cite[text]{unterlagen_warmepumpe} \\
-	1 \dots Kompressor 230 V; 50/60 Hz. Leistungsaufnahme ca. 130 W bei 50 Hz \\
-	2 \dots ausschwenkbare Stellfläche für rot-markierten Warmwasserbehälter \\
-	3 \dots Verflüssiger \\ 
-	4 \dots Sammler/Reiniger \\ 
-	5 \dots Expansionsventil \\ 
-	6 \dots Temperaturfühler des Expansionsventils \\ 
-	7 \dots Verdamp-fer \\ 
-	8 \dots ausschwenkbare Stellfläche Kaltwasserbehälter 
-	9 \dots Rohrwindungen als elastische Verbindung zwischen Kompressor und Wärmetauscher
-	10 \dots Druckwächter \\
-	11 \dots Kunststoffhalter (2x) für Thermometer und Temperaturfühler, zum Anklemmen an Kupferrohre 
-	12 \dots Kupfer-Meßschuh (2x) zum Einstecken von Temperaturfühlern für Temperaturmessungen an den Kupferrohren des Kältemittelkreislaufs
-	13 \dots Manometer für die Niederdruckseite; innere Skala für Druckmessung von -1...+10 bar, äußerste Skala mit zugehöriger Taupunkttemperatur für R134a von -60 °C bis +40 °C \\
-	14 \dots Manometer für die Hochdruckseite; innere Skala: Druck von -1...+30 bar, äußerste Skala mit zugehöriger Taupunkttemperatur für R 134a von -60 °C bis + 85°C.
-		\label{fig:skizze_warmepumpe}}{
-		\includegraphics[width=0.45\textwidth]{./figures/warmepumpe_skizze.PNG}
-	}
+		1 \dots Kompressor 230 V; 50/60 Hz. Leistungsaufnahme ca. 130 W bei 50 Hz \\
+		2 \dots ausschwenkbare Stellfläche für rot-markierten Warmwasserbehälter \\
+		3 \dots Verflüssiger \\
+		4 \dots Sammler/Reiniger \\
+		5 \dots Expansionsventil \\
+		6 \dots Temperaturfühler des Expansionsventils \\
+		7 \dots Verdamp-fer \\
+		8 \dots ausschwenkbare Stellfläche Kaltwasserbehälter 9 \dots Rohrwindungen als
+		elastische Verbindung zwischen Kompressor und Wärmetauscher 10 \dots
+		Druckwächter \\
+		11 \dots Kunststoffhalter (2x) für Thermometer und Temperaturfühler, zum
+		Anklemmen an Kupferrohre 12 \dots Kupfer-Meßschuh (2x) zum Einstecken von
+		Temperaturfühlern für Temperaturmessungen an den Kupferrohren des
+		Kältemittelkreislaufs 13 \dots Manometer für die Niederdruckseite; innere Skala
+		für Druckmessung von -1...+10 bar, äußerste Skala mit zugehöriger
+		Taupunkttemperatur für R134a von -60 °C bis +40 °C \\
+		14 \dots Manometer für die Hochdruckseite; innere Skala: Druck von -1...+30
+		bar, äußerste Skala mit zugehöriger Taupunkttemperatur für R 134a von -60 °C
+		bis + 85°C. \label{fig:skizze_warmepumpe}}{
+		\includegraphics[width=0.45\textwidth]{./figures/warmepumpe_skizze.PNG} }
 \end{figure}
 
-Die Temperatursensoren werden mit dem Temperaturmessgerät, wie in \autoref{fig:warmepumpe} sichtbar, verbunden. Das 
-Temperaturmessgerät wird über die USB-Schnittstelle mit den Rechner verbunden, um eine Auswertung mit der Software 
-Cassy Lab2 zu ermöglichen.
+Die Temperatursensoren werden mit dem Temperaturmessgerät, wie in
+\autoref{fig:warmepumpe} sichtbar, verbunden. Das Temperaturmessgerät wird über
+die USB-Schnittstelle mit den Rechner verbunden, um eine Auswertung mit der
+Software Cassy Lab2 zu ermöglichen.
 
-Weil der Temperatursensor im kälteren Behälter laufend zur Spule gerutscht ist und dies die Messung verfälschen würde,
-wurde er mit einem Stück Lötzinn gegen Verrutschen gesichert, wie in \autoref{fig:lotzinn} sichtbar.
+Weil der Temperatursensor im kälteren Behälter laufend zur Spule gerutscht ist
+und dies die Messung verfälschen würde, wurde er mit einem Stück Lötzinn gegen
+Verrutschen gesichert, wie in \autoref{fig:lotzinn} sichtbar.
 
 \begin{figure}[H]
 	\begin{center}
@@ -269,12 +280,9 @@ wurde er mit einem Stück Lötzinn gegen Verrutschen gesichert, wie in \autoref{
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
 
-
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
-
-
 
 \section{Geräteliste}\label{sec:geraeteliste}
 
@@ -311,15 +319,19 @@ verwendet.
 \subsection{Wärmepumpe}
 
 %todo si überprüfen
-Zunächst werden beide Kübel mit \SI{4000,40}{\milli\liter} Wasser gefüllt. Um diese möglichst genau zu bewerkstelligen,
-wird ein Messbecher verwendet. Die Kübel werden auf die dafür vorgesehenen Halterungen gestellt und überprüft, ob die 
-Wendeln mit Wasser bedeckt sind. Um die Zirkulationen während des Prozesses besser zu unterstützen wird regelmäßig umgerührt.
-Zusätzlich ist an den Kübeln ein Schlauch befestigt, um den Wasserfluss zwischen Boden und oberen Bereich des Eimers zu unterstützen.
+Zunächst werden beide Kübel mit \SI{4000,40}{\milli\liter} Wasser gefüllt. Um
+diese möglichst genau zu bewerkstelligen, wird ein Messbecher verwendet. Die
+Kübel werden auf die dafür vorgesehenen Halterungen gestellt und überprüft, ob
+die Wendeln mit Wasser bedeckt sind. Um die Zirkulationen während des Prozesses
+besser zu unterstützen wird regelmäßig umgerührt. Zusätzlich ist an den Kübeln
+ein Schlauch befestigt, um den Wasserfluss zwischen Boden und oberen Bereich
+des Eimers zu unterstützen.
 
-Um alle 4 Temperaturmessungen gleichzeitig zu erfassen, wird die Software Cassy Lab2 verwendet. Nachdem das Temperaturmessgerät 
-unter dem Fenster "Einstellungen anzeigen" verbunden wurde, muss sichergestellt werden, dass die geforderten Temperaturwerte
-erfasst und während des Messvorgangs geplottet werden.
-Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
+Um alle 4 Temperaturmessungen gleichzeitig zu erfassen, wird die Software Cassy
+Lab2 verwendet. Nachdem das Temperaturmessgerät unter dem Fenster
+"Einstellungen anzeigen" verbunden wurde, muss sichergestellt werden, dass die
+geforderten Temperaturwerte erfasst und während des Messvorgangs geplottet
+werden. Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width =0.5\textwidth]{./figures/interface.PNG}
@@ -328,13 +340,14 @@ Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
 	}\label{fig:interface}
 \end{figure}
 
-Nun wird er Kompressor an den Strom angeschlossen und gleichzeitig die Aufzeichnung der Daten über den entsprechenden Knopf 
-gestartet.
-Zusätzlich zur Temperaturmessung werden ca. im 2 Minuten- Takt die Drücke von den entsprechenden Barometern abgelesen,
-was in folgender \autoref{tab:drucke} sichtbar ist. Um sicherzustellen, dass die Drücke die richtige Zeit zugeordnet bekommen, werden
-Fotos von den Barometern gemacht und mithilfe der erfassten Metadaten des Smartphones die genaue Zeit notiert.
+Nun wird er Kompressor an den Strom angeschlossen und gleichzeitig die
+Aufzeichnung der Daten über den entsprechenden Knopf gestartet. Zusätzlich zur
+Temperaturmessung werden ca. im 2 Minuten- Takt die Drücke von den
+entsprechenden Barometern abgelesen, was in folgender \autoref{tab:drucke}
+sichtbar ist. Um sicherzustellen, dass die Drücke die richtige Zeit zugeordnet
+bekommen, werden Fotos von den Barometern gemacht und mithilfe der erfassten
+Metadaten des Smartphones die genaue Zeit notiert.
 %todo tab:drucke
-
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
@@ -342,13 +355,9 @@ Fotos von den Barometern gemacht und mithilfe der erfassten Metadaten des Smartp
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
 
-
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
-
-
-
 
 \section{Auswertung}\label{sec:auswertung}
 
@@ -360,15 +369,9 @@ Fotos von den Barometern gemacht und mithilfe der erfassten Metadaten des Smartp
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
 
-
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
-
-
-
-
-
 
 \section{Diskussion}\label{sec:diskussion}
 
@@ -380,12 +383,9 @@ Fotos von den Barometern gemacht und mithilfe der erfassten Metadaten des Smartp
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
 
-
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
-
-
 
 \section{Zusammenfassung}\label{sec:zusammenfassung}
 
@@ -397,11 +397,9 @@ Fotos von den Barometern gemacht und mithilfe der erfassten Metadaten des Smartp
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
 
-
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
-
 
 % \printbibliography
 \listoffigures
