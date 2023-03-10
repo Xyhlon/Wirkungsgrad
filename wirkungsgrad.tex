@@ -31,6 +31,8 @@
 % \includepdf{./deckblatt.pdf}
 \tableofcontents
 
+\newpage
+
 \section{Aufgabenstellung\label{Auf}}
 
 \subsection{Wärmepumpe}
@@ -225,37 +227,45 @@ Der Kältekreislauf besteht aus vier Hauptstufen:
 Der reale Versuchsaufbau,\autoref{fig:warmepumpe}, sowie eine schematische
 Skizze dessen, \autoref{fig:skizze_warmepumpe}, sind im folgenden sichtbar.
 
-%todo i hoffe da is ka fehler mit de figures
 \begin{figure}[H]
-	\centering
-	\captionbox{Versuchsaufbau der Wärmepumpe, am Bild markiert  sind die Kanäle, mit denen die entsprechenden
-		Temperatursensoren verbunden sind
-		\label{fig:warmepumpe}}{
-		\includegraphics[width=.45\textwidth]{./figures/warmepumpe_anschlusse.png}
-	}
-	\hfill
-	\captionbox{Skizze des Versuchsaufbaus der Wärmepumpe \cite[text]{unterlagen_warmepumpe} \\
-		1 \dots Kompressor 230 V; 50/60 Hz. Leistungsaufnahme ca. 130 W bei 50 Hz \\
-		2 \dots ausschwenkbare Stellfläche für rot-markierten Warmwasserbehälter \\
-		3 \dots Verflüssiger \\
-		4 \dots Sammler/Reiniger \\
-		5 \dots Expansionsventil \\
-		6 \dots Temperaturfühler des Expansionsventils \\
-		7 \dots Verdamp-fer \\
-		8 \dots ausschwenkbare Stellfläche Kaltwasserbehälter 9 \dots Rohrwindungen als
-		elastische Verbindung zwischen Kompressor und Wärmetauscher 10 \dots
-		Druckwächter \\
-		11 \dots Kunststoffhalter (2x) für Thermometer und Temperaturfühler, zum
-		Anklemmen an Kupferrohre 12 \dots Kupfer-Meßschuh (2x) zum Einstecken von
-		Temperaturfühlern für Temperaturmessungen an den Kupferrohren des
-		Kältemittelkreislaufs 13 \dots Manometer für die Niederdruckseite; innere Skala
-		für Druckmessung von -1...+10 bar, äußerste Skala mit zugehöriger
-		Taupunkttemperatur für R134a von -60 °C bis +40 °C \\
-		14 \dots Manometer für die Hochdruckseite; innere Skala: Druck von -1...+30
-		bar, äußerste Skala mit zugehöriger Taupunkttemperatur für R 134a von -60 °C
-		bis + 85°C. \label{fig:skizze_warmepumpe}}{
-		\includegraphics[width=0.45\textwidth]{./figures/warmepumpe_skizze.PNG} }
+	\begin{center}
+		\includegraphics[width =0.5\textwidth]{./figures/warmepumpe_anschlusse.png}
+	\end{center}
+	\caption{Versuchsaufbau der Wärmepumpe, am Bild markiert  sind die Kanäle, mit denen die entsprechenden
+	Temperatursensoren verbunden sind
+	}\label{fig:warmepumpe}
 \end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width =0.5\textwidth]{./figures/warmepumpe_skizze.PNG}
+	\end{center}
+	\caption{Skizze des Versuchsaufbaus der Wärmepumpe \cite[text]{unterlagen_warmepumpe} \\
+	1 \dots Kompressor 230 V; 50/60 Hz. Leistungsaufnahme ca. 130 W bei 50 Hz \\
+	2 \dots ausschwenkbare Stellfläche für rot-markierten Warmwasserbehälter \\
+	3 \dots Verflüssiger \\
+	4 \dots Sammler/Reiniger \\
+	5 \dots Expansionsventil \\
+	6 \dots Temperaturfühler des Expansionsventils \\
+	7 \dots Verdamp-fer \\
+	8 \dots ausschwenkbare Stellfläche Kaltwasserbehälter 9 \dots Rohrwindungen als
+	elastische Verbindung zwischen Kompressor und Wärmetauscher 10 \dots
+	Druckwächter \\
+	11 \dots Kunststoffhalter (2x) für Thermometer und Temperaturfühler, zum
+	Anklemmen an Kupferrohre \\
+	12 \dots Kupfer-Meßschuh (2x) zum Einstecken von
+	Temperaturfühlern für Temperaturmessungen an den Kupferrohren des
+	Kältemittelkreislaufs \\
+	13 \dots Manometer für die Niederdruckseite; innere Skala
+	für Druckmessung von -1...+10 bar, äußerste Skala mit zugehöriger
+	Taupunkttemperatur für R134a von -60 °C bis +40 °C \\
+	14 \dots Manometer für die Hochdruckseite; innere Skala: Druck von -1...+30
+	bar, äußerste Skala mit zugehöriger Taupunkttemperatur für R 134a von -60 °C
+	bis + 85°C.
+	}\label{fig:skizze_warmepumpe}
+\end{figure}
+
+
 
 Die Temperatursensoren werden mit dem Temperaturmessgerät, wie in
 \autoref{fig:warmepumpe} sichtbar, verbunden. Das Temperaturmessgerät wird über
@@ -276,11 +286,63 @@ Verrutschen gesichert, wie in \autoref{fig:lotzinn} sichtbar.
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
-\subsubsection{Serienschaltung der beiden Solarzellen}
+Um die Kennlinie der Solarzelle zu bestimmen wird diese, der jeweiligen Schaltung entsprechend, an einen 
+verstellbaren Widerstand geschlossen. Damit Messwerte generiert werden können, werden auch ein Amperemeter,
+sowie ein Voltmeter nach dem Schaltplan in \autoref{fig:schaltplan} in die Schaltung integriert. Bei den Messgeräten
+muss darauf geachtet werden, einen geeigneten Messbereich zu wählen.
 
-\subsubsection{Parallelschaltung der beiden Solarzellen}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width =0.5\textwidth]{./figures/schaltplan.PNG}
+	\end{center}
+	\caption{Schaltplan der Solarzelle \cite{unterlagen_solarzelle}\\
+	A \dots Amperemeter\\
+	V \dots Voltmeter
+	}\label{fig:schaltplan}
+\end{figure}
+
+Die folgenden Abbildungen zeigen die Serienschaltung, \autoref{fig:Serienschaltung}, sowie die Parallelschaltung, \autoref{fig:Parallelschaltung}.
+Um eine bessere Übersicht zu gewährleisten, wird bei den verwendeten Kabeln auf die Farbe geachtet.
+
+
+\begin{figure}[H]
+	\centering
+	\captionbox{Serienschaltung der beiden Solarzellen\\
+	1 \dots Solarzellenmodule\\
+	2 \dots Lampe\\
+	3 \dots regelbarer Widerstand\\
+	4 \dots Voltmeter\\
+	5 \dots Amperemeter\\
+	6 \dots entsprechende Verkabelung für Serienschaltung
+		\label{fig:Serienschaltung}}{
+		\includegraphics[width=.45\textwidth]{./figures/serienschaltung.jpg}
+	}
+	\hfill
+	\captionbox{Parallelschaltung der beiden Solarzellen \\
+	1 \dots Solarzellenmodule\\
+	2 \dots Lampe\\
+	3 \dots regelbarer Widerstand\\
+	4 \dots Voltmeter\\
+	5 \dots Amperemeter\\
+	6 \dots entsprechende Verkabelung für Parallelschaltung
+		 \label{fig:Parallelschaltung}}{
+		\includegraphics[width=0.45\textwidth]{./figures/parallelschaltung.jpg} }
+\end{figure}
 
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
+
+Um die partielle Abschattung einer Solarzelle zu simulieren, wird ein Stück Papier über einen Teil der ersten Solarzelle
+gelegt. Um sicherzustellen, dass das Papier sich nicht von der Solarzelle löst, wird dieses mit Klebeband gegen verrutschen
+gesichert. Dabei wird darauf geachtet, dass das Klebeband nur am Plastikrahmen festgeklebt wird, damit keine Kleberückstände
+auf der Solarzelle zurückbleiben. Die Abdunkelung ist in \autoref{fig:abgedeckt} sichtbar.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width =0.5\textwidth]{./figures/abgedeckt.png}
+	\end{center}
+	\caption{Partielle Beschattung einer Solarzelle
+	}\label{fig:abgedeckt}
+\end{figure}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
@@ -334,14 +396,16 @@ geforderten Temperaturwerte erfasst und während des Messvorgangs geplottet
 werden. Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width =0.5\textwidth]{./figures/interface.PNG}
+		\includegraphics[width =0.8\textwidth]{./figures/interface.PNG}
 	\end{center}
 	\caption{sichtbares Interface
 	}\label{fig:interface}
 \end{figure}
 
 Nun wird er Kompressor an den Strom angeschlossen und gleichzeitig die
-Aufzeichnung der Daten über den entsprechenden Knopf gestartet. Zusätzlich zur
+Aufzeichnung der Daten über den entsprechenden Knopf gestartet. 
+%todo leistung kompressor
+Zusätzlich zur
 Temperaturmessung werden ca. im 2 Minuten- Takt die Drücke von den
 entsprechenden Barometern abgelesen, was in folgender \autoref{tab:drucke}
 sichtbar ist. Um sicherzustellen, dass die Drücke die richtige Zeit zugeordnet
