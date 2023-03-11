@@ -1,7 +1,9 @@
 from labtool_ex2 import Project
 from sympy import exp, pi, sqrt, Abs, pi
-from sympy.physics.units.systems.si import elementary_charge, boltzmann_constant
+
+# from sympy.physics.units.systems.si import elementary_charge, boltzmann_constant
 import numpy as np
+from scipy.constants import elementary_charge, Boltzmann
 
 # from numpy.typing import NDArray
 import pandas as pd
@@ -156,13 +158,13 @@ def createStromSpannungsKennlinie(P: Project, file: str):
         / (leerLaufSpannung.U.values[0] * kurzSchlussStrom.I.values[0]),
     }
     print(kv)
-    P.add_text(ax, keyvalue=kv, offset=[20, -10], color="#A6F")
+    P.add_text(ax, keyvalue=kv, offset=[20, -10], color="#F5560C")
     ax.legend()
     ax.set_title("Leistungkennlinie")
     return ax
 
 
-def fitPlots(P: Project, file: str, p0):
+def fitPlots(P: Project, file: str, p0, dunkel=False):
     P.figure.clear()
     P.figure.set_size_inches((10, 6))
     P.data = pd.DataFrame(None)
@@ -210,6 +212,115 @@ def fitPlots(P: Project, file: str, p0):
         label="MPP",
         color="None",
     )
+    # I = (
+    #     IS1 * (exp(elementary_charge * U / (f1 * boltzmann_constant * T)) - 1)
+    #     + IS2 * (exp(elementary_charge * U / (f2 * boltzmann_constant * T)) - 1)
+    #     - Iph
+    #     + U / Rp
+    # )
+    P.vload()
+    # if dunkel:
+    #     I = IS1 * (exp(elementary_charge * U / (f1 * Boltzmann * 293.15)) - 1)
+    #     P.plot_fit(
+    #         axes=ax,
+    #         x=U,
+    #         y=I,
+    #         eqn=I,
+    #         style=r"#0cf574",
+    #         label="Diodenkennlinie",
+    #         offset=[0, 10],
+    #         use_all_known=False,
+    #         guess={
+    #             "f1": 2.0,
+    #             # "T": 300,
+    #             # "f2": 2.0,
+    #             "IS1": 2e-6,
+    #             # "IS2": 5e-6,
+    #             # "Iph": 80e-3,
+    #         },
+    #         bounds=[
+    #             {"name": "f1", "min": 0, "max": 8},
+    #             # {"name": "f2", "min": 0, "max": 4},
+    #             # {"name": "T", "min": 293, "max": 400},
+    #             {"name": "IS1", "min": 0, "max": 1},
+    #             # {"name": "Iph", "min": -1e-1, "max": 1e-1},
+    #             # {"name": "IS2", "min": 0, "max": 1},
+    #         ],
+    #         add_fit_params=True,
+    #         granularity=10000,
+    #         # gof=True,
+    #         scale_covar=True,
+    #     )
+    # else:
+    I = IS1 * (exp(elementary_charge * U / (f1 * Boltzmann * 293.15)) - 1) - Iph
+    # + IS2 * (exp(elementary_charge * U / (f2 * Boltzmann * 293.15)) - 1)
+    P.plot_fit(
+        axes=ax,
+        x=U,
+        y=I,
+        eqn=I,
+        style=r"#0cf574",
+        label="Diodenkennlinie",
+        offset=[0, 10],
+        use_all_known=False,
+        guess={
+            "f1": 2.0,
+            # "T": 300,
+            # "f2": 2.0,
+            "IS1": 2e-6,
+            # "IS2": 5e-6,
+            "Iph": 80e-3,
+        },
+        bounds=[
+            {"name": "f1", "min": 0, "max": 4},
+            # {"name": "f2", "min": 0, "max": 4},
+            # {"name": "T", "min": 293, "max": 400},
+            {"name": "IS1", "min": 0, "max": 1},
+            {"name": "Iph", "min": -2e-1, "max": 1},
+            # {"name": "IS2", "min": 0, "max": 1},
+        ],
+        add_fit_params=True,
+        granularity=10000,
+        # gof=True,
+        scale_covar=True,
+    )
+    # P.plot_fit(
+    #     axes=ax,
+    #     x=U,
+    #     y=I,
+    #     eqn=I,
+    #     style=r"#1cb2f5",
+    #     label="Diodenkennlinie",
+    #     offset=[40, 10],
+    #     use_all_known=False,
+    #     guess={
+    #         "f1": 2.0,
+    #         "f2": 2.0,
+    #         "T": 300,
+    #         "IS1": 5e-6,
+    #         "IS2": 5e-6,
+    #         "Iph": 80e-3,
+    #         "Rp": 1200,
+    #     },
+    #     bounds=[
+    #         {"name": "f1", "min": 0, "max": 100},
+    #         {"name": "f2", "min": 0, "max": 100},
+    #         {"name": "T", "min": 293, "max": 400},
+    #         {"name": "IS1", "min": 0, "max": 1e-4},
+    #         {"name": "IS2", "min": 0, "max": 1e-4},
+    #         {"name": "Iph", "min": -1e-1, "max": 1e-1},
+    #         {"name": "Rp", "min": 10, "max": 1e8},
+    #     ],
+    #     add_fit_params=True,
+    #     granularity=10000,
+    # )
+
+    # I = (
+    #     IS1 * exp(elementary_charge * (U - _I * RS) / (f1 * boltzmann_constant * T))
+    #     + IS2 * exp(elementary_charge * (U - _I * RS) / (f2 * boltzmann_constant * T))
+    #     - Iph
+    #     + (U - _I * Rs) / Rp
+    # )
     ax.legend()
     ax.set_title("Strom-Spannungs-Kennlinie")
     ax = axs[1]
@@ -245,7 +356,7 @@ def fitPlots(P: Project, file: str, p0):
         "eta": abs(maxpower.power.values[0]) / p0,
     }
     print(kv)
-    P.add_text(ax, keyvalue=kv, offset=[0, 20], color="#A6F")
+    P.add_text(ax, keyvalue=kv, offset=[0, 20], color="#F5560C")
     ax.legend()
     ax.set_title("Leistungkennlinie")
     return ax
@@ -284,6 +395,12 @@ def test_solar_protokoll():
         "_I": r"\si{\ampere}",
         "Ik": r"\si{\milli\ampere}",
         "t": r"\si{\second}",
+        "T": r"\si{\kelvin}",
+        "IS1": r"\si{\ampere}",
+        "IS2": r"\si{\ampere}",
+        "Iph": r"\si{\ampere}",
+        "Rs": r"\si{\ohm}",
+        "Rp": r"\si{\ohm}",
         "f1": r"1",
         "f2": r"1",
         "P0": r"\si{\watt}",
@@ -340,7 +457,7 @@ def test_solar_protokoll():
     powerArea = np.pi * durchmesserPower**2 / 4
     print(powerArea)
 
-    ax = fitPlots(P, "../data/dunkel.csv", p0=0.01 * cellArea)
+    ax = fitPlots(P, "../data/dunkel.csv", p0=0.01 * cellArea, dunkel=True)
     P.figure.suptitle("Dunkelkennlinie")
     P.figure.tight_layout()
     ax = P.savefig("dunkelkennlinie.pdf")
