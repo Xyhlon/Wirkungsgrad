@@ -222,7 +222,7 @@ def fitPlots(P: Project, file: str, p0, dunkel=False):
         "eta": abs(maxpower.power.values[0]) / p0,
     }
     print(kv)
-    P.add_text(ax, keyvalue=kv, offset=[0, 20], color="#F5560C")
+    P.add_text(ax, keyvalue=kv, offset=[0, 40], color="#F5560C")
     ax.legend()
     ax.set_title("Leistungkennlinie")
     print(P.data)
@@ -394,9 +394,14 @@ def test_solar_protokoll():
     ax = P.savefig("dunkelkennlinie.pdf")
 
     # Aufgabe 5
+    # hellwattlampe = ufloat(0.63, 0.02)
+    # hellwattlampe2 = ufloat(3.4, 0.2)
+
     hellwattlampe = ufloat(0.63, 0.02) / 10
-    # hellwattlampe2 = ufloat(3.4, 0.2) / 10
-    hellwattlampe2 = ufloat(1.2, 0.2) / 10
+    hellwattlampe2 = ufloat(3.4, 0.2) / 32
+    # hellwattlampe = ufloat(0.63, 0.02) / 10
+    # # hellwattlampe2 = ufloat(3.4, 0.2) / 10
+    # hellwattlampe2 = ufloat(1.2, 0.2) / 10
     hellwattled = ufloat(0.264, 0.003)
     Intensity1 = hellwattlampe / powerArea
     Intensity2 = hellwattlampe2 / powerArea
@@ -409,7 +414,7 @@ def test_solar_protokoll():
         + r"}{\watt\per\square\meter}"
     )
     P.figure.tight_layout()
-    ax = P.savefig("helllampe0_63.pdf")
+    ax = P.savefig("helllampe.pdf")
 
     ax = fitPlots(P, "../data/helllampe2.csv", p0=Intensity2 * cellArea)
     P.figure.suptitle(
@@ -418,7 +423,7 @@ def test_solar_protokoll():
         + r"}{\watt\per\square\meter}"
     )
     P.figure.tight_layout()
-    ax = P.savefig("helllampe3_4.pdf")
+    ax = P.savefig("helllampe2.pdf")
 
     ax = fitPlots(P, "../data/hellled.csv", p0=Intensity3 * cellArea)
     P.figure.suptitle(
@@ -427,7 +432,7 @@ def test_solar_protokoll():
         + r"}{\watt\per\square\meter}"
     )
     P.figure.tight_layout()
-    ax = P.savefig("hellled0_264.pdf")
+    ax = P.savefig("hellled.pdf")
     # I = (
     #     IS1 * exp(elementary_charge * (U - _I * RS) / (f1 * boltzmann_constant * T))
     #     + IS2 * exp(elementary_charge * (U - _I * RS) / (f2 * boltzmann_constant * T))
