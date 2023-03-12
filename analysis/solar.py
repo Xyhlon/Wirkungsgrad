@@ -169,31 +169,16 @@ def fitPlots(P: Project, file: str, p0, dunkel=False):
     P.figure.set_size_inches((10, 6))
     P.data = pd.DataFrame(None)
     axs = P.figure.subplots(1, 2)
-    ax = axs[0]
 
     filepath = os.path.join(os.path.dirname(__file__), file)
     P.load_data(filepath, loadnew=True)
+    P.data.drop(["t", "s"], axis=1, inplace=True)
     P.vload()
     P.data["dU"] = U.data.apply(KeithlyVolts)
     P.data["dI"] = I.data.apply(KeithlyAmps)
     P.data["d_I"] = I.data.apply(KeithlyAmps)
     P.data["_I"] = I.data
     P.data = P.data[P.data["I"] < 0.3998]
-
-    P.vload()
-
-    P.plot(
-        ax,
-        U,
-        I,
-        label="Gemessene Daten",
-        style="#1cb2f5",
-        errors=True,
-        marker="o",
-        markersize=4,
-        markeredgecolor="#1cb2f5",
-        markerfacecolor="#1cb2f5",
-    )
 
     power = U * I
     P.resolve(power)
@@ -202,127 +187,8 @@ def fitPlots(P: Project, file: str, p0, dunkel=False):
     umask = P.data["U"] == 0
     imask = P.data["I"] == 0
     maxpower = P.data[pmask]
-    ax.plot(
-        maxpower.U,
-        maxpower.I,
-        marker="D",
-        markersize=4,
-        markeredgecolor="red",
-        markerfacecolor="red",
-        label="MPP",
-        color="None",
-    )
-    # I = (
-    #     IS1 * (exp(elementary_charge * U / (f1 * boltzmann_constant * T)) - 1)
-    #     + IS2 * (exp(elementary_charge * U / (f2 * boltzmann_constant * T)) - 1)
-    #     - Iph
-    #     + U / Rp
-    # )
     P.vload()
-    # if dunkel:
-    #     I = IS1 * (exp(elementary_charge * U / (f1 * Boltzmann * 293.15)) - 1)
-    #     P.plot_fit(
-    #         axes=ax,
-    #         x=U,
-    #         y=I,
-    #         eqn=I,
-    #         style=r"#0cf574",
-    #         label="Diodenkennlinie",
-    #         offset=[0, 10],
-    #         use_all_known=False,
-    #         guess={
-    #             "f1": 2.0,
-    #             # "T": 300,
-    #             # "f2": 2.0,
-    #             "IS1": 2e-6,
-    #             # "IS2": 5e-6,
-    #             # "Iph": 80e-3,
-    #         },
-    #         bounds=[
-    #             {"name": "f1", "min": 0, "max": 8},
-    #             # {"name": "f2", "min": 0, "max": 4},
-    #             # {"name": "T", "min": 293, "max": 400},
-    #             {"name": "IS1", "min": 0, "max": 1},
-    #             # {"name": "Iph", "min": -1e-1, "max": 1e-1},
-    #             # {"name": "IS2", "min": 0, "max": 1},
-    #         ],
-    #         add_fit_params=True,
-    #         granularity=10000,
-    #         # gof=True,
-    #         scale_covar=True,
-    #     )
-    # else:
-    I = IS1 * (exp(elementary_charge * U / (f1 * Boltzmann * 293.15)) - 1) - Iph
-    # + IS2 * (exp(elementary_charge * U / (f2 * Boltzmann * 293.15)) - 1)
-    P.plot_fit(
-        axes=ax,
-        x=U,
-        y=I,
-        eqn=I,
-        style=r"#0cf574",
-        label="Diodenkennlinie",
-        offset=[0, 10],
-        use_all_known=False,
-        guess={
-            "f1": 2.0,
-            # "T": 300,
-            # "f2": 2.0,
-            "IS1": 2e-6,
-            # "IS2": 5e-6,
-            "Iph": 80e-3,
-        },
-        bounds=[
-            {"name": "f1", "min": 0, "max": 4},
-            # {"name": "f2", "min": 0, "max": 4},
-            # {"name": "T", "min": 293, "max": 400},
-            {"name": "IS1", "min": 0, "max": 1},
-            {"name": "Iph", "min": -2e-1, "max": 1},
-            # {"name": "IS2", "min": 0, "max": 1},
-        ],
-        add_fit_params=True,
-        granularity=10000,
-        # gof=True,
-        scale_covar=True,
-    )
-    # P.plot_fit(
-    #     axes=ax,
-    #     x=U,
-    #     y=I,
-    #     eqn=I,
-    #     style=r"#1cb2f5",
-    #     label="Diodenkennlinie",
-    #     offset=[40, 10],
-    #     use_all_known=False,
-    #     guess={
-    #         "f1": 2.0,
-    #         "f2": 2.0,
-    #         "T": 300,
-    #         "IS1": 5e-6,
-    #         "IS2": 5e-6,
-    #         "Iph": 80e-3,
-    #         "Rp": 1200,
-    #     },
-    #     bounds=[
-    #         {"name": "f1", "min": 0, "max": 100},
-    #         {"name": "f2", "min": 0, "max": 100},
-    #         {"name": "T", "min": 293, "max": 400},
-    #         {"name": "IS1", "min": 0, "max": 1e-4},
-    #         {"name": "IS2", "min": 0, "max": 1e-4},
-    #         {"name": "Iph", "min": -1e-1, "max": 1e-1},
-    #         {"name": "Rp", "min": 10, "max": 1e8},
-    #     ],
-    #     add_fit_params=True,
-    #     granularity=10000,
-    # )
 
-    # I = (
-    #     IS1 * exp(elementary_charge * (U - _I * RS) / (f1 * boltzmann_constant * T))
-    #     + IS2 * exp(elementary_charge * (U - _I * RS) / (f2 * boltzmann_constant * T))
-    #     - Iph
-    #     + (U - _I * Rs) / Rp
-    # )
-    ax.legend()
-    ax.set_title("Strom-Spannungs-Kennlinie")
     ax = axs[1]
     P.plot(
         ax,
@@ -359,6 +225,71 @@ def fitPlots(P: Project, file: str, p0, dunkel=False):
     P.add_text(ax, keyvalue=kv, offset=[0, 20], color="#F5560C")
     ax.legend()
     ax.set_title("Leistungkennlinie")
+    print(P.data)
+    P.data = P.data.u.sep
+    P.vload()
+
+    ax = axs[0]
+    P.plot(
+        ax,
+        U,
+        I,
+        label="Gemessene Daten",
+        style="#1cb2f5",
+        errors=True,
+        marker="o",
+        markersize=4,
+        markeredgecolor="#1cb2f5",
+        markerfacecolor="#1cb2f5",
+    )
+
+    maxpower = P.data[pmask]
+    ax.plot(
+        maxpower.U,
+        maxpower.I,
+        marker="D",
+        markersize=4,
+        markeredgecolor="red",
+        markerfacecolor="red",
+        label="MPP",
+        color="None",
+    )
+    P.vload()
+    if dunkel:
+        P.data = P.data[P.data["U"] > 0.14]
+    I = IS1 * (exp(elementary_charge * U / (f1 * Boltzmann * 293.15)) - 1) - Iph
+    P.plot_fit(
+        axes=ax,
+        x=U,
+        y=I,
+        eqn=I,
+        style=r"#0cf574",
+        label="Diodenkennlinie",
+        offset=[0, 10],
+        use_all_known=False,
+        guess={
+            "f1": 2.0,
+            # "T": 300,
+            # "f2": 2.0,
+            "IS1": 2e-6,
+            # "IS2": 5e-6,
+            "Iph": 80e-3,
+        },
+        bounds=[
+            {"name": "f1", "min": 0, "max": 4},
+            # {"name": "f2", "min": 0, "max": 4},
+            # {"name": "T", "min": 293, "max": 400},
+            {"name": "IS1", "min": 0, "max": 1},
+            {"name": "Iph", "min": -2e-1, "max": 1},
+            # {"name": "IS2", "min": 0, "max": 1},
+        ],
+        add_fit_params=True,
+        granularity=10000,
+        # gof=True,
+        scale_covar=True,
+    )
+    ax.legend()
+    ax.set_title("Strom-Spannungs-Kennlinie")
     return ax
 
 
