@@ -479,6 +479,19 @@ durchgeführt und die Messwerte in \autoref{tab:werte_abgedeckt} aufgelistet.
 
 \section{Auswertung}\label{sec:auswertung}
 
+Um zu sehen wie sich die Unsicherheit der Messungen bis in die Ergebnisse
+fortpflanzt, ist erweiterte Gauss-Methode verwendet worden. Die Grundlagen
+dieser Methode stammen von den Powerpointfolien von
+GUM~\cite{wolfgang_kessel_isobipm-gum_2004}. Für die Auswertung ist die
+Progammiersprache Python im speziellen die Pakete \verb#labtool-ex2#,
+\verb#pandas#, \verb#sympy#, \verb#lmfit# zur Hilfe genommen worden.
+\verb#lmfit# wurde für das Fitten verwendet, \verb#sympy# wurde für symbolische
+Manipulation verwendet und die restlichen Pakete für leichters Handhaben der
+Daten. Dies wurde aber alles durch \verb#labtool-ex2# abstrahiert.
+
+Um höchstmögliche Genauigkeit zu garantieren wird erst bei der Darstellung der
+Wert in Tabellen gerundet.
+
 \subsection{Wärmepumpe}
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
