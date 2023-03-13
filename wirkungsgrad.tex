@@ -231,7 +231,7 @@ Skizze dessen, \autoref{fig:skizze_warmepumpe}, sind im folgenden sichtbar.
 	\begin{center}
 		\includegraphics[width =0.5\textwidth]{./figures/warmepumpe_anschlusse.png}
 	\end{center}
-	\caption{Versuchsaufbau der Wärmepumpe, am Bild markiert  sind die Kanäle, mit denen die entsprechenden
+	\caption[Versuchsaufbau der Wärmepumpe]{Versuchsaufbau der Wärmepumpe, am Bild markiert  sind die Kanäle, mit denen die entsprechenden
 	Temperatursensoren verbunden sind
 	}\label{fig:warmepumpe}
 \end{figure}
@@ -240,7 +240,7 @@ Skizze dessen, \autoref{fig:skizze_warmepumpe}, sind im folgenden sichtbar.
 	\begin{center}
 		\includegraphics[width =0.5\textwidth]{./figures/warmepumpe_skizze.PNG}
 	\end{center}
-	\caption{Skizze des Versuchsaufbaus der Wärmepumpe \cite[text]{unterlagen_warmepumpe} \\
+	\caption[Skizze des Versuchsaufbaus der Wärmepumpe]{Skizze des Versuchsaufbaus der Wärmepumpe \cite[text]{unterlagen_warmepumpe} \\
 	1 \dots Kompressor 230 V; 50/60 Hz. Leistungsaufnahme ca. 130 W bei 50 Hz \\
 	2 \dots ausschwenkbare Stellfläche für rot-markierten Warmwasserbehälter \\
 	3 \dots Verflüssiger \\
@@ -295,7 +295,7 @@ muss darauf geachtet werden, einen geeigneten Messbereich zu wählen.
 	\begin{center}
 		\includegraphics[width =0.5\textwidth]{./figures/schaltplan.PNG}
 	\end{center}
-	\caption{Schaltplan der Solarzelle \cite{unterlagen_solarzelle}\\
+	\caption[Schaltplan der Solarzelle]{Schaltplan der Solarzelle \cite{unterlagen_solarzelle}\\
 	A \dots Amperemeter\\
 	V \dots Voltmeter
 	}\label{fig:schaltplan}
@@ -307,7 +307,7 @@ Um eine bessere Übersicht zu gewährleisten, wird bei den verwendeten Kabeln au
 
 \begin{figure}[H]
 	\centering
-	\captionbox{Serienschaltung der beiden Solarzellen\\
+	\captionbox[Serienschaltung der beiden Solarzellen]{Serienschaltung der beiden Solarzellen\\
 	1 \dots Solarzellenmodule\\
 	2 \dots Lampe\\
 	3 \dots regelbarer Widerstand\\
@@ -318,7 +318,7 @@ Um eine bessere Übersicht zu gewährleisten, wird bei den verwendeten Kabeln au
 		\includegraphics[width=.45\textwidth]{./figures/serienschaltung.jpg}
 	}
 	\hfill
-	\captionbox{Parallelschaltung der beiden Solarzellen \\
+	\captionbox[Parallelschaltung der beiden Solarzellen]{Parallelschaltung der beiden Solarzellen \\
 	1 \dots Solarzellenmodule\\
 	2 \dots Lampe\\
 	3 \dots regelbarer Widerstand\\
@@ -345,6 +345,22 @@ auf der Solarzelle zurückbleiben. Die Abdunkelung ist in \autoref{fig:abgedeckt
 \end{figure}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
+
+Um den Diodenparameter, sowie den Wirkungsgrad der Solarzelle zu bestimmen, wird diese auf den entsprechenden
+Kupferbock zur Kühlung gelegt. Der Sensor wird neben die Solarzelle positioniert und mit einem Block unterlegt, 
+damit sich der Sensor auf der gleichen Höhe, wie die Solarzelle befindet.
+
+Um die Diodenkennlinie aufzuzeichnen wird das Keithley 2450 also Sourcemeter verwendet. Dieses wird über eine USB
+Schnittstelle mit dem Rechner verbunden. Um den Fehler bei der Spannungsmessung möglichst gering zu halten, wird 
+die Solarzelle mit 4 Kabeln mit dem Sourcemeter verbunden, wobei 2 der Sense-Leitung entsprechen.
+
+Weil der Sonnensimulator leider kaputt war wurden als Lichtquelle eine höhenverstellbare Halogenlampe, sowie eine 
+LED Beleuchtung verwendet. Bei der Position der Lampe muss darauf geachtet werden, dass der Abstand zwischen der Lampe 
+und der Solarzelle oder dem Sensor konstant gehalten werden soll. Auch wird sichergestellt, dass die Lichtquelle
+immer ober dem Objekt zentriert wird. Um Störlicht von der Umgebung zu vermeiden, wird der Versuch bei ausgeschalteter 
+Raumbeleuchtung und geschlossenen Türen durchgeführt, um sicherzustellen, dass nur das gewünschte Licht von der, zu
+untersuchenden Lichtquelle auf den Sensor oder die Solarzelle trifft.
+
 
 \section{Geräteliste}\label{sec:geraeteliste}
 
@@ -465,6 +481,7 @@ Metadaten des Smartphones die genaue Zeit notiert.
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
+\newpage
 % \printbibliography
 \listoffigures
 \listoftables
