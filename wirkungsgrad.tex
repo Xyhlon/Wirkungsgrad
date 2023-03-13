@@ -397,7 +397,7 @@ verwendet.
 \subsection{Wärmepumpe}
 
 %todo si überprüfen
-Zunächst werden beide Kübel mit \SI{4000,40}{\milli\liter} Wasser gefüllt. Um
+Zunächst werden beide Kübel mit \SI{4000(40)}{\milli\liter} Wasser gefüllt. Um
 diese möglichst genau zu bewerkstelligen, wird ein Messbecher verwendet. Die
 Kübel werden auf die dafür vorgesehenen Halterungen gestellt und überprüft, ob
 die Wendeln mit Wasser bedeckt sind. Um die Zirkulationen während des Prozesses
@@ -412,7 +412,7 @@ geforderten Temperaturwerte erfasst und während des Messvorgangs geplottet
 werden. Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width =0.8\textwidth]{./figures/interface.PNG}
+		\includegraphics[width =\textwidth]{./figures/interface.PNG}
 	\end{center}
 	\caption{sichtbares Interface
 	}\label{fig:interface}
@@ -431,11 +431,49 @@ Metadaten des Smartphones die genaue Zeit notiert.
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
+%todo max stimmt der abstand?
+Nachdem die Solarzelle und die Lampe, wie bereits in \autoref{sec:versuchsanordnung} sichtbar, aufgestellt sind,
+wird zunächst der Abstand zwischen diesen bestimmt. Dieser beträgt \SI{28.0(5)}{\cm}. Die Unsicherheit ist so groß
+gewählt, weil sich vor der Lampe eine gekrümmte Glasplatte befindet, die die genaue Distanzmessung nicht erleichtert.
+Zusätzlich sei angemerkt, dass die genaue Distanz zwischen jener Glasplatte und der eigentlichen Glühbirne der Lampe 
+nicht bekannt ist. Weiters fällt auf, dass die Solarzellen nicht genau Parallel zu der Lampe angeordnet sind. Für diese
+Verdrehung wird ein Winkel von \SI{5.0(1.0)}{\degree} gemessen.
+
+Zusätzlich wird auch die Größe eines Solarzellenmoduls gemessen um die Fläche bestimmen zu können. Der besseren Übersicht halber,
+werden diese Daten der \autoref{tab:grose_solarzelle} beigefügt.
+
 \subsubsection{Serienschaltung der beiden Solarzellen}
 
+Zunächst werden die Solarzellenmodule, wie in \autoref{fig:Serienschaltung} sichtbar, in den Schaltplan integriert.
+
+Nun wird der Widerstand mithilfe des, dafür vorgesehenen Reglers, variiert und die
+ abgelesenen Werte der Messgeräte in folgender \autoref{tab:werte_serienschaltung} aufgelistet.
+
+%todo tab:werte_serienschaltung
+
+Zusätzlich werden noch die Werte bei Leerlauf und einem simulierten Kurzschluss gemessen. Dies geschieht, indem 
+der Stromkreis zunächst geöffnet und dann ohne Widerstand geschlossen wird. Der besseren Übersicht halber, sind 
+diese Werte auch in \autoref{tab:werte_serienschaltung} beigefügt.
+
 \subsubsection{Parallelschaltung der beiden Solarzellen}
+Auch bei der Parallelschaltung der beiden Solarzellen werden die Messwerte für den variierenden Widerstand
+und für den Leerlauf, sowie den Kurzschluss, von den Geräten abgelesen und in \autoref{tab:werte_parallelschaltung}
+aufgelistet.
+
+%todo tab:werte_parallelschaltung
+
 
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
+Zunächst wird die Größe vermessen, die durch das Blatt Papier verdeckt ist, wie in \autoref{fig:abgedeckt} sichtbar.
+Die entsprechenden Maße sind gemeinsam, mit den anfangs gemessenen Werten der Solarzelle in folgender 
+\autoref{tab:grose_solarzelle} angeführt.
+
+%todo tab:grose_solarzelle
+
+Nun wird die gesamte Messung, wie bereits erklärt, für die verschiedenen Widerstände, den Leerlauf und den Kurzschluss
+durchgeführt und die Messwerte in \autoref{tab:werte_abgedeckt} aufgelistet.
+
+%todo tab:werte_abgedeckt
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
