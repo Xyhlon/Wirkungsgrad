@@ -437,7 +437,8 @@ wird zunächst der Abstand zwischen diesen bestimmt. Dieser beträgt \SI{28.0(5)
 gewählt, weil sich vor der Lampe eine gekrümmte Glasplatte befindet, die die genaue Distanzmessung nicht erleichtert.
 Zusätzlich sei angemerkt, dass die genaue Distanz zwischen jener Glasplatte und der eigentlichen Glühbirne der Lampe 
 nicht bekannt ist. Weiters fällt auf, dass die Solarzellen nicht genau Parallel zu der Lampe angeordnet sind. Für diese
-Verdrehung wird ein Winkel von \SI{5.0(1.0)}{\degree} gemessen.
+Verdrehung wird ein Winkel von \SI{5.0(1.0)}{\degree} gemessen. Auf diese Verdrehung wird später in der
+\autoref{sec:diskussion} noch genauer eingegangen.
 
 Zusätzlich wird auch die Größe eines Solarzellenmoduls gemessen um die Fläche bestimmen zu können. Der besseren Übersicht halber,
 werden diese Daten der \autoref{tab:grose_solarzelle} beigefügt.
@@ -477,6 +478,31 @@ durchgeführt und die Messwerte in \autoref{tab:werte_abgedeckt} aufgelistet.
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
+\subsubsection{Messung der Dunkelkennlinie}
+
+Zunächst wird die Solarzelle komplett abgedunkelt. Dazu wird diese vollflächig mit einem Stück Papier 
+abgedeckt. Zusätzlich wird dieses Papier mit einem schwereren Gegenstand beschwert, um dafür zu sorgen, dass
+die Solarzelle wirklich vollflächig abgedeckt ist. 
+
+Um die Diodenkennlinie aufzuzeichnen, wird das Sourcemeter mit dem Rechner verbunden und das Programm, Kickstart
+geöffnet. Nun wird in der entsprechenden Software unter dem Menüpunkt "new" eine neue Messung gestartet.
+Nach erfolgreicher Verbindung mit dem Sourcemeter 2450 und der eingabe aller Parameter, wie zb den Maximalen Strom, 
+wie in den Unterlagen aus \cite{unterlagen_solarzelle} beschrieben, kann die Messung gestartet werden.
+Die so erzeugte Diodenkennlinie ist in \autoref{fig:dunkelkennlinie} sichtbar.
+
+%todo fig:dunkelkennlinie
+
+
+\subsubsection{Messung der Hellkennlinie und Bestimmung des Wirkungsgrades}
+
+Nun werden die Lampen, wie bereits in \autoref{sec:versuchsanordnung} beschrieben, positioniert und ebenfalls die Kennlinien
+aufgenommen. Die entsprechende Leistung der Lichtquelle wird anhand des Sensors bestimmt und vom analogen Messgerät abgelesen,
+was in folgender \autoref{tab:werte_solarzelle2} ersichtlich ist.
+
+%todo tab:werte_solarzelle2
+
+%todo bilder
+
 \section{Auswertung}\label{sec:auswertung}
 
 Um zu sehen wie sich die Unsicherheit der Messungen bis in die Ergebnisse
@@ -496,6 +522,9 @@ Wert in Tabellen gerundet.
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
+% todo verdrehung (cos)
+
+
 \subsubsection{Serienschaltung der beiden Solarzellen}
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
@@ -503,6 +532,13 @@ Wert in Tabellen gerundet.
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
+
+\subsubsection{Messung der Dunkelkennlinie}
+
+
+
+\subsubsection{Messung der Hellkennlinie und Bestimmung des Wirkungsgrades}
+
 
 \section{Diskussion}\label{sec:diskussion}
 
