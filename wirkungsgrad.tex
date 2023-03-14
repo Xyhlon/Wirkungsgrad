@@ -426,22 +426,25 @@ werden. Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
 	}\label{fig:interface}
 \end{figure}
 
-Nun wird er Kompressor an den Strom angeschlossen und gleichzeitig die
-Aufzeichnung der Daten über den entsprechenden Knopf gestartet.
-%todo leistung kompressor
-Zusätzlich zur Temperaturmessung werden ca. im 2 Minuten- Takt die Drücke von
-den entsprechenden Barometern abgelesen, was in folgender \autoref{tab:drucke}
-sichtbar ist. Um sicherzustellen, dass die Drücke die richtige Zeit zugeordnet
-bekommen, werden Fotos von den Barometern gemacht und mithilfe der erfassten
-Metadaten des Smartphones die genaue Zeit notiert.
-%todo tab:drucke
+Nun wird der Kompressor (\SI{118(2)}{\watt}) an den Strom angeschlossen und
+gleichzeitig die Aufzeichnung der Daten über den entsprechenden Knopf
+gestartet. Zusätzlich zur Temperaturmessung werden ca.\ im 2 Minuten- Takt die
+Drücke von den entsprechenden Barometern abgelesen, was in folgender
+\autoref{tab:drucke} sichtbar ist. Um sicherzustellen, dass die Drücke die
+richtige Zeit zugeordnet bekommen, werden Fotos von den Barometern gemacht und
+mithilfe der erfassten Metadaten des Smartphones die genaue Zeit notiert.
+
+\begin{table}[H]
+	\caption{}\label{tab:drucke}
+	\centering
+	\include{./tables/messreihe_werte_druck}
+\end{table}
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
-%todo max stimmt der abstand?
 Nachdem die Solarzelle und die Lampe, wie bereits in
 \autoref{sec:versuchsanordnung} sichtbar, aufgestellt sind, wird zunächst der
-Abstand zwischen diesen bestimmt. Dieser beträgt \SI{28.0(5)}{\cm}. Die
+Abstand zwischen diesen bestimmt. Dieser beträgt \SI{284(5)}{\mm}. Die
 Unsicherheit ist so groß gewählt, weil sich vor der Lampe eine gekrümmte
 Glasplatte befindet, die die genaue Distanzmessung nicht erleichtert.
 Zusätzlich sei angemerkt, dass die genaue Distanz zwischen jener Glasplatte und
@@ -464,7 +467,11 @@ Nun wird der Widerstand mithilfe des, dafür vorgesehenen Reglers, variiert und
 die abgelesenen Werte der Messgeräte in folgender
 \autoref{tab:werte_serienschaltung} aufgelistet.
 
-%todo tab:werte_serienschaltung
+\begin{table}[H]
+	\caption{}\label{tab:werte_serienschaltung}
+	\centering
+	\include{./tables/messreihe_werte_serienschaltung}
+\end{table}
 
 Zusätzlich werden noch die Werte bei Leerlauf und einem simulierten Kurzschluss
 gemessen. Dies geschieht, indem der Stromkreis zunächst geöffnet und dann ohne
@@ -476,7 +483,11 @@ Auch bei der Parallelschaltung der beiden Solarzellen werden die Messwerte für
 den variierenden Widerstand und für den Leerlauf, sowie den Kurzschluss, von
 den Geräten abgelesen und in \autoref{tab:werte_parallelschaltung} aufgelistet.
 
-%todo tab:werte_parallelschaltung
+\begin{table}[H]
+	\caption{}\label{tab:werte_parallelschaltung}
+	\centering
+	\include{./tables/messreihe_werte_parallelschaltung}
+\end{table}
 
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
 Zunächst wird die Größe vermessen, die durch das Blatt Papier verdeckt ist, wie
@@ -485,12 +496,19 @@ mit den anfangs gemessenen Werten der Solarzelle in folgender
 \autoref{tab:grose_solarzelle} angeführt.
 
 %todo tab:grose_solarzelle
+\begin{enumerate}
+	\item fehlend
+\end{enumerate}
 
 Nun wird die gesamte Messung, wie bereits erklärt, für die verschiedenen
 Widerstände, den Leerlauf und den Kurzschluss durchgeführt und die Messwerte in
 \autoref{tab:werte_abgedeckt} aufgelistet.
 
-%todo tab:werte_abgedeckt
+\begin{table}[H]
+	\caption{}\label{tab:werte_abgedeckt}
+	\centering
+	\include{./tables/messreihe_werte_abgedeckt}
+\end{table}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
@@ -505,11 +523,16 @@ Um die Diodenkennlinie aufzuzeichnen, wird das Sourcemeter mit dem Rechner
 verbunden und das Programm, Kickstart geöffnet. Nun wird in der entsprechenden
 Software unter dem Menüpunkt "new" eine neue Messung gestartet. Nach
 erfolgreicher Verbindung mit dem Sourcemeter 2450 und der eingabe aller
-Parameter, wie zb den Maximalen Strom, wie in den Unterlagen aus
+Parameter, wie z.B.\ den Maximalen Strom, wie in den Unterlagen aus
 \cite{unterlagen_solarzelle} beschrieben, kann die Messung gestartet werden.
-Die so erzeugte Diodenkennlinie ist in \autoref{fig:dunkelkennlinie} sichtbar.
+Die so erzeugte Diodenkennlinie ist in \autoref{fig:mess_dunkelkennlinie}
+sichtbar.
 
-%todo fig:dunkelkennlinie
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/dunekl.png}
+	\caption{}\label{fig:mess_dunkelkennlinie}
+\end{figure}
 
 \subsubsection{Messung der Hellkennlinie und Bestimmung des Wirkungsgrades}
 
@@ -521,7 +544,23 @@ ersichtlich ist.
 
 %todo tab:werte_solarzelle2
 
-%todo bilder
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/helllampe.png}
+	\caption{}\label{fig:mess_hellkennlinie_lampe}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/helllampe2.png}
+	\caption{}\label{fig:mess_hellkennlinie_lampe2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/hellled.png}
+	\caption{}\label{fig:mess_hellkennlinie_led}
+\end{figure}
 
 \section{Auswertung}\label{sec:auswertung}
 
@@ -532,7 +571,7 @@ GUM~\cite{wolfgang_kessel_isobipm-gum_2004}. Für die Auswertung ist die
 Progammiersprache Python im speziellen die Pakete \verb#labtool-ex2#,
 \verb#pandas#, \verb#sympy#, \verb#lmfit# zur Hilfe genommen worden.
 \verb#lmfit# wurde für das Fitten verwendet, \verb#sympy# wurde für symbolische
-Manipulation verwendet und die restlichen Pakete für leichters Handhaben der
+Manipulation verwendet und die restlichen Pakete für leichteres Handhaben der
 Daten. Dies wurde aber alles durch \verb#labtool-ex2# abstrahiert.
 
 Um höchstmögliche Genauigkeit zu garantieren wird erst bei der Darstellung der
@@ -540,21 +579,80 @@ Wert in Tabellen gerundet.
 
 \subsection{Wärmepumpe}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/pressureProfile.pdf}
+	\includegraphics[width=0.95\textwidth]{figures/temperatureProfile.pdf}
+	\caption{}\label{fig:druckTemperaturVerlauf}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/leistungszahlVerlauf.pdf}
+	\caption{}\label{fig:leistungszahlVerlauf}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/wirkungsgradVerlauf.pdf}
+	\caption{}\label{fig:wirkungsgradVerlauf}
+\end{figure}
+
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
 % todo verdrehung (cos)
 
 \subsubsection{Serienschaltung der beiden Solarzellen}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/serienschaltung.pdf}
+	\caption{}\label{fig:auws_kennlinie_serie}
+\end{figure}
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/parallelschaltung.pdf}
+	\caption{}\label{fig:auws_kennlinie_parallel}
+\end{figure}
 
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/serienschaltungAbgedeckt.pdf}
+	\caption{}\label{fig:auws_kennlinie_abgedeckt}
+\end{figure}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
 \subsubsection{Messung der Dunkelkennlinie}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/dunkelkennlinie.pdf}
+	\caption{}\label{fig:ausw_kennlinie_dunkel}
+\end{figure}
+
 \subsubsection{Messung der Hellkennlinie und Bestimmung des Wirkungsgrades}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/helllampe.pdf}
+	\caption{}\label{fig:ausw_kennlinie_hell_lampe}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/helllampe2.pdf}
+	\caption{}\label{fig:ausw_kennlinie_hell_lampe2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/hellled.pdf}
+	\caption{}\label{fig:ausw_kennlinie_hell_led}
+\end{figure}
 
 \section{Diskussion}\label{sec:diskussion}
 
