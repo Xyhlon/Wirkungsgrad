@@ -18,6 +18,10 @@
 \DeclareSIUnit\Var{var}
 \DeclareSIUnit\VA{VA}
 
+\usepackage{cleveref}
+
+\crefname{enumerate}{Aufzählung}{Aufzählungen}
+
 \begin{document}
 
 \begin{luacode*}
@@ -456,7 +460,7 @@ eingegangen.
 
 Zusätzlich wird auch die Größe eines Solarzellenmoduls gemessen um die Fläche
 bestimmen zu können. Der besseren Übersicht halber, werden diese Daten der
-\autoref{tab:grose_solarzelle} beigefügt.
+\cref{list:flaechenSolar1} beigefügt.
 
 \subsubsection{Serienschaltung der beiden Solarzellen}
 
@@ -493,11 +497,13 @@ den Geräten abgelesen und in \autoref{tab:werte_parallelschaltung} aufgelistet.
 Zunächst wird die Größe vermessen, die durch das Blatt Papier verdeckt ist, wie
 in \autoref{fig:abgedeckt} sichtbar. Die entsprechenden Maße sind gemeinsam,
 mit den anfangs gemessenen Werten der Solarzelle in folgender
-\autoref{tab:grose_solarzelle} angeführt.
+\cref{list:flaechenSolar1} angeführt.
 
 %todo tab:grose_solarzelle
 \begin{enumerate}
-	\item fehlend
+	\item Fläche ganz: $\SI{10.0(2)}{\cm}\cdot \SI{8.0(2)}{\cm}=\SI{80(3)}{\cm\squared}$
+	\item Fläche bedeckt: $\SI{10.0(2)}{\cm}\cdot
+		      \SI{7.0(2)}{\cm}=\SI{70(3)}{\cm\squared}$\label{list:flaechenSolar1}
 \end{enumerate}
 
 Nun wird die gesamte Messung, wie bereits erklärt, für die verschiedenen

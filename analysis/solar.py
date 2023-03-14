@@ -353,7 +353,8 @@ def test_solar_protokoll():
     ax: plt.Axes = P.figure.add_subplot()
     schieflagedersolarzellen = ufloat(5, 1)  # grad
     quellenAbstand = ufloat(284, 2)  # mm ist Abstand bis Lampenglas
-
+    flaechesolarzelle = ufloat(10 * 8, 1)                                                                                                 █
+    bagedeagtflaechesolarzelle = ufloat(10 * 7, 1)
     # Aufgabe 1
     ax = createStromSpannungsKennlinie(P, "../data/solarSerieOhneAbdeckung.csv")
     P.figure.suptitle("Serienschaltung von Solarzellen")
