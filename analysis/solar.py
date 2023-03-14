@@ -62,8 +62,8 @@ def createStromSpannungsKennlinie(P: Project, file: str):
     filepath = os.path.join(os.path.dirname(__file__), file)
     P.load_data(filepath, loadnew=True)
     P.vload()
-    P.data["dU"] = U.data.apply(Voltmeter)
-    P.data["dI"] = I.data.apply(Amperemeter)
+    P.data.loc[:, "dU"] = U.data.apply(Voltmeter)
+    P.data.loc[:, "dI"] = I.data.apply(Amperemeter)
 
     P.vload()
 
@@ -174,10 +174,10 @@ def fitPlots(P: Project, file: str, p0, dunkel=False):
     P.load_data(filepath, loadnew=True)
     P.data.drop(["t", "s"], axis=1, inplace=True)
     P.vload()
-    P.data["dU"] = U.data.apply(KeithlyVolts)
-    P.data["dI"] = I.data.apply(KeithlyAmps)
-    P.data["d_I"] = I.data.apply(KeithlyAmps)
-    P.data["_I"] = I.data
+    P.data.loc[:, "dU"] = U.data.apply(KeithlyVolts)
+    P.data.loc[:, "dI"] = I.data.apply(KeithlyAmps)
+    P.data.loc[:, "d_I"] = I.data.apply(KeithlyAmps)
+    P.data.loc[:, "_I"] = I.data
     P.data = P.data[P.data["I"] < 0.3998]
 
     power = U * I
@@ -358,6 +358,7 @@ def test_solar_protokoll():
     ax = createStromSpannungsKennlinie(P, "../data/solarSerieOhneAbdeckung.csv")
     P.figure.suptitle("Serienschaltung von Solarzellen")
     P.figure.tight_layout()
+    P.print_table(U, I, name="werte_serienschaltung", inline_units=True)
     # P.ax_legend_all(loc=0)
     ax = P.savefig("serienschaltung.pdf")
 
@@ -365,6 +366,7 @@ def test_solar_protokoll():
     ax = createStromSpannungsKennlinie(P, "../data/solarParallelOhneAbdeckung.csv")
     P.figure.suptitle("Parallelschaltung von Solarzellen")
     P.figure.tight_layout()
+    P.print_table(U, I, name="werte_parallelschaltung", inline_units=True)
     # P.ax_legend_all(loc=0)
     ax = P.savefig("parallelschaltung.pdf")
 
@@ -373,6 +375,7 @@ def test_solar_protokoll():
     P.figure.suptitle("Serienschaltung von Solarzellen abgedeckt")
     P.figure.tight_layout()
     # P.ax_legend_all(loc=0)
+    P.print_table(U, I, name="werte_abgedeckt", inline_units=True)
     ax = P.savefig("serienschaltungAbgedeckt.pdf")
 
     P.gv["power"] = r"\si{\watt}"
