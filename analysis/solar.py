@@ -54,7 +54,7 @@ def KeithlyAmps(value):
 
 def createStromSpannungsKennlinie(P: Project, file: str):
     P.figure.clear()
-    P.figure.set_size_inches((10, 6))
+    P.figure.set_size_inches((10, 4))
     P.data = pd.DataFrame(None)
     axs = P.figure.subplots(1, 2)
     ax = axs[0]
@@ -158,7 +158,7 @@ def createStromSpannungsKennlinie(P: Project, file: str):
         / (leerLaufSpannung.U.values[0] * kurzSchlussStrom.I.values[0]),
     }
     print(kv)
-    P.add_text(ax, keyvalue=kv, offset=[20, -10], color="#F5560C")
+    P.add_text(ax, keyvalue=kv, offset=[25, -10], color="#F5560C")
     ax.legend()
     ax.set_title("Leistungkennlinie")
     return ax
@@ -166,7 +166,7 @@ def createStromSpannungsKennlinie(P: Project, file: str):
 
 def fitPlots(P: Project, file: str, p0, dunkel=False):
     P.figure.clear()
-    P.figure.set_size_inches((10, 6))
+    P.figure.set_size_inches((10, 4))
     P.data = pd.DataFrame(None)
     axs = P.figure.subplots(1, 2)
 
@@ -222,7 +222,7 @@ def fitPlots(P: Project, file: str, p0, dunkel=False):
         "eta": abs(maxpower.power.values[0]) / p0,
     }
     print(kv)
-    P.add_text(ax, keyvalue=kv, offset=[0, 40], color="#F5560C")
+    P.add_text(ax, keyvalue=kv, offset=[0, 35], color="#F5560C")
     ax.legend()
     ax.set_title("Leistungkennlinie")
     print(P.data)
@@ -349,7 +349,7 @@ def test_solar_protokoll():
     plt.rcParams["axes.axisbelow"] = True
     P = Project("Solar", global_variables=gv, global_mapping=gm, font=13)
     P.output_dir = "./"
-    P.figure.set_size_inches((8, 6))
+    P.figure.set_size_inches((10, 1))
     ax: plt.Axes = P.figure.add_subplot()
     schieflagedersolarzellen = ufloat(5, 1)  # grad
     quellenAbstand = ufloat(284, 2)  # mm ist Abstand bis Lampenglas

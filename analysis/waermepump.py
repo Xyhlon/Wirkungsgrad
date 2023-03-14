@@ -170,7 +170,7 @@ def test_waermepumpe_protokoll():
     P.print_table(t, pk, pw, name="werte_druck", inline_units=True)
     P.figure.suptitle(r"Druckverlauf")
     P.figure.tight_layout()
-    ax.legend()
+    P.ax_legend_all(loc=7)
     ax = P.savefig("pressureProfile.pdf")
 
     filepath = os.path.join(os.path.dirname(__file__), "../data/waerme.csv")
@@ -199,7 +199,7 @@ def test_waermepumpe_protokoll():
         ax,
         t,
         Tw,
-        label="Daten",
+        label="Gemessene Daten",
         style="#F5460C",
         errors=True,
         marker="None",
@@ -207,8 +207,10 @@ def test_waermepumpe_protokoll():
 
     P.figure.suptitle(r"Temperaturverlauf")
     P.figure.tight_layout()
-    ax.legend()
+    P.ax_legend_all(loc=7)
     ax = P.savefig("temperatureProfile.pdf")
+    P.figure.set_size_inches((11, 4))
+    # ax: plt.Axes = P.figure.add_subplot()
 
     kuebelvolumen = ufloat(4, 0.020)
     leistungKompressor = ufloat(118, 2)
@@ -253,7 +255,7 @@ def test_waermepumpe_protokoll():
         DT,
         eta,
         label="Gemessene Daten",
-        style="#F5459C",
+        style="#A5459C",
         errors=True,
         marker="None",
     )
