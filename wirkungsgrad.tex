@@ -365,7 +365,9 @@ Solarzelle mit 4 Kabeln mit dem Sourcemeter verbunden, wobei 2 der
 Sense-Leitung entsprechen.
 
 Weil der Sonnensimulator leider kaputt war wurden als Lichtquelle eine
-höhenverstellbare Halogenlampe, sowie eine LED Beleuchtung verwendet. Bei der
+höhenverstellbare Halogenlampe, sowie eine LED Beleuchtung verwendet. 
+Aus Neugierde wurde der Versuch für 2 verschiedene Abstände der Halogenlampe
+und einmal für die LED Beleuchtung durchgeführt. Bei der
 Position der Lampe muss darauf geachtet werden, dass der Abstand zwischen der
 Lampe und der Solarzelle oder dem Sensor konstant gehalten werden soll. Auch
 wird sichergestellt, dass die Lichtquelle immer ober dem Objekt zentriert wird.
@@ -408,7 +410,6 @@ verwendet.
 
 \subsection{Wärmepumpe}
 
-%todo si überprüfen
 Zunächst werden beide Kübel mit \SI{4000(40)}{\milli\liter} Wasser gefüllt. Um
 diese möglichst genau zu bewerkstelligen, wird ein Messbecher verwendet. Die
 Kübel werden auf die dafür vorgesehenen Halterungen gestellt und überprüft, ob
@@ -419,7 +420,7 @@ des Eimers zu unterstützen.
 
 Um alle 4 Temperaturmessungen gleichzeitig zu erfassen, wird die Software Cassy
 Lab2 verwendet. Nachdem das Temperaturmessgerät unter dem Fenster
-"Einstellungen anzeigen" verbunden wurde, muss sichergestellt werden, dass die
+\" Einstellungen anzeigen \" verbunden wurde, muss sichergestellt werden, dass die
 geforderten Temperaturwerte erfasst und während des Messvorgangs geplottet
 werden. Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
 \begin{figure}[H]
@@ -438,10 +439,16 @@ Drücke von den entsprechenden Barometern abgelesen, was in folgender
 richtige Zeit zugeordnet bekommen, werden Fotos von den Barometern gemacht und
 mithilfe der erfassten Metadaten des Smartphones die genaue Zeit notiert.
 
+%todo tab ist zu groß für seite
 \begin{table}[H]
-	\caption{}\label{tab:drucke}
+	\caption[Abgelesene Drücke bei der entsprechenden Zeit]{
+		Abgelesene Drücke bei der entsprechenden Zeit\\
+		$t$ \dots vergangene Zeit seit dem Start des Messvorgangs in s\\
+		$p_k$ \dots abgelesener Druck auf der kalten Seite in bar\\
+		$p_h$ \dots abgelesener Druck auf der heißen Seite in bar\\}
 	\centering
 	\include{./tables/messreihe_werte_druck}
+	\label{tab:drucke}
 \end{table}
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
@@ -471,8 +478,14 @@ Nun wird der Widerstand mithilfe des, dafür vorgesehenen Reglers, variiert und
 die abgelesenen Werte der Messgeräte in folgender
 \autoref{tab:werte_serienschaltung} aufgelistet.
 
+%todo tab ist zu groß für seite
+
 \begin{table}[H]
-	\caption{}\label{tab:werte_serienschaltung}
+	\caption[Abgelesene Strom und Spannungswerte für die Serienschaltung der Solarzellenmodule]
+	{Abgelesene Strom und Spannungswerte für die Serienschaltung der Solarzellenmodule\\
+	$U$ \dots Abgelesener Wert der Spannung in V\\
+	$I$ \dots Abgelesener Wert des Stroms in mA
+	}\label{tab:werte_serienschaltung}
 	\centering
 	\include{./tables/messreihe_werte_serienschaltung}
 \end{table}
@@ -487,8 +500,13 @@ Auch bei der Parallelschaltung der beiden Solarzellen werden die Messwerte für
 den variierenden Widerstand und für den Leerlauf, sowie den Kurzschluss, von
 den Geräten abgelesen und in \autoref{tab:werte_parallelschaltung} aufgelistet.
 
+%todo tab ist zu groß für seite
+
 \begin{table}[H]
-	\caption{}\label{tab:werte_parallelschaltung}
+	\caption[Abgelesene Strom und Spannungswerte für die Parallelschaltung der Solarzellenmodule]
+	{Abgelesene Strom und Spannungswerte für die Parallelschaltung der Solarzellenmodule\\
+	$U$ \dots Abgelesener Wert der Spannung in V\\
+	$I$ \dots Abgelesener Wert des Stroms in mA}\label{tab:werte_parallelschaltung}
 	\centering
 	\include{./tables/messreihe_werte_parallelschaltung}
 \end{table}
@@ -497,13 +515,13 @@ den Geräten abgelesen und in \autoref{tab:werte_parallelschaltung} aufgelistet.
 Zunächst wird die Größe vermessen, die durch das Blatt Papier verdeckt ist, wie
 in \autoref{fig:abgedeckt} sichtbar. Die entsprechenden Maße sind gemeinsam,
 mit den anfangs gemessenen Werten der Solarzelle in folgender
-\cref{list:flaechenSolar1} angeführt.
+Aufzählung angeführt.
 
-%todo tab:grose_solarzelle
+%todo Max bitte überprüfen ob hier falsch war oder bei deinen ganzen aufzeichnungen diese werte für die fläche stimmen jetzt
 \begin{enumerate}
 	\item Fläche ganz: $\SI{10.0(2)}{\cm}\cdot \SI{8.0(2)}{\cm}=\SI{80(3)}{\cm\squared}$
-	\item Fläche bedeckt: $\SI{10.0(2)}{\cm}\cdot
-		      \SI{7.0(2)}{\cm}=\SI{70(3)}{\cm\squared}$\label{list:flaechenSolar1}
+	\item Fläche bedeckt: $\SI{7.0(2)}{\cm}\cdot
+		      \SI{8.0(2)}{\cm}=\SI{56(3)}{\cm\squared}$\label{list:flaechenSolar1}
 \end{enumerate}
 
 Nun wird die gesamte Messung, wie bereits erklärt, für die verschiedenen
@@ -511,7 +529,10 @@ Widerstände, den Leerlauf und den Kurzschluss durchgeführt und die Messwerte i
 \autoref{tab:werte_abgedeckt} aufgelistet.
 
 \begin{table}[H]
-	\caption{}\label{tab:werte_abgedeckt}
+	\caption[Abgelesene Strom und Spannungswerte für die Serienschaltung mit einem abgedeckten Solarzellenmodul]
+	{Abgelesene Strom und Spannungswerte für die Serienschaltung mit einem abgedeckten Solarzellenmodul\\
+	$U$ \dots Abgelesener Wert der Spannung in V\\
+	$I$ \dots Abgelesener Wert des Stroms in mA}\label{tab:werte_abgedeckt}
 	\centering
 	\include{./tables/messreihe_werte_abgedeckt}
 \end{table}
@@ -531,13 +552,13 @@ Software unter dem Menüpunkt "new" eine neue Messung gestartet. Nach
 erfolgreicher Verbindung mit dem Sourcemeter 2450 und der eingabe aller
 Parameter, wie z.B.\ den Maximalen Strom, wie in den Unterlagen aus
 \cite{unterlagen_solarzelle} beschrieben, kann die Messung gestartet werden.
-Die so erzeugte Diodenkennlinie ist in \autoref{fig:mess_dunkelkennlinie}
+Die so erzeugte Dunkelkennlinie ist in \autoref{fig:mess_dunkelkennlinie}
 sichtbar.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/dunekl.png}
-	\caption{}\label{fig:mess_dunkelkennlinie}
+	\caption{Erzeugte Dunkelkennlinie der Solarzelle}\label{fig:mess_dunkelkennlinie}
 \end{figure}
 
 \subsubsection{Messung der Hellkennlinie und Bestimmung des Wirkungsgrades}
@@ -546,26 +567,30 @@ Nun werden die Lampen, wie bereits in \autoref{sec:versuchsanordnung}
 beschrieben, positioniert und ebenfalls die Kennlinien aufgenommen. Die
 entsprechende Leistung der Lichtquelle wird anhand des Sensors bestimmt und vom
 analogen Messgerät abgelesen, was in folgender \autoref{tab:werte_solarzelle2}
-ersichtlich ist.
+ersichtlich ist. Auch die Diodenkennlinien für die verschiedenen Lampen werden,
+wie zuvor die Dunkelkennlinie, aufgenommen und sind in den folgenden 
+\autoref{fig:ausw_kennlinie_hell_lampe} bis \autoref{fig:mess_hellkennlinie_led}
+sichtbar.
 
+%todo tabelle mit gemessenen leistungen
 %todo tab:werte_solarzelle2
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/helllampe.png}
-	\caption{}\label{fig:mess_hellkennlinie_lampe}
+	\caption{Erzeugte Diodenkennlinie für die Halogenlampe}\label{fig:mess_hellkennlinie_lampe}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/helllampe2.png}
-	\caption{}\label{fig:mess_hellkennlinie_lampe2}
+	\caption{Erzeugte Diodenkennlinie für die Halogenlampe mit geringeren Abstand zur Solarzelle}\label{fig:mess_hellkennlinie_lampe2}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/hellled.png}
-	\caption{}\label{fig:mess_hellkennlinie_led}
+	\caption{Erzeugte Diodenkennlinie für die LED-Lampe}\label{fig:mess_hellkennlinie_led}
 \end{figure}
 
 \section{Auswertung}\label{sec:auswertung}
