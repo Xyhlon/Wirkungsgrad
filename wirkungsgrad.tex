@@ -253,8 +253,10 @@ Skizze dessen, \autoref{fig:skizze_warmepumpe}, sind im folgenden sichtbar.
 		5 \dots Expansionsventil                                                  \\
 		6 \dots Temperaturfühler des Expansionsventils                            \\
 		7 \dots Verdamp-fer                                                       \\
-		8 \dots ausschwenkbare Stellfläche Kaltwasserbehälter 9 \dots Rohrwindungen als
-		elastische Verbindung zwischen Kompressor und Wärmetauscher 10 \dots
+		8 \dots ausschwenkbare Stellfläche Kaltwasserbehälter \\
+		9 \dots Rohrwindungen als
+		elastische Verbindung zwischen Kompressor und Wärmetauscher \\
+		10 \dots
 		Druckwächter                                                              \\
 		11 \dots Kunststoffhalter (2x) für Thermometer und Temperaturfühler, zum
 		Anklemmen an Kupferrohre                                                  \\
@@ -378,32 +380,60 @@ Lichtquelle auf den Sensor oder die Solarzelle trifft.
 
 \section{Geräteliste}\label{sec:geraeteliste}
 
-Für den Versuch werden die in \autoref{tab:gerate} aufgelisteten Geräte
+Für die Wärmepumpe werden die in \autoref{tab:gerate_warme} aufgelisteten Geräte
 verwendet.
 
-%todo noch alt
 
 \begin{table}[H]
-	\caption{Verwendete Geräte
+	\caption{Verwendete Geräte für die Wärmepumpe
 	}
 	\begin{tblr}{lllll}
-		\textbf{Gerätetyp}  & \textbf{Hersteller} & \textbf{Typ}          & \textbf{Inventar-Nr} & \textbf{Anmerkung} \\
-		Transformator       & Thalheimer          & LTS 606               & 0161469              &                    \\
-		{Box  mit                                                                                                     \\ Versorgungsspannung} & & & F1 & \\
-		Strommessgerät      & Norma               & analog                & {VII/1106/9                               \\ VII/1106/6 \\ VII/1106/3} & 3 x \\
-		Spannungsmessgerät  & Norma               & analog                & {VII/1120/2                               \\ VII/1120/1 E3} & 3 x \\
-		Leistungsmessgerät  & Norma               & analog                & F18 F19              & 2 x                \\
-		Leistungsmessgerät  & {Chauvin                                                                                \\ Arnoux} & analog & C.A.505 & \\
-		Multimeter          & UNI-T               & UT51                  &                      & 2 x                \\
-		Multimeter          & METEX               & M-3610B               &                      &                    \\
-		Glühbirnen          &                     & {3x \SI{60}{\watt}                                                \\ 3x \SI{75}{\watt}} & & \\
-		Kondensator         &                     & \SI{12}{\micro\farad} & G5 V                 & 2 x                \\
-		Spule               &                     &                       & P                    &                    \\
-		Heizwiderstand      &                     & 3x \SI{230}{\volt}    & JFR/158/13           & 3 x                \\
-		Bananenstecker      &                     &                       &                      &                    \\
-		Spule mit Eisenkern &                     &                       &                      & 3 x                \\
-		{Metallscheibe auf                                                                                            \\ Sockel} & Hancaner & DT2234C & & \\
-	\end{tblr}\label{tab:gerate}
+			
+			\textbf{Gerätetyp}  & \textbf{Hersteller} & \textbf{Typ}   & \textbf{Inventar-Nr} & \textbf{Anmerkung}              \\ 
+			Wärmepumpe          & LD                  &                &                      &                                 \\ 
+			Kompressor          & Danfoss             & TL3G           & AA6HA100             &  \SI{118(2)}{\watt}             \\ 
+			Druckwächter        & Danfoss             &                &                      &                                 \\ 
+			Sammler             & UL                  & 16H5           & 023Z4566             &                                 \\ 
+			Temperaturfühler    &                     & Ni Cr-Ni       &                      & 4x                              \\ 
+			Barometer           & ITE                 & 823-BC-1.0/447 &                      & für warm                        \\ 
+			Barometer           & ITE                 & 825-BC-1.0/447 &                      & für kalt                        \\ 
+			Temperatormessgerät & LD                  & 666209         & TOP0000252           &  mit 4 Anschlüssen       \\ 
+			Computersoftware    & Cassy Lab 2         &                &                      &                                 \\ 
+			Messbecher          & Vit Lab             & 2 Liter        &                      &                                 \\ 
+			Eimer               &                     &                &                      & 2x mit Schlauch \\ 
+			Verbindungskabel    &                     &                &                      &                                 \\ 
+			Glasstab            &                     &                &                      & zum Umrühren                    \\ 
+			
+	\end{tblr}
+	\label{tab:gerate_warme}
+\end{table}
+
+Für die beiden Versuche mit den Solarzellen werden die in \autoref{tab:gerate_solar} aufgelisteten Geräte
+verwendet.
+
+
+\begin{table}[H]
+	\caption{Verwendete Geräte für die beiden Solarzellen Versuche
+	}
+	\begin{tblr}{lllll}
+		\textbf{Gerätetyp}       & \textbf{Hersteller} & \textbf{Typ} & \textbf{Inventar-Nr} & \textbf{Anmerkung} \\
+		Solarzellenmodul         &                     &              &                      & 2x  $\SI{10.0(2)}{\cm}\cdot \SI{8.0(2)}{\cm}$               \\
+		Radium-Lampe             &                     & PAR 38-EC    &                      &                    \\
+		Verstellbarer Widerstand & ARCOL               & VRH 320      & CEI 1010-1           &                    \\
+		Voltmeter                & TTI                 & 1604         & TMM-07               &                    \\
+		Amperemeter              & TTI                 & 1604         & TMM-11               &                    \\
+		Bananenstecker           &                     &              &                      &                    \\
+		Papier                   &                     &              &                      & zum Verdecken      \\
+		Rollmeter                & Schuller            & 3 m          &                      & für Distanzmessung \\
+		Solarzellenmodul         &                     &              &                      &                    \\
+		Leistungssensor          & Spectra Physics     & 407A         & 2775                 &                    \\
+		Leistungsmessgerät       & Spectra Physics     & 407A         & 310041630000         &                    \\
+		Sourcemeter              & Keithley            & 2450 S       & 300032370000         &                    \\
+		Computersoftware         & Kickstart           &              &                      &                    \\
+		Halogenlampe             & Osram               & 24V 150W     & HL\% 64640           &                               \\ 
+		LED-lampe                &                &      &            &                               \\	
+	\end{tblr}
+	\label{tab:gerate_solar}
 \end{table}
 
 \section{Versuchsdurchführung und Messergebnisse}\label{sec:versuchsdurchfuehrung_messergebnisse}
@@ -689,6 +719,18 @@ Wert in Tabellen gerundet.
 
 \subsection{Wärmepumpe}
 
+%todo eis
+
+Nach dem Versuch beim Entfernen des Kübels wurde festgestellt, dass sich auf der Kalten Seite Eis gebildet hat,
+wie in \autoref{fig:eis} sichtbar,
+welches natürlich isolierende Auswirkungen hat und somit das Ergebnis verfälscht. Bei einer erneuten Durchführung 
+des Versuchs sollte daher die Flüssigkeit deutlich öfter umgerührt werden.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/eis.PNG}
+	\caption{Eisbildung}\label{fig:eis}
+\end{figure}
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
 \subsubsection{Serienschaltung der beiden Solarzellen}
