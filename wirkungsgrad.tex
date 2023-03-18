@@ -584,23 +584,53 @@ Wert in Tabellen gerundet.
 
 \subsection{Wärmepumpe}
 
+Zunächst gilt es die zeitlichen Temperatur und Druckverläufe des kalten und des
+warmen Bereich darzustellen dazu sind die Daten in zwei Diagrammen geplottet
+worden. Dies ist gemacht worden um zeitliche Tendenzen besser zu präsentieren.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.49\textwidth]{figures/pressureProfile.pdf}
 	\includegraphics[width=0.49\textwidth]{figures/temperatureProfile.pdf}
-	\caption{}\label{fig:druckTemperaturVerlauf}
+	\caption{Diese Graphik beinhaltet die zeitlichen Verläufe von den Drücken
+		und Temperaturen, während dem Betrieb der Wärmepumpe. Wobei $p_k$
+		der Druck und $T_k$ die Temperatur des Reservoirs der kalten Seite der Wärmepumpe
+		sind. $p_w$ und $T_w$ sind dementsprechend, die der warmen Seite der Wärmepumpe.
+	}\label{fig:druckTemperaturVerlauf}
 \end{figure}
+
+Nun wird mittels der zeitlichen Änderung der warmen Reservoir-Temperatur der
+Wärmefluss mittels der Masse und Wärmekapazität des Reservoirs errechnet
+$\dot{Q}= (m_1) c_w \Delta \dot{T}$. Hier wurde die Warme Aufgrund des
+stetigeren Temperaturverlaufs gewählt. Schlussendlich wird durch die zugeführte
+elektrische Leistung dividiert um die Leistungszahl zu bekommen, siehe
+\autoref{eq:Leistungszahl}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/leistungszahlVerlauf.pdf}
-	\caption{}\label{fig:leistungszahlVerlauf}
+	\caption[Leistungszahlkennlinie Wärmepumpe]{Diese Graphik beschreibt den Verlauf der
+		Leistungszahl $\epsilon$ einer Wärmepumpe, während diese durch ihres Betriebs
+		die Temperaturdifferenz der zwei Reservoirs $\Delta T$ erhöht.
+	}\label{fig:leistungszahlVerlauf}
 \end{figure}
+
+Indem nun diese Leistungszahlen $\epsilon$ in Relation zu dem hier theoretisch
+Maximalen $\epsilon_\text{max}$ gesetzt kann der Gütefaktor $\eta$ bestimmt
+werden, wie in \autoref{eq:guetefaktor}. Dabei wurde $\epsilon_\text{max}$
+durch den Kehrwert des Carnot-Wirkungsgrad bestimmt, die höchst und tiefst
+Temperaturen sind aus den Daten genommen worden $\epsilon_\text{max} =
+	\frac{1}{1-\frac{T_k}{T_w}}$.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/wirkungsgradVerlauf.pdf}
-	\caption{}\label{fig:wirkungsgradVerlauf}
+	\caption{In dieser Graphik ist der dynamische Gütegradverlauf $\eta$ der
+		Wärmepumpe ersichtlich. Der Gütegrad $\eta$ wird bezüglich der
+		Temperaturdifferenz der zwei Reservoirs $\Delta T$ aufgetragen. Die,
+		für die Graphik errechnete, theoretisch maximale Leistungszahl
+		$\epsilon_\text{max}$ ist hier auch angeführt.
+	}\label{fig:wirkungsgradVerlauf}
 \end{figure}
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
