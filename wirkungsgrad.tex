@@ -42,17 +42,16 @@
 \subsection{Wärmepumpe}
 
 \begin{itemize}
-	\item Messung des Temperaturverlaufes in zwei Wasserbehältern, der von der Pumpe
-	      aufgenommenen Leistung und der Drücke nach Kompression bzw. Expansion im
+	\item Messung des Temperaturverlaufes in zwei Wasserbehältern und der Drücke nach Kompression bzw. Expansion im
 	      Kältemittelkreislauf über 1 Stunde
 	\item Bestimmung der Leistungszahl und des Gütegrades als Funktion der
 	      Temperaturdifferenz
 	\item Erstellung des p-H-Diagrammes des Kreisprozesses aufgrund der gemessenen Werte
-	      zu Beginn und am Ende der Messung
+	      zu Beginn und am Ende der Messung \cite{unterlagen_warmepumpe}
 \end{itemize}
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
-Die Kennlinie des Solarzellenmoduls I(U) ist bei kontanter Temperatur
+Die Kennlinie des Solarzellenmoduls I(U) ist bei konstanter Temperatur
 aufzunehmen. Weiters sind ein I(U)- und ein P(U)-Diagramm zu erstellen. Auch
 werden die Kenndaten Leerlaufspannung (UL), Kurzschlussstrom (IK), sowie am
 Betriebspunkt maximaler Leistung (MPP) die Spannung (UMPP), den Strom (IMPP),
@@ -73,7 +72,7 @@ Gegeben sind eine einzelne Solarzelle, Lampen als Lichtquelle, ein
 Leistungsmessgerät, sowie ein Quellenmessgerät (Sourcemeter) zur
 automatisierten Messung der Kennlinie.
 
-Damit werden folgende Schritte durchgeführt:
+Damit werden folgende Schritte durchgeführt \cite{unterlagen_solarzelle}:
 
 \begin{itemize}
 	\item Messung der Dunkelkennlinie: An der einzelnen, abgedeckten Solarzelle wird mit
@@ -89,6 +88,79 @@ Damit werden folgende Schritte durchgeführt:
 \section{Grundlagen}\label{Grund}
 
 %TODO Matthias verbessern und bilder bitte 
+\subsection{Wärmepumpe}
+Eine Wärmepumpe ist ein Gerät, das Wärmeenergie von einem Ort zum anderen
+überträgt. Sie wird sowohl für Heiz- als auch für Kühlzwecke eingesetzt und
+basiert auf den Prinzipien der Thermodynamik.
+
+Im Kühlbetrieb nimmt eine Wärmepumpe Wärme aus dem Innenraum auf und gibt
+sie nach außen ab. Im Heizbetrieb arbeitet sie umgekehrt, indem sie der
+Außenluft, dem Boden oder dem Wasser Wärme entzieht und an die Innenräume abgibt. Dies macht eine
+effiziente Möglichkeit, ein Gebäude zu heizen oder zu kühlen, da weniger
+Energie benötigt wird, um Wärme zu übertragen, als diese zu erzeugen.
+
+Die Effizienz einer Wärmepumpe wird durch ihre Leistungszahl $\epsilon$ (COP)
+gemessen. Die Leistungszahl ist das Verhältnis zwischen der übertragenen
+Wärmemenge und der von der Wärmepumpe verbrauchten Energie. Eine höherer
+Leistungszahl bedeutet eine effizientere Wärmepumpe, da sie mehr
+Wärmeenergie für die gleiche Energiemenge übertragen kann (d.\ h.\ mit einem COP von $\epsilon$ kann man
+$\epsilon$ Einheiten an Wärmeenergie Energie für jede verbrauchte
+Energieeinheit übertragen).
+%todo max ist der teil in der Klammer mt dem COP notwendig?
+
+\begin{equation}
+	\epsilon = \frac{\dot{Q}}{P_{el}}
+	\label{eq:Leistungszahl}
+\end{equation}
+
+Wobei $\dot{Q}$ der durch die Wärmepumpe verursachte Wärmefluss und
+$P_{el}$ die benötigte Leistung ist,um die Wärmepumpe zu betreiben. Nun lässt sich
+der Gütegrad mittels der Leistungszahl definieren, sie ist die Kenngröße der
+Güte indem sie das Verhältnis der erhaltene Leistungszahl $\epsilon$ zu der
+theoretisch Maximalen $\epsilon_\text{max} = \frac{T_h}{T_h-T_k}$ angibt.
+
+\begin{equation}
+	\eta = \frac{\epsilon}{\epsilon_\text{max}}
+	\label{eq:guetefaktor}
+\end{equation}
+
+Der Kältekreislauf ist ein thermodynamischer Prozess der von einer Wärmepumpe
+durchgeführt wird. Dieser Prozess entzieht Wärme aus einer Umgebung mit
+niedriger Temperatur und gibt sie an eine Umgebung mit hoher Temperatur ab.
+Das p-H Diagramm des Kreisprozesses ist in \autoref{fig:ph_diagramm_grundlagen} dargestellt. Der
+Prozess wird in Kältesystemen wie Klimaanlagen und Kühlschränken verwendet.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width =0.8\textwidth]{./figures/ph_diagramm_grundlagen.PNG}
+	\end{center}
+	\caption[p-H Diagramm des Kreisprozesses]{p-H Diagramm des Kreisprozesses \cite{unterlagen_warmepumpe}
+	}\label{fig:ph_diagramm_grundlagen}
+\end{figure}
+
+Der Kältekreislauf besteht aus vier Hauptstufen \cite{unterlagen_warmepumpe}:
+
+\begin{enumerate}
+	\item Isentrope Verdichtung: Das Kältemittel wird durch einen Kompressor komprimiert,
+	      wodurch Druck und Temperatur erhöht werden. Diese
+	      Stufe wird durch eine Linie dargestellt, die von niedrigem Druck und niedriger
+	      Enthalpie zu hohem Druck und hoher Enthalpie isentrop verläuft.
+	\item Isobare Kondensation: Das unter hohem Druck stehende und auf hohe Temperatur
+	      gebrachte Kältemittel wird in einem Verflüssiger abgekühlt, wo es Wärme
+	      abgibt und zu einer Flüssigkeit kondensiert. Diese Stufe wird wird durch eine
+	      horizontale Linie dargestellt, die von hoher Enthalpie zu niedriger Enthalpie
+	      verläuft, während der Druck konstant bleibt.
+	\item Isenthalpe Drosselung: Das flüssige Kältemittel wird durch ein
+	      Expansionsventil geleitet, wo sein Druck verringert wird, wodurch es zu einem
+	      Gas mit niedrigem Druck verdampft. Diese Stufe wird durch eine Linie
+	      dargestellt, die bei konstanter Enthalpie verläuft, während der Druck abnimmt.
+	\item Isobare Verdampfung: Das Niederdruck-Kältemittel absorbiert Wärme beim
+	      Verdampfer aus der Umgebung, die es kühlen soll, und kehrt zum Kompressor
+	      zurück, um den Kreislauf erneut zu starten. Diese Phase wird durch eine Linie
+	      dargestellt, die von niedriger Enthalpie zu hoher Enthalpie verläuft, während
+	      der Druck konstant bleibt.
+\end{enumerate}
+
 \subsection{Solarzelle}
 Eine Solarzelle, die auch als photovoltaische Zelle bezeichnet wird, wandelt
 Sonnenlicht durch den Photoeffekt in elektrische Energie um. Der Photoeffekt
@@ -102,7 +174,7 @@ zwischen zwei Metallkontakten, von denen einer auf der Ober- und einer auf der
 Unterseite liegt. Wenn Sonnenlicht auf die Halbleiterschicht fällt, werden die
 Photonen des Sonnenlichts von dem Halbleitermaterial absorbiert. Dies führt
 dazu, dass einige der Elektronen im Material angeregt werden und auf ein
-höheres Energieniveau springen, wobei ein "Loch" im Material zurückbleibt, wo
+höheres Energieniveau springen, wobei ein \dq Loch\dq \ im Material zurückbleibt, wo
 das Elektron vorher war.
 
 Die angeregten Elektronen und die durch die absorbierten Photonen entstandenen
@@ -116,7 +188,16 @@ negativ geladenen Elektronen hat.
 Die angeregten Elektronen werden in Richtung der n-Typ-Schicht gezogen, während
 die Löcher in Richtung der p-Typ-Schicht gezogen werden. Durch diese
 Ladungstrennung entsteht eine Spannungsdifferenz über der Halbleiterschicht,
-die zur Erzeugung elektrischer Energie genutzt werden kann.
+die zur Erzeugung elektrischer Energie genutzt werden kann. Die schematische 
+Funktionsweise der Solarzelle ist in folgender \autoref{fig:solarzelle_grundlagen} ersichtlich.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width =0.8\textwidth]{./figures/solarzelle_grundlagen.PNG}
+	\end{center}
+	\caption[Schematische Funktionsweise der Solarzelle]{Schematische Funktionsweise der Solarzelle
+	\cite{unterlagen_solarzelle}}\label{fig:solarzelle_grundlagen}
+\end{figure}
 
 Die Shockley-Gleichung beschreibt die Beziehung zwischen dem Stromdurchsatz
 einer Diode und der an ihr anliegenden Spannung. Da eine Solarzelle nichts
@@ -156,73 +237,9 @@ Durch die Auswertung und Analyse dieser Schlüsselparameter kann die
 Diodenkennlinie wertvolle Erkenntnisse über die Leistung einer Solarzelle
 liefern. Diese Informationen können dazu genutzt werden, das Design der
 Solarzelle zu optimieren und ihren Wirkungsgrad und ihre Leistung zu
-verbessern.
+verbessern \cite{unterlagen_solarzelle}.
 
-\subsection{Wärmepumpe}
-Eine Wärmepumpe ist ein Gerät, das Wärmeenergie von einem Ort zum anderen
-überträgt. Sie wird sowohl für Heiz- als auch für Kühlzwecke eingesetzt und
-basiert auf den Prinzipien der Thermodynamik.
 
-Im Kühlbetrieb nimmt eine Wärmepumpe Wärme aus dem Innenraum auf und und gibt
-sie nach außen ab. Im Heizbetrieb arbeitet sie umgekehrt, indem sie der
-Außenluft, dem Boden oder dem Wasser Wärme entzieht aus der Außenluft, dem
-Boden oder dem Wasser entzieht und an die Innenräume abgibt. Dies macht eine
-effiziente Möglichkeit, ein Gebäude zu heizen oder zu kühlen, da sie weniger
-Energie zur Wärme zu übertragen als sie zu erzeugen.
-
-Die Effizienz einer Wärmepumpe wird durch ihre Leistungszahl $\epsilon$ (COP)
-gemessen. Die Leistungszahl ist das Verhältnis zwischen der übertragenen
-Wärmemenge und der von der Wärmepumpe verbrauchten Energie. Eine höherer
-Leistungszahl bedeutet eine effizientere Wärmepumpe an, da sie mehr
-Wärmeenergie für die gleiche Energiemenge übertragen kann Energiemenge mehr
-Wärmeenergie übertragen kann (d.\ h.\ mit einem COP von $\epsilon$ kann man
-$\epsilon$ Einheiten an Wärmeenergie Energie für jede verbrauchte
-Energieeinheit übertragen).
-
-\begin{equation}
-	\epsilon = \frac{\dot{Q}}{P_{el}}
-	\label{eq:Leistungszahl}
-\end{equation}
-
-Wobei $\dot{Q}$ der durch die Wärmepumpe verursachte Wärmefluss ist und
-$P_{el}$ die benötigte Leistung ist die Wärmepumpe zu betreiben. Nun lässt sich
-der Gütegrad mittels der Leistungszahl definieren, sie ist die Kenngröße der
-Güte indem sie das Verhältnis der erhaltene Leistungszahl $\epsilon$ zu der
-theoretisch Maximalen $\epsilon_\text{max} = \frac{T_h}{T_h-T_k}$ angibt.
-
-\begin{equation}
-	\eta = \frac{\epsilon}{\epsilon_\text{max}}
-	\label{eq:guetefaktor}
-\end{equation}
-
-Der Kältekreislauf ist ein thermodynamischer Prozess der von einer Wärmepumpe
-durchgeführt wird. Dieser Prozess entzieht Wärme aus einer Umgebung mit
-niedriger Temperatur und gibt sie an eine Umgebung mit hoher Temperatur ab. Der
-Prozess wird in Kältesystemen wie Klimaanlagen und Kühlschränken verwendet.
-Kühlschränke.
-
-Der Kältekreislauf besteht aus vier Hauptstufen:
-
-\begin{enumerate}
-	\item Isentrope Verdichtung: Das Kältemittel wird durch einen Kompressor komprimiert,
-	      wodurch Druck und Temperatur erhöht werden. Druck und Temperatur erhöht. Diese
-	      Stufe wird durch eine Linie dargestellt, die von niedrigem Druck und niedriger
-	      Enthalpie zu hohem Druck und hoher Enthalpie isentrop verläuft.
-	\item Isobare Kondensation: Das unter hohem Druck stehende und auf hohe Temperatur
-	      gebrachte Kältemittel wird dann in einem Verflüssiger abgekühlt, wo es Wärme
-	      abgibt und zu einer Flüssigkeit kondensiert. Diese Stufe wird wird durch eine
-	      horizontale Linie dargestellt, die von hoher Enthalpie zu niedriger Enthalpie
-	      verläuft, während der Druck konstant bleibt.
-	\item Isenthalpe Drosselung: Das flüssige Kältemittel wird dann durch ein
-	      Expansionsventil geleitet, wo sein Druck verringert wird, wodurch es zu einem
-	      Gas mit niedrigem Druck verdampft. Diese Stufe wird durch eine Linie
-	      dargestellt, bei konstanter Enthalpie verläuft, während der Druck abnimmt.
-	\item Isobare Verdampfung: Das Niederdruck-Kältemittel absorbiert Wärme beim
-	      Verdampfer aus der Umgebung auf, die es kühlen soll, und kehrt zum Kompressor
-	      zurück, um den Kreislauf erneut zu starten. Diese Phase wird durch eine Linie
-	      dargestellt, die von niedriger Enthalpie zu hoher Enthalpie verläuft, während
-	      der Druck konstant bleibt.
-\end{enumerate}
 
 \section{Versuchsanordnung}\label{sec:versuchsanordnung}
 
