@@ -9,8 +9,10 @@
 	\textsc{Philipp} Maximilian - 11839611}
 \ohead{FLAB 2 \\
 	Wirkungsgrad}
+
 % Fußzeile
 % \addbibresource{leistung.bib}
+
 \usepackage{luacode}
 
 \DeclareSIUnit\px{px}
@@ -26,11 +28,7 @@
 \begin{document}
 
 \begin{luacode*}
-	luatexbase.add_to_callback("wrapup_run", function()
-	local outfile=io.open("20230308_20A_Philipp_Stark_WIRK_01.pdf", "wb")
-	outfile:write(io.open(tex.jobname..".pdf", "rb"):read("a"))
-	outfile:close()
-	end, "final callback to rename pdf file")
+	dofile("createExtraPDF.lua")
 \end{luacode*}
 
 % \includepdf{./deckblatt.pdf}
