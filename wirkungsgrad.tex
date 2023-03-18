@@ -46,11 +46,11 @@
 	\item Bestimmung der Leistungszahl und des Gütegrades als Funktion der
 	      Temperaturdifferenz
 	\item Erstellung des p-H-Diagrammes des Kreisprozesses aufgrund der gemessenen Werte
-	      zu Beginn und am Ende der Messung \cite{unterlagen_warmepumpe}
+	      zu Beginn und am Ende der Messung
 \end{itemize}
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
-Die Kennlinie des Solarzellenmoduls I(U) ist bei konstanter Temperatur
+Die Kennlinie des Solarzellenmoduls I(U) ist bei kontanter Temperatur
 aufzunehmen. Weiters sind ein I(U)- und ein P(U)-Diagramm zu erstellen. Auch
 werden die Kenndaten Leerlaufspannung (UL), Kurzschlussstrom (IK), sowie am
 Betriebspunkt maximaler Leistung (MPP) die Spannung (UMPP), den Strom (IMPP),
@@ -71,7 +71,7 @@ Gegeben sind eine einzelne Solarzelle, Lampen als Lichtquelle, ein
 Leistungsmessgerät, sowie ein Quellenmessgerät (Sourcemeter) zur
 automatisierten Messung der Kennlinie.
 
-Damit werden folgende Schritte durchgeführt \cite{unterlagen_solarzelle}:
+Damit werden folgende Schritte durchgeführt:
 
 \begin{itemize}
 	\item Messung der Dunkelkennlinie: An der einzelnen, abgedeckten Solarzelle wird mit
@@ -216,22 +216,21 @@ der Leistung der Zelle verwendet werden. Durch die Analyse der Diodenkennlinie
 können die folgenden Schlüsselparameter der Solarzelle bestimmt werden:
 
 \begin{enumerate}
-	\item Leerlaufspannung (Voc): Dies ist die Spannung, bei der die Solarzelle keinen
+	\item Leerlaufspannung ($U_L$): Dies ist die Spannung, bei der die Solarzelle keinen
 	      Strom erzeugt, und entspricht der maximalen Ausgangsspannung der Zelle. Die
 	      Leerlaufspannung wird durch die Beleuchtungsstärke und die intrinsischen
 	      Eigenschaften der Zelle bestimmt.
-	\item Kurzschlussstrom (Isc): Dies ist der Strom, der von der Solarzelle erzeugt
+	\item Kurzschlussstrom ($I_k$): Dies ist der Strom, der von der Solarzelle erzeugt
 	      wird, wenn die Spannung über der Zelle gleich Null ist, und entspricht der
 	      maximalen Stromabgabe der Zelle. Der Kurzschlussstrom wird durch die
 	      Beleuchtungsstärke und die physikalischen Eigenschaften der Zelle bestimmt.
-	\item Füllungsfaktor (FF): Er ist ein Maß für den Wirkungsgrad der Solarzelle und
-	      wird durch das Verhältnis zwischen der maximalen Ausgangsleistung der Zelle und
-	      dem Produkt aus Leerlaufspannung und Kurzschlussstrom bestimmt. Der Füllfaktor
-	      wird von den physikalischen Eigenschaften der Zelle, wie der Rekombinationsrate
-	      und dem Serien- und Nebenschlusswiderstand, beeinflusst.
+	\item Füllfaktor ($FF$): Er ist ein Maß für den Wirkungsgrad der Solarzelle und wird
+	      durch das Verhältnis zwischen der maximalen Ausgangsleistung der Zelle und dem
+	      Produkt aus Leerlaufspannung und Kurzschlussstrom bestimmt. Der Füllfaktor wird
+	      von den physikalischen Eigenschaften der Zelle, wie der Rekombinationsrate und
+	      dem Serien- und Nebenschlusswiderstand, beeinflusst.
 	\item Maximaler Leistungspunkt (MPP): Dies ist der Punkt auf der Diodenkennlinie, an
 	      dem die Solarzelle die maximale Leistung abgibt. Der Punkt maximaler Leistung
-	      wird durch den Schnittpunkt der Lastlinie mit der Diodenkennlinie bestimmt und
 	      wird von der Beleuchtungsstärke und den physikalischen Eigenschaften der Zelle
 	      beeinflusst.
 \end{enumerate}
@@ -401,7 +400,7 @@ Für die Wärmepumpe werden die in \autoref{tab:gerate_warme} aufgelisteten
 Geräte verwendet.
 
 \begin{table}[H]
-	\caption{Verwendete Geräte für die Wärmepumpe
+	\caption{Verwendete Geräte
 	}
 	\begin{tblr}{lllll}
 
@@ -455,6 +454,7 @@ Für die beiden Versuche mit den Solarzellen werden die in
 
 \subsection{Wärmepumpe}
 
+%todo si überprüfen
 Zunächst werden beide Kübel mit \SI{4000(40)}{\milli\liter} Wasser gefüllt. Um
 diese möglichst genau zu bewerkstelligen, wird ein Messbecher verwendet. Die
 Kübel werden auf die dafür vorgesehenen Halterungen gestellt und überprüft, ob
@@ -464,8 +464,8 @@ ein Schlauch befestigt, um den Wasserfluss zwischen Boden und oberen Bereich
 des Eimers zu unterstützen.
 
 Um alle 4 Temperaturmessungen gleichzeitig zu erfassen, wird die Software Cassy
-Lab2 verwendet. Nachdem das Temperaturmessgerät unter dem Fenster \"
-Einstellungen anzeigen \" verbunden wurde, muss sichergestellt werden, dass die
+Lab2 verwendet. Nachdem das Temperaturmessgerät unter dem Fenster
+"Einstellungen anzeigen" verbunden wurde, muss sichergestellt werden, dass die
 geforderten Temperaturwerte erfasst und während des Messvorgangs geplottet
 werden. Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
 \begin{figure}[H]
@@ -484,7 +484,6 @@ Drücke von den entsprechenden Barometern abgelesen, was in folgender
 richtige Zeit zugeordnet bekommen, werden Fotos von den Barometern gemacht und
 mithilfe der erfassten Metadaten des Smartphones die genaue Zeit notiert.
 
-%todo tab ist zu groß für seite
 \begin{table}[H]
 	\caption[Abgelesene Drücke bei der entsprechenden Zeit]{ Abgelesene Drücke bei der
 		entsprechenden Zeit                                            \\
@@ -494,7 +493,6 @@ mithilfe der erfassten Metadaten des Smartphones die genaue Zeit notiert.
 	}
 	\centering
 	\include{./tables/messreihe_werte_druck}
-	\label{tab:drucke}
 \end{table}
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
@@ -524,8 +522,6 @@ Nun wird der Widerstand mithilfe des, dafür vorgesehenen Reglers, variiert und
 die abgelesenen Werte der Messgeräte in folgender
 \autoref{tab:werte_serienschaltung} aufgelistet.
 
-%todo tab ist zu groß für seite
-
 \begin{table}[H]
 	\caption[Abgelesene Strom und Spannungswerte für die Serienschaltung der
 		Solarzellenmodule] {Abgelesene Strom und Spannungswerte für die Serienschaltung
@@ -547,8 +543,6 @@ Auch bei der Parallelschaltung der beiden Solarzellen werden die Messwerte für
 den variierenden Widerstand und für den Leerlauf, sowie den Kurzschluss, von
 den Geräten abgelesen und in \autoref{tab:werte_parallelschaltung} aufgelistet.
 
-%todo tab ist zu groß für seite
-
 \begin{table}[H]
 	\caption[Abgelesene Strom und Spannungswerte für die Parallelschaltung der
 		Solarzellenmodule] {Abgelesene Strom und Spannungswerte für die
@@ -566,11 +560,11 @@ in \autoref{fig:abgedeckt} sichtbar. Die entsprechenden Maße sind gemeinsam,
 mit den anfangs gemessenen Werten der Solarzelle in folgender Aufzählung
 angeführt.
 
-%todo Max bitte überprüfen ob hier falsch war oder bei deinen ganzen aufzeichnungen diese werte für die fläche stimmen jetzt
+%todo tab:grose_solarzelle
 \begin{enumerate}
 	\item Fläche ganz: $\SI{10.0(2)}{\cm}\cdot \SI{8.0(2)}{\cm}=\SI{80(3)}{\cm\squared}$
-	\item Fläche bedeckt: $\SI{7.0(2)}{\cm}\cdot
-		      \SI{8.0(2)}{\cm}=\SI{56(3)}{\cm\squared}$\label{list:flaechenSolar1}
+	\item Fläche bedeckt: $\SI{10.0(2)}{\cm}\cdot
+		      \SI{7.0(2)}{\cm}=\SI{70(3)}{\cm\squared}$\label{list:flaechenSolar1}
 \end{enumerate}
 
 Nun wird die gesamte Messung, wie bereits erklärt, für die verschiedenen
@@ -603,7 +597,7 @@ Software unter dem Menüpunkt "new" eine neue Messung gestartet. Nach
 erfolgreicher Verbindung mit dem Sourcemeter 2450 und der eingabe aller
 Parameter, wie z.B.\ den Maximalen Strom, wie in den Unterlagen aus
 \cite{unterlagen_solarzelle} beschrieben, kann die Messung gestartet werden.
-Die so erzeugte Dunkelkennlinie ist in \autoref{fig:mess_dunkelkennlinie}
+Die so erzeugte Diodenkennlinie ist in \autoref{fig:mess_dunkelkennlinie}
 sichtbar.
 
 \begin{figure}[H]
@@ -624,7 +618,6 @@ wie zuvor die Dunkelkennlinie, aufgenommen und sind in den folgenden
 \autoref{fig:ausw_kennlinie_hell_lampe} bis
 \autoref{fig:mess_hellkennlinie_led} sichtbar.
 
-%todo tabelle mit gemessenen leistungen
 %todo tab:werte_solarzelle2
 
 \begin{figure}[H]
@@ -709,27 +702,57 @@ Temperaturen sind aus den Daten genommen worden $\epsilon_\text{max} =
 	\caption{In dieser Graphik ist der dynamische Gütegradverlauf $\eta$ der
 		Wärmepumpe ersichtlich. Der Gütegrad $\eta$ wird bezüglich der
 		Temperaturdifferenz der zwei Reservoirs $\Delta T$ aufgetragen. Die,
-		für die Graphik errechnete, theoretisch maximale Leistungszahl
+		für diese Graphik errechnete, theoretisch maximale Leistungszahl
 		$\epsilon_\text{max}$ ist hier auch angeführt.
 	}\label{fig:wirkungsgradVerlauf}
 \end{figure}
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
+Damit die invertierte Strom-Spannung Kennlinie und die Leistungskennlinie
+leserlich bleiben sind diese in zwei nebeneinanderliegenden Plots gezeichnet
 
-% todo verdrehung (cos)
+Um die Kenndaten sind folgende Statistiken auf die Datensätze angewandt worden.
+Damit der Kurzschlussstrom $I_k$ ermittelt werden kann ist der Messwert bei der
+Spannung von $\SI{0}{\volt}$ genommen worden; für die Leerlaufspannung $U_L$
+der Messwert mit keinem Strom $\SI{0}{\ampere}$. Für den Betriebspunkt der
+maximalen Leistung ist zunächst die Leistung mit $P=UI$ berechnet worden und
+von diesen Werten ist das Maximum genommen worden um $P_\text{MPP}$ zu
+bestimmen und die Spannung $U_\text{MPP}$ und Strom $I_\text{MPP}$, die diese
+Leistung produzierten ist vermerkt worden. Dies ist für die verschiedenen
+Beschaltungen und Belichtungsflächen gemacht worden.
 
 \subsubsection{Serienschaltung der beiden Solarzellen}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/serienschaltung.pdf}
-	\caption{}\label{fig:auws_kennlinie_serie}
+	\caption[Kennlinien Serienschaltung Solarzellen]{ Untersuchung der invertierten
+		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
+		Serienschaltung von Solarzellen. Folgende Größen wurden errechnet und um
+		Effizienz für dieser Konfiguration besser vergleichen zu können auch angeführt: \\
+		$I_k \dots$ Kurzschlussstrom                                                    \\
+		$U_L \dots$ Leerlaufspannung                                                    \\
+		$P_\text{MPP} \dots$ Leistung am MPP                                            \\
+		$I_\text{MPP} \dots$ Strom am MPP                                               \\
+		$U_\text{MPP} \dots$ Spannung am MPP                                            \\
+		$FF \dots$ Füllfaktor der Solarzellenkonfiguration
+	}\label{fig:auws_kennlinie_serie}
 \end{figure}
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/parallelschaltung.pdf}
-	\caption{}\label{fig:auws_kennlinie_parallel}
+	\caption[Kennlinien Parallelschaltung Solarzellen]{Untersuchung der invertierten
+		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
+		Parallelschaltung von Solarzellen. Folgende Größen wurden errechnet und um
+		Effizienz für dieser Konfiguration besser vergleichen zu können auch angeführt: \\
+		$I_k \dots$ Kurzschlussstrom                                                    \\
+		$U_L \dots$ Leerlaufspannung                                                    \\
+		$P_\text{MPP} \dots$ Leistung am MPP                                            \\
+		$I_\text{MPP} \dots$ Strom am MPP                                               \\
+		$U_\text{MPP} \dots$ Spannung am MPP                                            \\
+		$FF \dots$ Füllfaktor der Solarzellenkonfiguration
+	}\label{fig:auws_kennlinie_parallel}
 \end{figure}
 
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
@@ -737,10 +760,27 @@ Temperaturen sind aus den Daten genommen worden $\epsilon_\text{max} =
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/serienschaltungAbgedeckt.pdf}
-	\caption{}\label{fig:auws_kennlinie_abgedeckt}
+	\caption[Kennlinien Serienschaltung mit teils bedeckten Solarzellen]{Untersuchung der
+		invertierten Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts)
+		bei einer Serienschaltung mit Teilbedeckung der Solarzellen. Folgende Größen
+		wurden errechnet und um Effizienz für dieser Konfiguration besser vergleichen
+		zu können auch angeführt:            \\
+		$I_k \dots$ Kurzschlussstrom         \\
+		$U_L \dots$ Leerlaufspannung         \\
+		$P_\text{MPP} \dots$ Leistung am MPP \\
+		$I_\text{MPP} \dots$ Strom am MPP    \\
+		$U_\text{MPP} \dots$ Spannung am MPP \\
+		$FF \dots$ Füllfaktor der Solarzellenkonfiguration
+	}\label{fig:auws_kennlinie_abgedeckt}
 \end{figure}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
+
+Nun werden die Diodencharakteristik einer Solarzelle bei verschiedenen
+Belichtungsstufen untersucht. Dazu wurde die Strom-Spannung Kennlinien gemessen
+und an die Gleichung für das Zweidioden-Modell gefittet. Um dies zu
+bewerkstelligen wurden folgende Vereinfachungen getroffen: Die implizite
+Anteile werden vernachlässig was
 
 \subsubsection{Messung der Dunkelkennlinie}
 
@@ -774,7 +814,7 @@ Temperaturen sind aus den Daten genommen worden $\epsilon_\text{max} =
 
 \subsection{Wärmepumpe}
 
-%todo eis
+immer rühren
 
 Nach dem Versuch beim Entfernen des Kübels wurde festgestellt, dass sich auf
 der Kalten Seite Eis gebildet hat, wie in \autoref{fig:eis} sichtbar, welches
@@ -790,6 +830,9 @@ einer erneuten Durchführung des Versuchs sollte daher die Flüssigkeit deutlich
 \end{figure}
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
+mal drauf scheinen lassen damit sich eine betriebstemperatur einstellen kann
+
+% todo verdrehung (cos)
 \subsubsection{Serienschaltung der beiden Solarzellen}
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
@@ -797,6 +840,9 @@ einer erneuten Durchführung des Versuchs sollte daher die Flüssigkeit deutlich
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
+
+techinque um die Watt messung wahrheitsgetreuer zu machen mit dem sensor punkte
+abfahren und ein mittel für die linie erstellen
 
 \section{Zusammenfassung}\label{sec:zusammenfassung}
 
