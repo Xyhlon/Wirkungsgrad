@@ -628,27 +628,57 @@ Temperaturen sind aus den Daten genommen worden $\epsilon_\text{max} =
 	\caption{In dieser Graphik ist der dynamische Gütegradverlauf $\eta$ der
 		Wärmepumpe ersichtlich. Der Gütegrad $\eta$ wird bezüglich der
 		Temperaturdifferenz der zwei Reservoirs $\Delta T$ aufgetragen. Die,
-		für die Graphik errechnete, theoretisch maximale Leistungszahl
+		für diese Graphik errechnete, theoretisch maximale Leistungszahl
 		$\epsilon_\text{max}$ ist hier auch angeführt.
 	}\label{fig:wirkungsgradVerlauf}
 \end{figure}
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
+Damit die invertierte Strom-Spannung Kennlinie und die Leistungskennlinie
+leserlich bleiben sind diese in zwei nebeneinanderliegenden Plots gezeichnet
 
-% todo verdrehung (cos)
+Um die Kenndaten sind folgende Statistiken auf die Datensätze angewandt worden.
+Damit der Kurzschlussstrom $I_k$ ermittelt werden kann ist der Messwert bei der
+Spannung von $\SI{0}{\volt}$ genommen worden; für die Leerlaufspannung $U_L$
+der Messwert mit keinem Strom $\SI{0}{\ampere}$. Für den Betriebspunkt der
+maximalen Leistung ist zunächst die Leistung mit $P=UI$ berechnet worden und
+von diesen Werten ist das Maximum genommen worden um $P_\text{MPP}$ zu
+bestimmen und die Spannung $U_\text{MPP}$ und Strom $I_\text{MPP}$, die diese
+Leistung produzierten ist vermerkt worden. Dies ist für die verschiedenen
+Beschaltungen und Belichtungsflächen gemacht worden.
 
 \subsubsection{Serienschaltung der beiden Solarzellen}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/serienschaltung.pdf}
-	\caption{}\label{fig:auws_kennlinie_serie}
+	\caption[Kennlinien Serienschaltung Solarzellen]{ Untersuchung der invertierten
+		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
+		Serienschaltung von Solarzellen. Folgende Größen wurden errechnet und um
+		Effizienz für dieser Konfiguration besser vergleichen zu können auch angeführt: \\
+		$I_k \dots$ Kurzschlussstrom                                                    \\
+		$U_L \dots$ Leerlaufspannung                                                    \\
+		$P_\text{MPP} \dots$ Leistung am MPP                                            \\
+		$I_\text{MPP} \dots$ Strom am MPP                                               \\
+		$U_\text{MPP} \dots$ Spannung am MPP                                            \\
+		$FF \dots$ Füllfaktor der Solarzellenkonfiguration
+	}\label{fig:auws_kennlinie_serie}
 \end{figure}
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/parallelschaltung.pdf}
-	\caption{}\label{fig:auws_kennlinie_parallel}
+	\caption[Kennlinien Parallelschaltung Solarzellen]{Untersuchung der invertierten
+		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
+		Parallelschaltung von Solarzellen. Folgende Größen wurden errechnet und um
+		Effizienz für dieser Konfiguration besser vergleichen zu können auch angeführt: \\
+		$I_k \dots$ Kurzschlussstrom                                                    \\
+		$U_L \dots$ Leerlaufspannung                                                    \\
+		$P_\text{MPP} \dots$ Leistung am MPP                                            \\
+		$I_\text{MPP} \dots$ Strom am MPP                                               \\
+		$U_\text{MPP} \dots$ Spannung am MPP                                            \\
+		$FF \dots$ Füllfaktor der Solarzellenkonfiguration
+	}\label{fig:auws_kennlinie_parallel}
 \end{figure}
 
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
@@ -656,7 +686,18 @@ Temperaturen sind aus den Daten genommen worden $\epsilon_\text{max} =
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/serienschaltungAbgedeckt.pdf}
-	\caption{}\label{fig:auws_kennlinie_abgedeckt}
+	\caption[Kennlinien Serienschaltung mit teils bedeckten Solarzellen]{Untersuchung der
+		invertierten Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts)
+		bei einer Serienschaltung mit Teilbedeckung der Solarzellen. Folgende Größen
+		wurden errechnet und um Effizienz für dieser Konfiguration besser vergleichen
+		zu können auch angeführt:            \\
+		$I_k \dots$ Kurzschlussstrom         \\
+		$U_L \dots$ Leerlaufspannung         \\
+		$P_\text{MPP} \dots$ Leistung am MPP \\
+		$I_\text{MPP} \dots$ Strom am MPP    \\
+		$U_\text{MPP} \dots$ Spannung am MPP \\
+		$FF \dots$ Füllfaktor der Solarzellenkonfiguration
+	}\label{fig:auws_kennlinie_abgedeckt}
 \end{figure}
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
@@ -695,6 +736,9 @@ Temperaturen sind aus den Daten genommen worden $\epsilon_\text{max} =
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
+mal drauf scheinen lassen damit sich eine betriebstemperatur einstellen kann
+
+% todo verdrehung (cos)
 \subsubsection{Serienschaltung der beiden Solarzellen}
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
