@@ -86,7 +86,6 @@ Damit werden folgende Schritte durchgeführt:
 
 \section{Grundlagen}\label{Grund}
 
-%TODO Matthias verbessern und bilder bitte 
 \subsection{Wärmepumpe}
 Eine Wärmepumpe ist ein Gerät, das Wärmeenergie von einem Ort zum anderen
 überträgt. Sie wird sowohl für Heiz- als auch für Kühlzwecke eingesetzt und
@@ -211,9 +210,34 @@ Sättigungsrückstrom und den Idealitätsfaktor zu ermitteln. Diese Informatione
 sind nützlich, um die Leistung einer Solarzelle zu bewerten und ihr Design für
 eine maximale Effizienz zu optimieren.
 
+Aus der Shockley-Gleichung geht unter Berücksichtigung der parasitären Widerstände 
+die \autoref{eq:I_eindiodenmodell} für den gemessen Strom $I$ hervor. Berücksichtigt man,
+dass in der Solarzelle Dotierungsschwankungen vorherschen, bezeichnet das zweidiodenmodell
+aus \autoref{eq:I_zweidiodenmodell} eher das tatsächliche Verhalten.
+
+\begin{equation}
+	I=I_{S 1}\left(e^{\frac{e\left(U-I R_s\right)}{f_1 k_B T}}-1\right)-I_{p h}+\frac{\left(U-I R_s\right)}{R_p}
+	\label{eq:I_eindiodenmodell}
+\end{equation}
+
+\begin{equation}
+	I=I_{S 1}\left(e^{\frac{e\left(U-I R_s\right)}{f_1 k_B T}}-1\right)+I_{S 2}\left(e^{\frac{e\left(U-I R_s\right)}{f_2 k_B T}}-1\right)-I_{p h}+\frac{\left(U-I R_s\right)}{R_p}
+	\label{eq:I_zweidiodenmodell}
+\end{equation}
+
+$I_{S 1}$ bzw. $I_{S 2}$ bezeichnet dabei den Sättigungsstrom,
+$U$ die gemessene Spannung,
+$R_{s}$ den Serienwiderstand,
+$R_p$ den Parallelwiderstand,
+$k_B$ die Boltzmann-Konstante,
+$e$ die Elementarladung,
+$T$ die absolute Temperatur,
+$I_{ph}$ den Betrag des Photostroms und
+$f_1$ bzw $f_2$ die Diodenfaktoren zur Anpassung.
+
 Die Diodenkennlinie einer Solarzelle kann zur Bewertung und Charakterisierung
 der Leistung der Zelle verwendet werden. Durch die Analyse der Diodenkennlinie
-können die folgenden Schlüsselparameter der Solarzelle bestimmt werden:
+können die folgenden Schlüsselparameter der Solarzelle nach den folgenden Formeln bestimmt werden:
 
 \begin{enumerate}
 	\item Leerlaufspannung ($U_L$): Dies ist die Spannung, bei der die Solarzelle keinen
@@ -229,11 +253,43 @@ können die folgenden Schlüsselparameter der Solarzelle bestimmt werden:
 	      Produkt aus Leerlaufspannung und Kurzschlussstrom bestimmt. Der Füllfaktor wird
 	      von den physikalischen Eigenschaften der Zelle, wie der Rekombinationsrate und
 	      dem Serien- und Nebenschlusswiderstand, beeinflusst.
-	\item Maximaler Leistungspunkt (MPP): Dies ist der Punkt auf der Diodenkennlinie, an
+	\item Maximaler Leistungspunkt ($MPP$): Dies ist der Punkt auf der Diodenkennlinie, an
 	      dem die Solarzelle die maximale Leistung abgibt. Der Punkt maximaler Leistung
 	      wird von der Beleuchtungsstärke und den physikalischen Eigenschaften der Zelle
 	      beeinflusst.
 \end{enumerate}
+
+\begin{equation}
+	FF=\frac{I_{\text {max }} U_{\max }}{I_K U_L}
+	\label{eq:I_fuellfaktor}
+\end{equation}
+
+\begin{equation}
+	MPP =I_{\max } U_{\max }
+	\label{eq:leistung_max}
+\end{equation}
+
+
+\begin{equation}
+	\eta=\frac{P_{\text {max }}}{P_{\text {Licht }}}
+	\label{eq:wirkungsgrad_solar}
+\end{equation}
+
+
+\begin{equation}
+	P_{\text {Licht }}=A \cdot I_{\text {Licht}} \quad I_{\text {Licht }}=\frac{P_{\text {mess }}}{A_{\text {mess }}} \\
+	\label{eq:leistung_solar}
+\end{equation}
+
+
+$U_{\max}$ bezeichnet dabei die Spannung beim Punkt maximaler Leistung,
+$I_{\max}$ die Stromstärke beim Punkt maximaler Leistung,
+$\eta$ den entsprechenden Wirkungsgrad,
+$P_{\text {Licht }}$ die gemessene Leistung am Strahlungsmessgerät,
+$A$ die aktive Fläche der Solarzelle,
+$I_{\text {Licht }}$ die Lichtintensität der Lampe,
+$P_{\text {mess }} $ die gemessene Leistung am Strahlungsmessgerät und
+$A_{\text {mess }} $ die Fläche des Leistungsmessgeräts.
 
 Durch die Auswertung und Analyse dieser Schlüsselparameter kann die
 Diodenkennlinie wertvolle Erkenntnisse über die Leistung einer Solarzelle
@@ -400,7 +456,7 @@ Für die Wärmepumpe werden die in \autoref{tab:gerate_warme} aufgelisteten
 Geräte verwendet.
 
 \begin{table}[H]
-	\caption{Verwendete Geräte
+	\caption{Verwendete Geräte für die Wärmepumpe
 	}
 	\begin{tblr}{lllll}
 
@@ -454,7 +510,6 @@ Für die beiden Versuche mit den Solarzellen werden die in
 
 \subsection{Wärmepumpe}
 
-%todo si überprüfen
 Zunächst werden beide Kübel mit \SI{4000(40)}{\milli\liter} Wasser gefüllt. Um
 diese möglichst genau zu bewerkstelligen, wird ein Messbecher verwendet. Die
 Kübel werden auf die dafür vorgesehenen Halterungen gestellt und überprüft, ob
