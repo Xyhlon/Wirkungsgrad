@@ -115,6 +115,7 @@ def test_waermepumpe_protokoll():
         "t": r"t",
         "eta": r"\eta",
         "eps": r"\epsilon",
+        "epsMax": r"\epsilon_\text{max}",
     }
     gv = {
         "pk": r"\si{\bar}",
@@ -125,6 +126,7 @@ def test_waermepumpe_protokoll():
         "DT": r"\si{\kelvin}",
         "eta": r"1",
         "eps": r"1",
+        "epsMax": r"1",
     }
 
     pd.set_option("display.max_columns", None)
@@ -244,11 +246,17 @@ def test_waermepumpe_protokoll():
     P.figure.suptitle(r"Leistungszahl der Wärmepumpe")
     P.figure.tight_layout()
     ax = P.savefig("leistungszahlVerlauf.pdf")
-    P.data.u.com
+    P.data = P.data.u.com
+    param = {
+        "epsMax": 1
+        / (1 - (min(Tk.data.values) + 273.15) / (max(Tw.data.values) + 273.15))
+    }
+    print(1 / (1 - (min(Tk.data.values) + 273.15) / (max(Tw.data.values) + 273.15)))
+
     P.data["eta"] = eps.data * (
         1 - (min(Tk.data.values) + 273.15) / (max(Tw.data.values) + 273.15)
     )
-    P.data.u.sep
+    P.data = P.data.u.sep
 
     P.plot(
         ax,
@@ -259,6 +267,7 @@ def test_waermepumpe_protokoll():
         errors=True,
         marker="None",
     )
+    P.add_text(ax, keyvalue=param, offset=[75, 60], color="#A5459C")
     P.figure.suptitle(r"Wirkungsgrad der Wärmepumpe")
     P.figure.tight_layout()
     ax = P.savefig("wirkungsgradVerlauf.pdf")
