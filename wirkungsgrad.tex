@@ -41,16 +41,17 @@
 \subsection{Wärmepumpe}
 
 \begin{itemize}
-	\item Messung des Temperaturverlaufes in zwei Wasserbehältern und der Drücke nach Kompression bzw. Expansion im
+	\item Messung des Temperaturverlaufes in zwei Wasserbehältern, der von der Pumpe
+	      aufgenommenen Leistung und der Drücke nach Kompression bzw. Expansion im
 	      Kältemittelkreislauf über 1 Stunde
 	\item Bestimmung der Leistungszahl und des Gütegrades als Funktion der
 	      Temperaturdifferenz
 	\item Erstellung des p-H-Diagrammes des Kreisprozesses aufgrund der gemessenen Werte
-	      zu Beginn und am Ende der Messung \cite{unterlagen_warmepumpe}
+	      zu Beginn und am Ende der Messung
 \end{itemize}
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
-Die Kennlinie des Solarzellenmoduls I(U) ist bei konstanter Temperatur
+Die Kennlinie des Solarzellenmoduls I(U) ist bei kontanter Temperatur
 aufzunehmen. Weiters sind ein I(U)- und ein P(U)-Diagramm zu erstellen. Auch
 werden die Kenndaten Leerlaufspannung (UL), Kurzschlussstrom (IK), sowie am
 Betriebspunkt maximaler Leistung (MPP) die Spannung (UMPP), den Strom (IMPP),
@@ -71,7 +72,7 @@ Gegeben sind eine einzelne Solarzelle, Lampen als Lichtquelle, ein
 Leistungsmessgerät, sowie ein Quellenmessgerät (Sourcemeter) zur
 automatisierten Messung der Kennlinie.
 
-Damit werden folgende Schritte durchgeführt \cite{unterlagen_solarzelle}:
+Damit werden folgende Schritte durchgeführt:
 
 \begin{itemize}
 	\item Messung der Dunkelkennlinie: An der einzelnen, abgedeckten Solarzelle wird mit
@@ -87,79 +88,6 @@ Damit werden folgende Schritte durchgeführt \cite{unterlagen_solarzelle}:
 \section{Grundlagen}\label{Grund}
 
 %TODO Matthias verbessern und bilder bitte 
-\subsection{Wärmepumpe}
-Eine Wärmepumpe ist ein Gerät, das Wärmeenergie von einem Ort zum anderen
-überträgt. Sie wird sowohl für Heiz- als auch für Kühlzwecke eingesetzt und
-basiert auf den Prinzipien der Thermodynamik.
-
-Im Kühlbetrieb nimmt eine Wärmepumpe Wärme aus dem Innenraum auf und gibt
-sie nach außen ab. Im Heizbetrieb arbeitet sie umgekehrt, indem sie der
-Außenluft, dem Boden oder dem Wasser Wärme entzieht und an die Innenräume abgibt. Dies macht eine
-effiziente Möglichkeit, ein Gebäude zu heizen oder zu kühlen, da weniger
-Energie benötigt wird, um Wärme zu übertragen, als diese zu erzeugen.
-
-Die Effizienz einer Wärmepumpe wird durch ihre Leistungszahl $\epsilon$ (COP)
-gemessen. Die Leistungszahl ist das Verhältnis zwischen der übertragenen
-Wärmemenge und der von der Wärmepumpe verbrauchten Energie. Eine höherer
-Leistungszahl bedeutet eine effizientere Wärmepumpe, da sie mehr
-Wärmeenergie für die gleiche Energiemenge übertragen kann (d.\ h.\ mit einem COP von $\epsilon$ kann man
-$\epsilon$ Einheiten an Wärmeenergie Energie für jede verbrauchte
-Energieeinheit übertragen).
-%todo max ist der teil in der Klammer mt dem COP notwendig?
-
-\begin{equation}
-	\epsilon = \frac{\dot{Q}}{P_{el}}
-	\label{eq:Leistungszahl}
-\end{equation}
-
-Wobei $\dot{Q}$ der durch die Wärmepumpe verursachte Wärmefluss und
-$P_{el}$ die benötigte Leistung ist,um die Wärmepumpe zu betreiben. Nun lässt sich
-der Gütegrad mittels der Leistungszahl definieren, sie ist die Kenngröße der
-Güte indem sie das Verhältnis der erhaltene Leistungszahl $\epsilon$ zu der
-theoretisch Maximalen $\epsilon_\text{max} = \frac{T_h}{T_h-T_k}$ angibt.
-
-\begin{equation}
-	\eta = \frac{\epsilon}{\epsilon_\text{max}}
-	\label{eq:guetefaktor}
-\end{equation}
-
-Der Kältekreislauf ist ein thermodynamischer Prozess der von einer Wärmepumpe
-durchgeführt wird. Dieser Prozess entzieht Wärme aus einer Umgebung mit
-niedriger Temperatur und gibt sie an eine Umgebung mit hoher Temperatur ab.
-Das p-H Diagramm des Kreisprozesses ist in \autoref{fig:ph_diagramm_grundlagen} dargestellt. Der
-Prozess wird in Kältesystemen wie Klimaanlagen und Kühlschränken verwendet.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width =0.8\textwidth]{./figures/ph_diagramm_grundlagen.PNG}
-	\end{center}
-	\caption[p-H Diagramm des Kreisprozesses]{p-H Diagramm des Kreisprozesses \cite{unterlagen_warmepumpe}
-	}\label{fig:ph_diagramm_grundlagen}
-\end{figure}
-
-Der Kältekreislauf besteht aus vier Hauptstufen \cite{unterlagen_warmepumpe}:
-
-\begin{enumerate}
-	\item Isentrope Verdichtung: Das Kältemittel wird durch einen Kompressor komprimiert,
-	      wodurch Druck und Temperatur erhöht werden. Diese
-	      Stufe wird durch eine Linie dargestellt, die von niedrigem Druck und niedriger
-	      Enthalpie zu hohem Druck und hoher Enthalpie isentrop verläuft.
-	\item Isobare Kondensation: Das unter hohem Druck stehende und auf hohe Temperatur
-	      gebrachte Kältemittel wird in einem Verflüssiger abgekühlt, wo es Wärme
-	      abgibt und zu einer Flüssigkeit kondensiert. Diese Stufe wird wird durch eine
-	      horizontale Linie dargestellt, die von hoher Enthalpie zu niedriger Enthalpie
-	      verläuft, während der Druck konstant bleibt.
-	\item Isenthalpe Drosselung: Das flüssige Kältemittel wird durch ein
-	      Expansionsventil geleitet, wo sein Druck verringert wird, wodurch es zu einem
-	      Gas mit niedrigem Druck verdampft. Diese Stufe wird durch eine Linie
-	      dargestellt, die bei konstanter Enthalpie verläuft, während der Druck abnimmt.
-	\item Isobare Verdampfung: Das Niederdruck-Kältemittel absorbiert Wärme beim
-	      Verdampfer aus der Umgebung, die es kühlen soll, und kehrt zum Kompressor
-	      zurück, um den Kreislauf erneut zu starten. Diese Phase wird durch eine Linie
-	      dargestellt, die von niedriger Enthalpie zu hoher Enthalpie verläuft, während
-	      der Druck konstant bleibt.
-\end{enumerate}
-
 \subsection{Solarzelle}
 Eine Solarzelle, die auch als photovoltaische Zelle bezeichnet wird, wandelt
 Sonnenlicht durch den Photoeffekt in elektrische Energie um. Der Photoeffekt
@@ -173,7 +101,7 @@ zwischen zwei Metallkontakten, von denen einer auf der Ober- und einer auf der
 Unterseite liegt. Wenn Sonnenlicht auf die Halbleiterschicht fällt, werden die
 Photonen des Sonnenlichts von dem Halbleitermaterial absorbiert. Dies führt
 dazu, dass einige der Elektronen im Material angeregt werden und auf ein
-höheres Energieniveau springen, wobei ein \dq Loch\dq \ im Material zurückbleibt, wo
+höheres Energieniveau springen, wobei ein "Loch" im Material zurückbleibt, wo
 das Elektron vorher war.
 
 Die angeregten Elektronen und die durch die absorbierten Photonen entstandenen
@@ -187,16 +115,7 @@ negativ geladenen Elektronen hat.
 Die angeregten Elektronen werden in Richtung der n-Typ-Schicht gezogen, während
 die Löcher in Richtung der p-Typ-Schicht gezogen werden. Durch diese
 Ladungstrennung entsteht eine Spannungsdifferenz über der Halbleiterschicht,
-die zur Erzeugung elektrischer Energie genutzt werden kann. Die schematische 
-Funktionsweise der Solarzelle ist in folgender \autoref{fig:solarzelle_grundlagen} ersichtlich.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width =0.8\textwidth]{./figures/solarzelle_grundlagen.PNG}
-	\end{center}
-	\caption[Schematische Funktionsweise der Solarzelle]{Schematische Funktionsweise der Solarzelle
-	\cite{unterlagen_solarzelle}}\label{fig:solarzelle_grundlagen}
-\end{figure}
+die zur Erzeugung elektrischer Energie genutzt werden kann.
 
 Die Shockley-Gleichung beschreibt die Beziehung zwischen dem Stromdurchsatz
 einer Diode und der an ihr anliegenden Spannung. Da eine Solarzelle nichts
@@ -236,9 +155,73 @@ Durch die Auswertung und Analyse dieser Schlüsselparameter kann die
 Diodenkennlinie wertvolle Erkenntnisse über die Leistung einer Solarzelle
 liefern. Diese Informationen können dazu genutzt werden, das Design der
 Solarzelle zu optimieren und ihren Wirkungsgrad und ihre Leistung zu
-verbessern \cite{unterlagen_solarzelle}.
+verbessern.
 
+\subsection{Wärmepumpe}
+Eine Wärmepumpe ist ein Gerät, das Wärmeenergie von einem Ort zum anderen
+überträgt. Sie wird sowohl für Heiz- als auch für Kühlzwecke eingesetzt und
+basiert auf den Prinzipien der Thermodynamik.
 
+Im Kühlbetrieb nimmt eine Wärmepumpe Wärme aus dem Innenraum auf und und gibt
+sie nach außen ab. Im Heizbetrieb arbeitet sie umgekehrt, indem sie der
+Außenluft, dem Boden oder dem Wasser Wärme entzieht aus der Außenluft, dem
+Boden oder dem Wasser entzieht und an die Innenräume abgibt. Dies macht eine
+effiziente Möglichkeit, ein Gebäude zu heizen oder zu kühlen, da sie weniger
+Energie zur Wärme zu übertragen als sie zu erzeugen.
+
+Die Effizienz einer Wärmepumpe wird durch ihre Leistungszahl $\epsilon$ (COP)
+gemessen. Die Leistungszahl ist das Verhältnis zwischen der übertragenen
+Wärmemenge und der von der Wärmepumpe verbrauchten Energie. Eine höherer
+Leistungszahl bedeutet eine effizientere Wärmepumpe an, da sie mehr
+Wärmeenergie für die gleiche Energiemenge übertragen kann Energiemenge mehr
+Wärmeenergie übertragen kann (d.\ h.\ mit einem COP von $\epsilon$ kann man
+$\epsilon$ Einheiten an Wärmeenergie Energie für jede verbrauchte
+Energieeinheit übertragen).
+
+\begin{equation}
+	\epsilon = \frac{\dot{Q}}{P_{el}}
+	\label{eq:Leistungszahl}
+\end{equation}
+
+Wobei $\dot{Q}$ der durch die Wärmepumpe verursachte Wärmefluss ist und
+$P_{el}$ die benötigte Leistung ist die Wärmepumpe zu betreiben. Nun lässt sich
+der Gütegrad mittels der Leistungszahl definieren, sie ist die Kenngröße der
+Güte indem sie das Verhältnis der erhaltene Leistungszahl $\epsilon$ zu der
+theoretisch Maximalen $\epsilon_\text{max} = \frac{T_h}{T_h-T_k}$ angibt.
+
+\begin{equation}
+	\eta = \frac{\epsilon}{\epsilon_\text{max}}
+	\label{eq:guetefaktor}
+\end{equation}
+
+Der Kältekreislauf ist ein thermodynamischer Prozess der von einer Wärmepumpe
+durchgeführt wird. Dieser Prozess entzieht Wärme aus einer Umgebung mit
+niedriger Temperatur und gibt sie an eine Umgebung mit hoher Temperatur ab. Der
+Prozess wird in Kältesystemen wie Klimaanlagen und Kühlschränken verwendet.
+Kühlschränke.
+
+Der Kältekreislauf besteht aus vier Hauptstufen:
+
+\begin{enumerate}
+	\item Isentrope Verdichtung: Das Kältemittel wird durch einen Kompressor komprimiert,
+	      wodurch Druck und Temperatur erhöht werden. Druck und Temperatur erhöht. Diese
+	      Stufe wird durch eine Linie dargestellt, die von niedrigem Druck und niedriger
+	      Enthalpie zu hohem Druck und hoher Enthalpie isentrop verläuft.
+	\item Isobare Kondensation: Das unter hohem Druck stehende und auf hohe Temperatur
+	      gebrachte Kältemittel wird dann in einem Verflüssiger abgekühlt, wo es Wärme
+	      abgibt und zu einer Flüssigkeit kondensiert. Diese Stufe wird wird durch eine
+	      horizontale Linie dargestellt, die von hoher Enthalpie zu niedriger Enthalpie
+	      verläuft, während der Druck konstant bleibt.
+	\item Isenthalpe Drosselung: Das flüssige Kältemittel wird dann durch ein
+	      Expansionsventil geleitet, wo sein Druck verringert wird, wodurch es zu einem
+	      Gas mit niedrigem Druck verdampft. Diese Stufe wird durch eine Linie
+	      dargestellt, bei konstanter Enthalpie verläuft, während der Druck abnimmt.
+	\item Isobare Verdampfung: Das Niederdruck-Kältemittel absorbiert Wärme beim
+	      Verdampfer aus der Umgebung auf, die es kühlen soll, und kehrt zum Kompressor
+	      zurück, um den Kreislauf erneut zu starten. Diese Phase wird durch eine Linie
+	      dargestellt, die von niedriger Enthalpie zu hoher Enthalpie verläuft, während
+	      der Druck konstant bleibt.
+\end{enumerate}
 
 \section{Versuchsanordnung}\label{sec:versuchsanordnung}
 
@@ -269,10 +252,8 @@ Skizze dessen, \autoref{fig:skizze_warmepumpe}, sind im folgenden sichtbar.
 		5 \dots Expansionsventil                                                  \\
 		6 \dots Temperaturfühler des Expansionsventils                            \\
 		7 \dots Verdamp-fer                                                       \\
-		8 \dots ausschwenkbare Stellfläche Kaltwasserbehälter \\
-		9 \dots Rohrwindungen als
-		elastische Verbindung zwischen Kompressor und Wärmetauscher \\
-		10 \dots
+		8 \dots ausschwenkbare Stellfläche Kaltwasserbehälter 9 \dots Rohrwindungen als
+		elastische Verbindung zwischen Kompressor und Wärmetauscher 10 \dots
 		Druckwächter                                                              \\
 		11 \dots Kunststoffhalter (2x) für Thermometer und Temperaturfühler, zum
 		Anklemmen an Kupferrohre                                                  \\
@@ -383,9 +364,7 @@ Solarzelle mit 4 Kabeln mit dem Sourcemeter verbunden, wobei 2 der
 Sense-Leitung entsprechen.
 
 Weil der Sonnensimulator leider kaputt war wurden als Lichtquelle eine
-höhenverstellbare Halogenlampe, sowie eine LED Beleuchtung verwendet. 
-Aus Neugierde wurde der Versuch für 2 verschiedene Abstände der Halogenlampe
-und einmal für die LED Beleuchtung durchgeführt. Bei der
+höhenverstellbare Halogenlampe, sowie eine LED Beleuchtung verwendet. Bei der
 Position der Lampe muss darauf geachtet werden, dass der Abstand zwischen der
 Lampe und der Solarzelle oder dem Sensor konstant gehalten werden soll. Auch
 wird sichergestellt, dass die Lichtquelle immer ober dem Objekt zentriert wird.
@@ -396,66 +375,39 @@ Lichtquelle auf den Sensor oder die Solarzelle trifft.
 
 \section{Geräteliste}\label{sec:geraeteliste}
 
-Für die Wärmepumpe werden die in \autoref{tab:gerate_warme} aufgelisteten Geräte
+Für den Versuch werden die in \autoref{tab:gerate} aufgelisteten Geräte
 verwendet.
 
+%todo noch alt
 
 \begin{table}[H]
-	\caption{Verwendete Geräte für die Wärmepumpe
+	\caption{Verwendete Geräte
 	}
 	\begin{tblr}{lllll}
-			
-			\textbf{Gerätetyp}  & \textbf{Hersteller} & \textbf{Typ}   & \textbf{Inventar-Nr} & \textbf{Anmerkung}              \\ 
-			Wärmepumpe          & LD                  &                &                      &                                 \\ 
-			Kompressor          & Danfoss             & TL3G           & AA6HA100             &  \SI{118(2)}{\watt}             \\ 
-			Druckwächter        & Danfoss             &                &                      &                                 \\ 
-			Sammler             & UL                  & 16H5           & 023Z4566             &                                 \\ 
-			Temperaturfühler    &                     & Ni Cr-Ni       &                      & 4x                              \\ 
-			Barometer           & ITE                 & 823-BC-1.0/447 &                      & für warm                        \\ 
-			Barometer           & ITE                 & 825-BC-1.0/447 &                      & für kalt                        \\ 
-			Temperatormessgerät & LD                  & 666209         & TOP0000252           &  mit 4 Anschlüssen       \\ 
-			Computersoftware    & Cassy Lab 2         &                &                      &                                 \\ 
-			Messbecher          & Vit Lab             & 2 Liter        &                      &                                 \\ 
-			Eimer               &                     &                &                      & 2x mit Schlauch \\ 
-			Verbindungskabel    &                     &                &                      &                                 \\ 
-			Glasstab            &                     &                &                      & zum Umrühren                    \\ 
-			
-	\end{tblr}
-	\label{tab:gerate_warme}
-\end{table}
-
-Für die beiden Versuche mit den Solarzellen werden die in \autoref{tab:gerate_solar} aufgelisteten Geräte
-verwendet.
-
-
-\begin{table}[H]
-	\caption{Verwendete Geräte für die beiden Solarzellen Versuche
-	}
-	\begin{tblr}{lllll}
-		\textbf{Gerätetyp}       & \textbf{Hersteller} & \textbf{Typ} & \textbf{Inventar-Nr} & \textbf{Anmerkung} \\
-		Solarzellenmodul         &                     &              &                      & 2x  $\SI{10.0(2)}{\cm}\cdot \SI{8.0(2)}{\cm}$               \\
-		Radium-Lampe             &                     & PAR 38-EC    &                      &                    \\
-		Verstellbarer Widerstand & ARCOL               & VRH 320      & CEI 1010-1           &                    \\
-		Voltmeter                & TTI                 & 1604         & TMM-07               &                    \\
-		Amperemeter              & TTI                 & 1604         & TMM-11               &                    \\
-		Bananenstecker           &                     &              &                      &                    \\
-		Papier                   &                     &              &                      & zum Verdecken      \\
-		Rollmeter                & Schuller            & 3 m          &                      & für Distanzmessung \\
-		Solarzellenmodul         &                     &              &                      &                    \\
-		Leistungssensor          & Spectra Physics     & 407A         & 2775                 &                    \\
-		Leistungsmessgerät       & Spectra Physics     & 407A         & 310041630000         &                    \\
-		Sourcemeter              & Keithley            & 2450 S       & 300032370000         &                    \\
-		Computersoftware         & Kickstart           &              &                      &                    \\
-		Halogenlampe             & Osram               & 24V 150W     & HL\% 64640           &                               \\ 
-		LED-lampe                &                &      &            &                               \\	
-	\end{tblr}
-	\label{tab:gerate_solar}
+		\textbf{Gerätetyp}  & \textbf{Hersteller} & \textbf{Typ}          & \textbf{Inventar-Nr} & \textbf{Anmerkung} \\
+		Transformator       & Thalheimer          & LTS 606               & 0161469              &                    \\
+		{Box  mit                                                                                                     \\ Versorgungsspannung} & & & F1 & \\
+		Strommessgerät      & Norma               & analog                & {VII/1106/9                               \\ VII/1106/6 \\ VII/1106/3} & 3 x \\
+		Spannungsmessgerät  & Norma               & analog                & {VII/1120/2                               \\ VII/1120/1 E3} & 3 x \\
+		Leistungsmessgerät  & Norma               & analog                & F18 F19              & 2 x                \\
+		Leistungsmessgerät  & {Chauvin                                                                                \\ Arnoux} & analog & C.A.505 & \\
+		Multimeter          & UNI-T               & UT51                  &                      & 2 x                \\
+		Multimeter          & METEX               & M-3610B               &                      &                    \\
+		Glühbirnen          &                     & {3x \SI{60}{\watt}                                                \\ 3x \SI{75}{\watt}} & & \\
+		Kondensator         &                     & \SI{12}{\micro\farad} & G5 V                 & 2 x                \\
+		Spule               &                     &                       & P                    &                    \\
+		Heizwiderstand      &                     & 3x \SI{230}{\volt}    & JFR/158/13           & 3 x                \\
+		Bananenstecker      &                     &                       &                      &                    \\
+		Spule mit Eisenkern &                     &                       &                      & 3 x                \\
+		{Metallscheibe auf                                                                                            \\ Sockel} & Hancaner & DT2234C & & \\
+	\end{tblr}\label{tab:gerate}
 \end{table}
 
 \section{Versuchsdurchführung und Messergebnisse}\label{sec:versuchsdurchfuehrung_messergebnisse}
 
 \subsection{Wärmepumpe}
 
+%todo si überprüfen
 Zunächst werden beide Kübel mit \SI{4000(40)}{\milli\liter} Wasser gefüllt. Um
 diese möglichst genau zu bewerkstelligen, wird ein Messbecher verwendet. Die
 Kübel werden auf die dafür vorgesehenen Halterungen gestellt und überprüft, ob
@@ -466,7 +418,7 @@ des Eimers zu unterstützen.
 
 Um alle 4 Temperaturmessungen gleichzeitig zu erfassen, wird die Software Cassy
 Lab2 verwendet. Nachdem das Temperaturmessgerät unter dem Fenster
-\" Einstellungen anzeigen \" verbunden wurde, muss sichergestellt werden, dass die
+"Einstellungen anzeigen" verbunden wurde, muss sichergestellt werden, dass die
 geforderten Temperaturwerte erfasst und während des Messvorgangs geplottet
 werden. Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
 \begin{figure}[H]
@@ -485,16 +437,10 @@ Drücke von den entsprechenden Barometern abgelesen, was in folgender
 richtige Zeit zugeordnet bekommen, werden Fotos von den Barometern gemacht und
 mithilfe der erfassten Metadaten des Smartphones die genaue Zeit notiert.
 
-%todo tab ist zu groß für seite
 \begin{table}[H]
-	\caption[Abgelesene Drücke bei der entsprechenden Zeit]{
-		Abgelesene Drücke bei der entsprechenden Zeit\\
-		$t$ \dots vergangene Zeit seit dem Start des Messvorgangs in s\\
-		$p_k$ \dots abgelesener Druck auf der kalten Seite in bar\\
-		$p_h$ \dots abgelesener Druck auf der heißen Seite in bar\\}
+	\caption{}\label{tab:drucke}
 	\centering
 	\include{./tables/messreihe_werte_druck}
-	\label{tab:drucke}
 \end{table}
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
@@ -524,14 +470,8 @@ Nun wird der Widerstand mithilfe des, dafür vorgesehenen Reglers, variiert und
 die abgelesenen Werte der Messgeräte in folgender
 \autoref{tab:werte_serienschaltung} aufgelistet.
 
-%todo tab ist zu groß für seite
-
 \begin{table}[H]
-	\caption[Abgelesene Strom und Spannungswerte für die Serienschaltung der Solarzellenmodule]
-	{Abgelesene Strom und Spannungswerte für die Serienschaltung der Solarzellenmodule\\
-	$U$ \dots Abgelesener Wert der Spannung in V\\
-	$I$ \dots Abgelesener Wert des Stroms in mA
-	}\label{tab:werte_serienschaltung}
+	\caption{}\label{tab:werte_serienschaltung}
 	\centering
 	\include{./tables/messreihe_werte_serienschaltung}
 \end{table}
@@ -546,13 +486,8 @@ Auch bei der Parallelschaltung der beiden Solarzellen werden die Messwerte für
 den variierenden Widerstand und für den Leerlauf, sowie den Kurzschluss, von
 den Geräten abgelesen und in \autoref{tab:werte_parallelschaltung} aufgelistet.
 
-%todo tab ist zu groß für seite
-
 \begin{table}[H]
-	\caption[Abgelesene Strom und Spannungswerte für die Parallelschaltung der Solarzellenmodule]
-	{Abgelesene Strom und Spannungswerte für die Parallelschaltung der Solarzellenmodule\\
-	$U$ \dots Abgelesener Wert der Spannung in V\\
-	$I$ \dots Abgelesener Wert des Stroms in mA}\label{tab:werte_parallelschaltung}
+	\caption{}\label{tab:werte_parallelschaltung}
 	\centering
 	\include{./tables/messreihe_werte_parallelschaltung}
 \end{table}
@@ -561,13 +496,13 @@ den Geräten abgelesen und in \autoref{tab:werte_parallelschaltung} aufgelistet.
 Zunächst wird die Größe vermessen, die durch das Blatt Papier verdeckt ist, wie
 in \autoref{fig:abgedeckt} sichtbar. Die entsprechenden Maße sind gemeinsam,
 mit den anfangs gemessenen Werten der Solarzelle in folgender
-Aufzählung angeführt.
+\cref{list:flaechenSolar1} angeführt.
 
-%todo Max bitte überprüfen ob hier falsch war oder bei deinen ganzen aufzeichnungen diese werte für die fläche stimmen jetzt
+%todo tab:grose_solarzelle
 \begin{enumerate}
 	\item Fläche ganz: $\SI{10.0(2)}{\cm}\cdot \SI{8.0(2)}{\cm}=\SI{80(3)}{\cm\squared}$
-	\item Fläche bedeckt: $\SI{7.0(2)}{\cm}\cdot
-		      \SI{8.0(2)}{\cm}=\SI{56(3)}{\cm\squared}$\label{list:flaechenSolar1}
+	\item Fläche bedeckt: $\SI{10.0(2)}{\cm}\cdot
+		      \SI{7.0(2)}{\cm}=\SI{70(3)}{\cm\squared}$\label{list:flaechenSolar1}
 \end{enumerate}
 
 Nun wird die gesamte Messung, wie bereits erklärt, für die verschiedenen
@@ -575,10 +510,7 @@ Widerstände, den Leerlauf und den Kurzschluss durchgeführt und die Messwerte i
 \autoref{tab:werte_abgedeckt} aufgelistet.
 
 \begin{table}[H]
-	\caption[Abgelesene Strom und Spannungswerte für die Serienschaltung mit einem abgedeckten Solarzellenmodul]
-	{Abgelesene Strom und Spannungswerte für die Serienschaltung mit einem abgedeckten Solarzellenmodul\\
-	$U$ \dots Abgelesener Wert der Spannung in V\\
-	$I$ \dots Abgelesener Wert des Stroms in mA}\label{tab:werte_abgedeckt}
+	\caption{}\label{tab:werte_abgedeckt}
 	\centering
 	\include{./tables/messreihe_werte_abgedeckt}
 \end{table}
@@ -598,13 +530,13 @@ Software unter dem Menüpunkt "new" eine neue Messung gestartet. Nach
 erfolgreicher Verbindung mit dem Sourcemeter 2450 und der eingabe aller
 Parameter, wie z.B.\ den Maximalen Strom, wie in den Unterlagen aus
 \cite{unterlagen_solarzelle} beschrieben, kann die Messung gestartet werden.
-Die so erzeugte Dunkelkennlinie ist in \autoref{fig:mess_dunkelkennlinie}
+Die so erzeugte Diodenkennlinie ist in \autoref{fig:mess_dunkelkennlinie}
 sichtbar.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/dunekl.png}
-	\caption{Erzeugte Dunkelkennlinie der Solarzelle}\label{fig:mess_dunkelkennlinie}
+	\caption{}\label{fig:mess_dunkelkennlinie}
 \end{figure}
 
 \subsubsection{Messung der Hellkennlinie und Bestimmung des Wirkungsgrades}
@@ -613,30 +545,26 @@ Nun werden die Lampen, wie bereits in \autoref{sec:versuchsanordnung}
 beschrieben, positioniert und ebenfalls die Kennlinien aufgenommen. Die
 entsprechende Leistung der Lichtquelle wird anhand des Sensors bestimmt und vom
 analogen Messgerät abgelesen, was in folgender \autoref{tab:werte_solarzelle2}
-ersichtlich ist. Auch die Diodenkennlinien für die verschiedenen Lampen werden,
-wie zuvor die Dunkelkennlinie, aufgenommen und sind in den folgenden 
-\autoref{fig:ausw_kennlinie_hell_lampe} bis \autoref{fig:mess_hellkennlinie_led}
-sichtbar.
+ersichtlich ist.
 
-%todo tabelle mit gemessenen leistungen
 %todo tab:werte_solarzelle2
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/helllampe.png}
-	\caption{Erzeugte Diodenkennlinie für die Halogenlampe}\label{fig:mess_hellkennlinie_lampe}
+	\caption{}\label{fig:mess_hellkennlinie_lampe}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/helllampe2.png}
-	\caption{Erzeugte Diodenkennlinie für die Halogenlampe mit geringeren Abstand zur Solarzelle}\label{fig:mess_hellkennlinie_lampe2}
+	\caption{}\label{fig:mess_hellkennlinie_lampe2}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/hellled.png}
-	\caption{Erzeugte Diodenkennlinie für die LED-Lampe}\label{fig:mess_hellkennlinie_led}
+	\caption{}\label{fig:mess_hellkennlinie_led}
 \end{figure}
 
 \section{Auswertung}\label{sec:auswertung}
@@ -765,18 +693,6 @@ Temperaturen sind aus den Daten genommen worden $\epsilon_\text{max} =
 
 \subsection{Wärmepumpe}
 
-%todo eis
-
-Nach dem Versuch beim Entfernen des Kübels wurde festgestellt, dass sich auf der Kalten Seite Eis gebildet hat,
-wie in \autoref{fig:eis} sichtbar,
-welches natürlich isolierende Auswirkungen hat und somit das Ergebnis verfälscht. Bei einer erneuten Durchführung 
-des Versuchs sollte daher die Flüssigkeit deutlich öfter umgerührt werden.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{figures/eis.PNG}
-	\caption{Eisbildung}\label{fig:eis}
-\end{figure}
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
 \subsubsection{Serienschaltung der beiden Solarzellen}
