@@ -256,10 +256,10 @@ Formeln bestimmt werden:
 	      Produkt aus Leerlaufspannung und Kurzschlussstrom bestimmt. Der Füllfaktor wird
 	      von den physikalischen Eigenschaften der Zelle, wie der Rekombinationsrate und
 	      dem Serien- und Nebenschlusswiderstand, beeinflusst.
-	\item Maximaler Leistungspunkt ($MPP$): Dies ist der Punkt auf der Diodenkennlinie,
-	      an dem die Solarzelle die maximale Leistung abgibt. Der Punkt maximaler
-	      Leistung wird von der Beleuchtungsstärke und den physikalischen Eigenschaften
-	      der Zelle beeinflusst.
+	\item Maximaler Leistungspunkt (MPP): Dies ist der Punkt auf der Diodenkennlinie, an
+	      dem die Solarzelle die maximale Leistung abgibt. Der Punkt maximaler Leistung
+	      wird von der Beleuchtungsstärke und den physikalischen Eigenschaften der Zelle
+	      beeinflusst.
 \end{enumerate}
 
 \begin{equation}
@@ -268,7 +268,7 @@ Formeln bestimmt werden:
 \end{equation}
 
 \begin{equation}
-	MPP =I_{\max } U_{\max }
+	P_\text{MPP} =I_{\max } U_{\max }
 	\label{eq:leistung_max}
 \end{equation}
 
@@ -294,8 +294,8 @@ $A_{\text {mess }} $ die Fläche des Leistungsmessgeräts.
 Durch die Auswertung und Analyse dieser Schlüsselparameter kann die
 Diodenkennlinie wertvolle Erkenntnisse über die Leistung einer Solarzelle
 liefern. Diese Informationen können dazu genutzt werden, das Design der
-Solarzelle zu optimieren und ihren Wirkungsgrad und ihre Leistung zu verbessern
-\cite{knoll_solarzelle_nodate}.
+Solarzelle zu optimieren und ihren Wirkungsgrad und ihre Leistung zu
+verbessern~\cite{knoll_solarzelle_nodate}.
 
 \section{Versuchsanordnung}\label{sec:versuchsanordnung}
 
@@ -318,7 +318,7 @@ Skizze dessen, \autoref{fig:skizze_warmepumpe}, sind im folgenden sichtbar.
 		\includegraphics[width =0.5\textwidth]{./figures/warmepumpe_skizze.PNG}
 	\end{center}
 	\caption[Skizze des Versuchsaufbaus der Wärmepumpe]{Skizze des Versuchsaufbaus der
-		Wärmepumpe \cite[text]{hohenau_warmepumpe_2014}                           \\
+		Wärmepumpe~\cite[text]{hohenau_warmepumpe_2014}.                          \\
 		1 \dots Kompressor 230 V; 50/60 Hz. Leistungsaufnahme ca. 130 W bei 50 Hz \\
 		2 \dots ausschwenkbare Stellfläche für rot-markierten Warmwasserbehälter  \\
 		3 \dots Verflüssiger                                                      \\
@@ -458,7 +458,7 @@ Geräte verwendet.
 \begin{table}[H]
 	\caption{Verwendete Geräte für die Wärmepumpe
 	}
-	\begin{tblr}{lllll}
+	\begin{tblr}{cells={font=\footnotesize},colspec={lllll}}
 
 		\textbf{Gerätetyp}  & \textbf{Hersteller} & \textbf{Typ}   & \textbf{Inventar-Nr} & \textbf{Anmerkung} \\
 		Wärmepumpe          & LD                  &                &                      &                    \\
@@ -473,10 +473,8 @@ Geräte verwendet.
 		Messbecher          & Vit Lab             & 2 Liter        &                      &                    \\
 		Eimer               &                     &                &                      & 2x mit Schlauch    \\
 		Verbindungskabel    &                     &                &                      &                    \\
-		Glasstab            &                     &                &                      & zum Umrühren       \\
-
-	\end{tblr}
-	\label{tab:gerate_warme}
+		Glasstab            &                     &                &                      & zum Umrühren
+	\end{tblr}\label{tab:gerate_warme}
 \end{table}
 
 Für die beiden Versuche mit den Solarzellen werden die in
@@ -485,7 +483,7 @@ Für die beiden Versuche mit den Solarzellen werden die in
 \begin{table}[H]
 	\caption{Verwendete Geräte für die beiden Solarzellen Versuche
 	}
-	\begin{tblr}{lllll}
+	\begin{tblr}{cells={font=\footnotesize},colspec={lllll}}
 		\textbf{Gerätetyp}       & \textbf{Hersteller} & \textbf{Typ} & \textbf{Inventar-Nr} & \textbf{Anmerkung}                           \\
 		Solarzellenmodul         &                     &              &                      & 2x $\SI{10.0(2)}{\cm}\cdot \SI{8.0(2)}{\cm}$ \\
 		Radium-Lampe             &                     & PAR 38-EC    &                      &                                              \\
@@ -501,9 +499,8 @@ Für die beiden Versuche mit den Solarzellen werden die in
 		Sourcemeter              & Keithley            & 2450 S       & 300032370000         &                                              \\
 		Computersoftware         & Kickstart           &              &                      &                                              \\
 		Halogenlampe             & Osram               & 24V 150W     & HL\% 64640           &                                              \\
-		LED-lampe                &                     &              &                      &                                              \\
-	\end{tblr}
-	\label{tab:gerate_solar}
+		LED-lampe                &                     &              &                      &
+	\end{tblr}\label{tab:gerate_solar}
 \end{table}
 
 \section{Versuchsdurchführung und Messergebnisse}\label{sec:versuchsdurchfuehrung_messergebnisse}
@@ -545,7 +542,7 @@ mithilfe der erfassten Metadaten des Smartphones die genaue Zeit notiert.
 		$t$ \dots vergangene Zeit seit dem Start des Messvorgangs in s \\
 		$p_k$ \dots abgelesener Druck auf der kalten Seite in bar      \\
 		$p_h$ \dots abgelesener Druck auf der heißen Seite in bar
-	}
+	}\label{tab:drucke}
 	\centering
 	\include{./tables/messreihe_werte_druck}
 \end{table}
@@ -938,7 +935,7 @@ auch so zu einem sinnvollen Ergebnis konvergiert.
 
 \subsection{Wärmepumpe}
 
-immer rühren
+immer rühren sonst enstehen spikes im Temperatur und Druckverläufen
 
 Nach dem Versuch beim Entfernen des Kübels wurde festgestellt, dass sich auf
 der Kalten Seite Eis gebildet hat, wie in \autoref{fig:eis} sichtbar, welches
@@ -952,6 +949,7 @@ einer erneuten Durchführung des Versuchs sollte daher die Flüssigkeit deutlich
 	\caption{Eisbildung
 	}\label{fig:eis}
 \end{figure}
+
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
 mal drauf scheinen lassen damit sich eine betriebstemperatur einstellen kann
