@@ -353,13 +353,19 @@ def test_solar_protokoll():
     ax: plt.Axes = P.figure.add_subplot()
     schieflagedersolarzellen = ufloat(5, 1)  # grad
     quellenAbstand = ufloat(284, 2)  # mm ist Abstand bis Lampenglas
-    flaechesolarzelle = ufloat(10 * 8, 1)                                                                                                 █
+    flaechesolarzelle = ufloat(10 * 8, 1)
     bagedeagtflaechesolarzelle = ufloat(10 * 7, 1)
     # Aufgabe 1
     ax = createStromSpannungsKennlinie(P, "../data/solarSerieOhneAbdeckung.csv")
     P.figure.suptitle("Serienschaltung von Solarzellen")
     P.figure.tight_layout()
-    P.print_table(U, I, name="werte_serienschaltung", inline_units=True)
+    P.print_table(
+        U,
+        I,
+        name="werte_serienschaltung",
+        options=r"cells={font=\footnotesize},",
+        inline_units=True,
+    )
     # P.ax_legend_all(loc=0)
     ax = P.savefig("serienschaltung.pdf")
 
@@ -367,7 +373,13 @@ def test_solar_protokoll():
     ax = createStromSpannungsKennlinie(P, "../data/solarParallelOhneAbdeckung.csv")
     P.figure.suptitle("Parallelschaltung von Solarzellen")
     P.figure.tight_layout()
-    P.print_table(U, I, name="werte_parallelschaltung", inline_units=True)
+    P.print_table(
+        U,
+        I,
+        name="werte_parallelschaltung",
+        options=r"cells={font=\footnotesize},",
+        inline_units=True,
+    )
     # P.ax_legend_all(loc=0)
     ax = P.savefig("parallelschaltung.pdf")
 
@@ -376,7 +388,13 @@ def test_solar_protokoll():
     P.figure.suptitle("Serienschaltung von Solarzellen abgedeckt")
     P.figure.tight_layout()
     # P.ax_legend_all(loc=0)
-    P.print_table(U, I, name="werte_abgedeckt", inline_units=True)
+    P.print_table(
+        U,
+        I,
+        name="werte_abgedeckt",
+        options=r"cells={font=\footnotesize},",
+        inline_units=True,
+    )
     ax = P.savefig("serienschaltungAbgedeckt.pdf")
 
     P.gv["power"] = r"\si{\watt}"

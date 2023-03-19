@@ -169,7 +169,14 @@ def test_waermepumpe_protokoll():
         markerfacecolor="#F5460C",
     )
 
-    P.print_table(t, pk, pw, name="werte_druck", inline_units=True)
+    P.print_table(
+        t,
+        pk,
+        pw,
+        name="werte_druck",
+        options=r"cells={font=\footnotesize},",
+        inline_units=True,
+    )
     P.figure.suptitle(r"Druckverlauf")
     P.figure.tight_layout()
     P.ax_legend_all(loc=7)
