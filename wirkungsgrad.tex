@@ -325,7 +325,7 @@ Skizze dessen, \autoref{fig:skizze_warmepumpe}, sind im folgenden sichtbar.
 		4 \dots Sammler/Reiniger                                                  \\
 		5 \dots Expansionsventil                                                  \\
 		6 \dots Temperaturfühler des Expansionsventils                            \\
-		7 \dots Verdamp-fer                                                       \\
+		7 \dots Verdampfer                                                        \\
 		8 \dots ausschwenkbare Stellfläche Kaltwasserbehälter                     \\
 		9 \dots Rohrwindungen als elastische Verbindung zwischen Kompressor und
 		Wärmetauscher                                                             \\
@@ -373,9 +373,9 @@ Messbereich zu wählen.
 	\begin{center}
 		\includegraphics[width =0.5\textwidth]{./figures/schaltplan.PNG}
 	\end{center}
-	\caption[Schaltplan der Solarzelle]{Schaltplan der Solarzelle
-		\cite{knoll_solarzelle_nodate} \\
-		A \dots Amperemeter            \\
+	\caption[Schaltplan der Solarzelle]{Schaltplan der
+		Solarzelle~\cite{knoll_solarzelle_nodate} \\
+		A \dots Amperemeter                       \\
 		V \dots Voltmeter
 	}\label{fig:schaltplan}
 \end{figure}
@@ -957,9 +957,22 @@ mal drauf scheinen lassen damit sich eine betriebstemperatur einstellen kann
 % todo verdrehung (cos)
 \subsubsection{Serienschaltung der beiden Solarzellen}
 
+Die Serienschaltung bietet eine höhere Spannung bei einem niedrigeren Strom als
+die Parallelschaltung wie es zu erwarten war.
+
 \subsubsection{Parallelschaltung der beiden Solarzellen}
 
+Die Parallelschaltung bietet einen höheren Strom bei niedriger Spannung al die
+Serienschaltung, wie bei Parallelschaltung üblich. Zudem ist die Leistung höher
+als bei Serienschaltung, was der Ohmschen-Model widerspricht (eigentlich
+sollten sie gleich sein). Da dieses sich aber Nicht-Linear verhaltet ist dies
+wahrscheinlich der Grund für die Diskrepanz zum Ohmschen-Model.
+
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
+
+Bei den teils bedeckten in Serie geschalteten Solarzellen ist ein enormer
+Abfall in gewonner Leistung vonstatten gegangen. Da die beschattete Fläche ein
+parasitärer Widerstand ist.
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
