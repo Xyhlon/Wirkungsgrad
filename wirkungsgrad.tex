@@ -780,7 +780,24 @@ Nun werden die Diodencharakteristik einer Solarzelle bei verschiedenen
 Belichtungsstufen untersucht. Dazu wurde die Strom-Spannung Kennlinien gemessen
 und an die Gleichung für das Zweidioden-Modell gefittet. Um dies zu
 bewerkstelligen wurden folgende Vereinfachungen getroffen: Die implizite
-Anteile werden vernachlässig was
+Anteile werden vernachlässigt was bewirkt dass die gefittet Höher sein wird als
+wenn die Terme berücksichtigt werden. Beim fitten war der zweite
+Diodenparameter nahe 0 und deshalb wurde die Fit-Kurve nochmals vereinfacht und
+dieser Term weggelassen. Somit wurde schlussendlich mit folgender Gleichung
+gefittet:
+
+\begin{equation}
+	I(U) = I_{S1} \left( \exp{\frac{eU}{f_1 k_b T}} -1 \right) - I_{ph}
+	\label{eq:kennlinienFit}
+\end{equation}
+
+%todo erklaere die symbole
+
+Damit die Konvergenz der Parameter funktionieren konnte, wurde die Anzahl der
+freien Parameter reduziert, dafür wurde die Temperatur gewählt, welche am
+besten abschätzt werden konnte. Weiters wurde, wegen demselben Grund, der
+Cutoff Bereich von \SI{0.4}{\ampere} verworfen, da es nicht den echten Verlauf
+wiederspiegelt.
 
 \subsubsection{Messung der Dunkelkennlinie}
 
