@@ -50,11 +50,12 @@
 \end{itemize}
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
-Die Kennlinie des Solarzellenmoduls I(U) ist bei kontanter Temperatur
-aufzunehmen. Weiters sind ein I(U)- und ein P(U)-Diagramm zu erstellen. Auch
-werden die Kenndaten Leerlaufspannung (UL), Kurzschlussstrom (IK), sowie am
-Betriebspunkt maximaler Leistung (MPP) die Spannung (UMPP), den Strom (IMPP),
-die Leistung (PMPP) und schließlich der Füllfaktor bestimmt.
+Die Kennlinie des Solarzellenmoduls $I(U)$ ist bei kontanter Temperatur
+aufzunehmen. Weiters sind ein $I(U)$- und ein $P(U)$-Diagramm zu erstellen.
+Auch werden die Kenndaten Leerlaufspannung ($U_L$), Kurzschlussstrom ($I_K$),
+sowie am Betriebspunkt maximaler Leistung (MPP) die Spannung ($U_\text{MPP}$),
+den Strom ($I_\text{MPP}$), die Leistung ($P_\text{MPP}$) und schließlich der
+Füllfaktor $FF$ bestimmt.
 
 Dies Wird für folgende Schaltungen durchgeführt:
 
@@ -210,10 +211,11 @@ Sättigungsrückstrom und den Idealitätsfaktor zu ermitteln. Diese Informatione
 sind nützlich, um die Leistung einer Solarzelle zu bewerten und ihr Design für
 eine maximale Effizienz zu optimieren.
 
-Aus der Shockley-Gleichung geht unter Berücksichtigung der parasitären Widerstände 
-die \autoref{eq:I_eindiodenmodell} für den gemessen Strom $I$ hervor. Berücksichtigt man,
-dass in der Solarzelle Dotierungsschwankungen vorherschen, bezeichnet das zweidiodenmodell
-aus \autoref{eq:I_zweidiodenmodell} eher das tatsächliche Verhalten.
+Aus der Shockley-Gleichung geht unter Berücksichtigung der parasitären
+Widerstände die \autoref{eq:I_eindiodenmodell} für den gemessen Strom $I$
+hervor. Berücksichtigt man, dass in der Solarzelle Dotierungsschwankungen
+vorherschen, bezeichnet das zweidiodenmodell aus
+\autoref{eq:I_zweidiodenmodell} eher das tatsächliche Verhalten.
 
 \begin{equation}
 	I=I_{S 1}\left(e^{\frac{e\left(U-I R_s\right)}{f_1 k_B T}}-1\right)-I_{p h}+\frac{\left(U-I R_s\right)}{R_p}
@@ -237,7 +239,8 @@ $f_1$ bzw $f_2$ die Diodenfaktoren zur Anpassung.
 
 Die Diodenkennlinie einer Solarzelle kann zur Bewertung und Charakterisierung
 der Leistung der Zelle verwendet werden. Durch die Analyse der Diodenkennlinie
-können die folgenden Schlüsselparameter der Solarzelle nach den folgenden Formeln bestimmt werden:
+können die folgenden Schlüsselparameter der Solarzelle nach den folgenden
+Formeln bestimmt werden:
 
 \begin{enumerate}
 	\item Leerlaufspannung ($U_L$): Dies ist die Spannung, bei der die Solarzelle keinen
@@ -253,10 +256,10 @@ können die folgenden Schlüsselparameter der Solarzelle nach den folgenden Form
 	      Produkt aus Leerlaufspannung und Kurzschlussstrom bestimmt. Der Füllfaktor wird
 	      von den physikalischen Eigenschaften der Zelle, wie der Rekombinationsrate und
 	      dem Serien- und Nebenschlusswiderstand, beeinflusst.
-	\item Maximaler Leistungspunkt ($MPP$): Dies ist der Punkt auf der Diodenkennlinie, an
-	      dem die Solarzelle die maximale Leistung abgibt. Der Punkt maximaler Leistung
-	      wird von der Beleuchtungsstärke und den physikalischen Eigenschaften der Zelle
-	      beeinflusst.
+	\item Maximaler Leistungspunkt ($MPP$): Dies ist der Punkt auf der Diodenkennlinie,
+	      an dem die Solarzelle die maximale Leistung abgibt. Der Punkt maximaler
+	      Leistung wird von der Beleuchtungsstärke und den physikalischen Eigenschaften
+	      der Zelle beeinflusst.
 \end{enumerate}
 
 \begin{equation}
@@ -269,18 +272,15 @@ können die folgenden Schlüsselparameter der Solarzelle nach den folgenden Form
 	\label{eq:leistung_max}
 \end{equation}
 
-
 \begin{equation}
 	\eta=\frac{P_{\text {max }}}{P_{\text {Licht }}}
 	\label{eq:wirkungsgrad_solar}
 \end{equation}
 
-
 \begin{equation}
 	P_{\text {Licht }}=A \cdot I_{\text {Licht}} \quad I_{\text {Licht }}=\frac{P_{\text {mess }}}{A_{\text {mess }}} \\
 	\label{eq:leistung_solar}
 \end{equation}
-
 
 $U_{\max}$ bezeichnet dabei die Spannung beim Punkt maximaler Leistung,
 $I_{\max}$ die Stromstärke beim Punkt maximaler Leistung,
