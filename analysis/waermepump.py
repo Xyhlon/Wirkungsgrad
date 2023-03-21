@@ -174,7 +174,7 @@ def test_waermepumpe_protokoll():
         pk,
         pw,
         name="werte_druck",
-        options=r"cells={font=\footnotesize},",
+        options=r"cells={font=\footnotesize},rowsep=0pt,",
         inline_units=True,
     )
     P.figure.suptitle(r"Druckverlauf")

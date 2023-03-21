@@ -363,7 +363,7 @@ def test_solar_protokoll():
         U,
         I,
         name="werte_serienschaltung",
-        options=r"cells={font=\footnotesize},",
+        options=r"cells={font=\footnotesize},rowsep=0pt,",
         inline_units=True,
     )
     # P.ax_legend_all(loc=0)
@@ -377,7 +377,7 @@ def test_solar_protokoll():
         U,
         I,
         name="werte_parallelschaltung",
-        options=r"cells={font=\footnotesize},",
+        options=r"cells={font=\footnotesize},rowsep=0pt,",
         inline_units=True,
     )
     # P.ax_legend_all(loc=0)
