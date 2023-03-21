@@ -459,7 +459,6 @@ Geräte verwendet.
 	\caption{Verwendete Geräte für die Wärmepumpe
 	}
 	\begin{tblr}{cells={font=\footnotesize},colspec={lllll}}
-
 		\textbf{Gerätetyp}  & \textbf{Hersteller} & \textbf{Typ}   & \textbf{Inventar-Nr} & \textbf{Anmerkung} \\
 		Wärmepumpe          & LD                  &                &                      &                    \\
 		Kompressor          & Danfoss             & TL3G           & AA6HA100             & \SI{118(2)}{\watt} \\
@@ -484,22 +483,23 @@ Für die beiden Versuche mit den Solarzellen werden die in
 	\caption{Verwendete Geräte für die beiden Solarzellen Versuche
 	}
 	\begin{tblr}{cells={font=\footnotesize},colspec={lllll}}
-		\textbf{Gerätetyp}       & \textbf{Hersteller} & \textbf{Typ} & \textbf{Inventar-Nr} & \textbf{Anmerkung}                           \\
-		Solarzellenmodul         &                     &              &                      & 2x $\SI{10.0(2)}{\cm}\cdot \SI{8.0(2)}{\cm}$ \\
-		Radium-Lampe             &                     & PAR 38-EC    &                      &                                              \\
-		Verstellbarer Widerstand & ARCOL               & VRH 320      & CEI 1010-1           &                                              \\
-		Voltmeter                & TTI                 & 1604         & TMM-07               &                                              \\
-		Amperemeter              & TTI                 & 1604         & TMM-11               &                                              \\
-		Bananenstecker           &                     &              &                      &                                              \\
-		Papier                   &                     &              &                      & zum Verdecken                                \\
-		Rollmeter                & Schuller            & 3 m          &                      & für Distanzmessung                           \\
-		Solarzellenmodul         &                     &              &                      &                                              \\
-		Leistungssensor          & Spectra Physics     & 407A         & 2775                 &                                              \\
-		Leistungsmessgerät       & Spectra Physics     & 407A         & 310041630000         &                                              \\
-		Sourcemeter              & Keithley            & 2450 S       & 300032370000         &                                              \\
-		Computersoftware         & Kickstart           &              &                      &                                              \\
-		Halogenlampe             & Osram               & 24V 150W     & HL\% 64640           &                                              \\
-		LED-lampe                &                     &              &                      &
+		\textbf{Gerätetyp}                            & \textbf{Hersteller} & \textbf{Typ} & \textbf{Inventar-Nr} & \textbf{Anmerkung}                           \\
+		Solarzellenmodul                              &                     &              &                      & 2x $\SI{10.0(2)}{\cm}\cdot \SI{8.0(2)}{\cm}$ \\
+		Radium-Lampe                                  &                     & PAR 38-EC    &                      &                                              \\
+		Verstellbarer Widerstand                      & ARCOL               & VRH 320      & CEI 1010-1           &                                              \\
+		Voltmeter                                     & TTI                 & 1604         & TMM-07               &                                              \\
+		Amperemeter                                   & TTI                 & 1604         & TMM-11               &                                              \\
+		Bananenstecker                                &                     &              &                      &                                              \\
+		Papier                                        &                     &              &                      & zum Verdecken                                \\
+		Rollmeter                                     & Schuller            & 3 m          &                      & für Distanzmessung                           \\
+		Solarzellenmodul                              &                     &              &                      &                                              \\
+		Leistungssensor\cite{noauthor_407a_nodate}    & Spectra Physics     & 407A         & 2775                 &                                              \\
+		Leistungsmessgerät\cite{noauthor_407a_nodate} & Spectra Physics     & 407A         &
+		310041630000                                  &                                                                                                          \\
+		Sourcemeter\cite{noauthor_2450_nodate}        & Keithley            & 2450 S       & 300032370000         &                                              \\
+		Computersoftware                              & Kickstart           &              &                      &                                              \\
+		Halogenlampe                                  & Osram               & 24V 150W     & HL\% 64640           &                                              \\
+		LED-lampe                                     &                     &              &                      &
 	\end{tblr}\label{tab:gerate_solar}
 \end{table}
 
@@ -890,16 +890,15 @@ auch so zu einem sinnvollen Ergebnis konvergiert.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/helllampe.pdf}
-	\caption{Untersuchung der Strom-Spannungs Kennlinie
-		(links) und Leistungskennlinie (rechts) bei einer
+	\caption[Kennlinie durch Halogen-Lampen 1.te Belichtung]{Untersuchung der
+		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
 		Bestrahlungsstärke der Solarzelle von \SI{250(30)}{\watt\per\meter\squared}
-		mittels einer Halogenlampe.
-		Folgende Größen wurden errechnet und um Effizienz für diese Konfiguration
-		besser vergleichen zu können auch angeführt: \\
-		$P_\text{MPP} \dots$ Leistung am MPP         \\
-		$I_\text{MPP} \dots$ Strom am MPP            \\
-		$U_\text{MPP} \dots$ Spannung am MPP         \\
-		$P_0 \dots$ Zugeführte Strahlungsfluss       \\
+		mittels einer Halogenlampe. Folgende Größen wurden errechnet und um Effizienz
+		für diese Konfiguration besser vergleichen zu können auch angeführt: \\
+		$P_\text{MPP} \dots$ Leistung am MPP                                 \\
+		$I_\text{MPP} \dots$ Strom am MPP                                    \\
+		$U_\text{MPP} \dots$ Spannung am MPP                                 \\
+		$P_0 \dots$ Zugeführte Strahlungsfluss                               \\
 		$\eta \dots$ Wirkungsgrad
 	}\label{fig:ausw_kennlinie_hell_lampe}
 \end{figure}
@@ -907,16 +906,15 @@ auch so zu einem sinnvollen Ergebnis konvergiert.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/helllampe2.pdf}
-	\caption{Untersuchung der Strom-Spannungs Kennlinie
-		(links) und Leistungskennlinie (rechts) bei einer
+	\caption[Kennlinie durch Halogen-Lampen 2.te Belichtung]{Untersuchung der
+		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
 		Bestrahlungsstärke der Solarzelle von \SI{420(60)}{\watt\per\meter\squared}
-		mittels einer Halogenlampe.
-		Folgende Größen wurden errechnet und um Effizienz für diese Konfiguration
-		besser vergleichen zu können auch angeführt: \\
-		$P_\text{MPP} \dots$ Leistung am MPP         \\
-		$I_\text{MPP} \dots$ Strom am MPP            \\
-		$U_\text{MPP} \dots$ Spannung am MPP         \\
-		$P_0 \dots$ Zugeführte Strahlungsfluss       \\
+		mittels einer Halogenlampe. Folgende Größen wurden errechnet und um Effizienz
+		für diese Konfiguration besser vergleichen zu können auch angeführt: \\
+		$P_\text{MPP} \dots$ Leistung am MPP                                 \\
+		$I_\text{MPP} \dots$ Strom am MPP                                    \\
+		$U_\text{MPP} \dots$ Spannung am MPP                                 \\
+		$P_0 \dots$ Zugeführte Strahlungsfluss                               \\
 		$\eta \dots$ Wirkungsgrad
 	}\label{fig:ausw_kennlinie_hell_lampe2}
 \end{figure}
@@ -924,16 +922,15 @@ auch so zu einem sinnvollen Ergebnis konvergiert.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/hellled.pdf}
-	\caption{Untersuchung der Strom-Spannungs Kennlinie
-		(links) und Leistungskennlinie (rechts) bei einer
-		Bestrahlungsstärke der Solarzelle von \SI{1040(120)}{\watt\per\meter\squared}
-		mittels einer bläulichen LED-Lampe.
-		Folgende Größen wurden errechnet und um Effizienz für diese Konfiguration
-		besser vergleichen zu können auch angeführt: \\
-		$P_\text{MPP} \dots$ Leistung am MPP         \\
-		$I_\text{MPP} \dots$ Strom am MPP            \\
-		$U_\text{MPP} \dots$ Spannung am MPP         \\
-		$P_0 \dots$ Zugeführte Strahlungsfluss       \\
+	\caption[Kennlinie durch LED-Lampen Belichtung]{Untersuchung der Strom-Spannungs
+		Kennlinie (links) und Leistungskennlinie (rechts) bei einer Bestrahlungsstärke
+		der Solarzelle von \SI{1040(120)}{\watt\per\meter\squared} mittels einer
+		bläulichen LED-Lampe. Folgende Größen wurden errechnet und um Effizienz für
+		diese Konfiguration besser vergleichen zu können auch angeführt: \\
+		$P_\text{MPP} \dots$ Leistung am MPP                             \\
+		$I_\text{MPP} \dots$ Strom am MPP                                \\
+		$U_\text{MPP} \dots$ Spannung am MPP                             \\
+		$P_0 \dots$ Zugeführte Strahlungsfluss                           \\
 		$\eta \dots$ Wirkungsgrad
 	}\label{fig:ausw_kennlinie_hell_led}
 \end{figure}
