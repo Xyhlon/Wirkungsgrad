@@ -77,8 +77,8 @@ Damit werden folgende Schritte durchgeführt:
 \begin{itemize}
 	\item Messung der Dunkelkennlinie: An der einzelnen, abgedeckten Solarzelle wird mit
 	      Hilfe des Sourcemeters automatisiert die Kennlinie aufgenommen. Der
-	      I(U)-Verlauf ist mit der gegebenen Formel zu fitten und die Parameter der
-	      Diode sind zu bestimmen.
+	      I(U)-Verlauf ist mit der gegebenen Formel zu fitten und die Parameter der Diode
+	      sind zu bestimmen.
 	\item Messung der Hellkennlinie und Bestimmung des Wirkungsgrades: Die einzelne
 	      Solarzelle wird mit Hilfe der Lampen bestrahlt. Aus den aufgenommenen
 	      Kennlinien werden die Diodenparameter, sowie im Punkt der maximalen Leistung
@@ -497,7 +497,7 @@ Für die beiden Versuche mit den Solarzellen werden die in
 		Sourcemeter\cite{noauthor_2450_nodate}        & Keithley            & 2450 S       & 300032370000         &                                              \\
 		Computersoftware                              & Kickstart           &              &                      &                                              \\
 		Halogenlampe                                  & Osram               & 24V 150W     & HL\% 64640           &                                              \\
-		LED-lampe                                     &  Hansa              & 41-5010.608  &                      &
+		LED-lampe                                     & Hansa               & 41-5010.608  &                      &
 	\end{tblr}\label{tab:gerate_solar}
 \end{table}
 %todo led 4.8 W
@@ -514,9 +514,9 @@ ein Schlauch befestigt, um den Wasserfluss zwischen Boden und oberen Bereich
 des Eimers zu unterstützen.
 
 Um alle 4 Temperaturmessungen gleichzeitig zu erfassen, wird die Software Cassy
-Lab2 verwendet. Nachdem das Temperaturmessgerät unter dem Fenster
-\dq Einstellungen anzeigen\dq \ verbunden wurde, muss sichergestellt werden, dass die
-geforderten Temperaturwerte erfasst und während des Messvorgangs geplottet
+Lab2 verwendet. Nachdem das Temperaturmessgerät unter dem Fenster \dq
+Einstellungen anzeigen\dq \ verbunden wurde, muss sichergestellt werden, dass
+die geforderten Temperaturwerte erfasst und während des Messvorgangs geplottet
 werden. Das entsprechende Interface ist in \autoref{fig:interface} sichtbar.
 \begin{figure}[H]
 	\begin{center}
@@ -662,12 +662,12 @@ sichtbar.
 Nun werden die Lampen, wie bereits in \autoref{sec:versuchsanordnung}
 beschrieben, positioniert und ebenfalls die Kennlinien aufgenommen. Die
 entsprechende Leistung der Lichtquelle wird anhand des Sensors bestimmt und vom
-analogen Messgerät abgelesen, was gemeinsam mit den entsprechenden Größen
- in folgender Aufzählung in \Cref{enum:werte_solarzelle2}
-ersichtlich ist. Auch die Diodenkennlinien für die verschiedenen Lampen werden,
-wie zuvor die Dunkelkennlinie, aufgenommen und sind in den folgenden
-\autoref{fig:mess_hellkennlinie_lampe} bis
-\autoref{fig:mess_hellkennlinie_led} sichtbar.
+analogen Messgerät abgelesen, was gemeinsam mit den entsprechenden Größen in
+folgender Aufzählung in \Cref{enum:werte_solarzelle2} ersichtlich ist. Auch die
+Diodenkennlinien für die verschiedenen Lampen werden, wie zuvor die
+Dunkelkennlinie, aufgenommen und sind in den folgenden
+\autoref{fig:mess_hellkennlinie_lampe} bis \autoref{fig:mess_hellkennlinie_led}
+sichtbar.
 
 \begin{enumerate}\label{enum:werte_solarzelle2}
 	\item Durchmesser des Sensors: $\SI{1.80(5)}{\cm}$\cite{noauthor_2450_nodate}
@@ -723,11 +723,11 @@ worden. Dies ist gemacht worden um zeitliche Tendenzen besser zu präsentieren.
 	\centering
 	\includegraphics[width=0.49\textwidth]{figures/pressureProfile.pdf}
 	\includegraphics[width=0.49\textwidth]{figures/temperatureProfile.pdf}
-	\caption[Zeitliche Verläufe von den Drücken
-	und Temperaturen, während dem Betrieb der Wärmepumpe]{Zeitliche Verläufe von den Drücken
-		und Temperaturen, während dem Betrieb der Wärmepumpe. Wobei $p_k$
-		der Druck und $T_k$ die Temperatur des Reservoirs der kalten Seite der Wärmepumpe
-		sind. $p_w$ und $T_w$ sind dementsprechend, die der warmen Seite der Wärmepumpe.
+	\caption[Zeitliche Verläufe von den Drücken und Temperaturen, während dem Betrieb der
+		Wärmepumpe]{Zeitliche Verläufe von den Drücken und Temperaturen, während dem
+		Betrieb der Wärmepumpe. Wobei $p_k$ der Druck und $T_k$ die Temperatur des
+		Reservoirs der kalten Seite der Wärmepumpe sind. $p_w$ und $T_w$ sind
+		dementsprechend, die der warmen Seite der Wärmepumpe.
 	}\label{fig:druckTemperaturVerlauf}
 \end{figure}
 
@@ -742,29 +742,27 @@ elektrische Leistung dividiert um die Leistungszahl zu bekommen, siehe
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/leistungszahlVerlauf.pdf}
-	\caption[Verlauf der
-	Leistungszahl]{Verlauf der
-		Leistungszahl $\epsilon$ einer Wärmepumpe, während diese durch ihren Betrieb
-		die Temperaturdifferenz der zwei Reservoirs $\Delta T$ erhöht.
+	\caption[Verlauf der Leistungszahl]{Verlauf der Leistungszahl $\epsilon$ einer
+		Wärmepumpe, während diese durch ihren Betrieb die Temperaturdifferenz der zwei
+		Reservoirs $\Delta T$ erhöht.
 	}\label{fig:leistungszahlVerlauf}
 \end{figure}
 
 Indem nun diese Leistungszahlen $\epsilon$ in Relation zu dem hier theoretisch
-Maximalen $\epsilon_\text{max}$ gesetzt wird, kann der Gütefaktor $\eta$ bestimmt
-werden, wie in \autoref{eq:guetefaktor} sichtbar. Dabei wurde $\epsilon_\text{max}$
-durch den Kehrwert des Carnot-Wirkungsgrad bestimmt, die höchst und tiefst
-Temperaturen sind aus den Daten genommen worden ${\epsilon_\text{max} =
-	\frac{1}{1-\frac{T_k}{T_w}}}$.
+Maximalen $\epsilon_\text{max}$ gesetzt wird, kann der Gütefaktor $\eta$
+bestimmt werden, wie in \autoref{eq:guetefaktor} sichtbar. Dabei wurde
+$\epsilon_\text{max}$ durch den Kehrwert des Carnot-Wirkungsgrad bestimmt, die
+höchst und tiefst Temperaturen sind aus den Daten genommen worden
+${\epsilon_\text{max} = \frac{1}{1-\frac{T_k}{T_w}}}$.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figures/wirkungsgradVerlauf.pdf}
-	\caption[Dynamischer Gütegradverlauf $\eta$ der
-	Wärmepumpe]{Dynamischer Gütegradverlauf $\eta$ der
-		Wärmepumpe. Der Gütegrad $\eta$ wird bezüglich der
-		Temperaturdifferenz der zwei Reservoirs $\Delta T$ aufgetragen. Die,
-		für diese Graphik errechnete, theoretisch maximale Leistungszahl
-		$\epsilon_\text{max}$ ist auch angeführt.
+	\caption[Dynamischer Gütegradverlauf $\eta$ der Wärmepumpe]{Dynamischer Gütegradverlauf
+		$\eta$ der Wärmepumpe. Der Gütegrad $\eta$ wird bezüglich der
+		Temperaturdifferenz der zwei Reservoirs $\Delta T$ aufgetragen. Die, für diese
+		Graphik errechnete, theoretisch maximale Leistungszahl $\epsilon_\text{max}$
+		ist auch angeführt.
 	}\label{fig:wirkungsgradVerlauf}
 \end{figure}
 
@@ -772,15 +770,15 @@ Temperaturen sind aus den Daten genommen worden ${\epsilon_\text{max} =
 Damit die invertierte Strom-Spannung Kennlinie und die Leistungskennlinie
 leserlich bleiben sind diese in zwei nebeneinanderliegenden Plots gezeichnet
 
-Um die Kenndaten zu erzeugen sind folgende Statistiken auf die Datensätze angewandt worden.
-Damit der Kurzschlussstrom $I_k$ ermittelt werden kann ist der Messwert bei der
-Spannung von $\SI{0}{\volt}$, für die Leerlaufspannung $U_L$
-der Messwert mit keinem Strom $\SI{0}{\ampere}$ genommen worden. Für den Betriebspunkt der
-maximalen Leistung ist zunächst die Leistung mit $P=UI$ berechnet und
-von diesen Werten das Maximum genommen worden, um $P_\text{MPP}$ zu
-bestimmen, und die Spannung $U_\text{MPP}$ und Strom $I_\text{MPP}$, die diese
-Leistung produzierten, vermerkt worden. Dieses Verfahren ist für die verschiedenen
-Beschaltungen und Belichtungsflächen durchgeführt worden.
+Um die Kenndaten zu erzeugen sind folgende Statistiken auf die Datensätze
+angewandt worden. Damit der Kurzschlussstrom $I_k$ ermittelt werden kann ist
+der Messwert bei der Spannung von $\SI{0}{\volt}$, für die Leerlaufspannung
+$U_L$ der Messwert mit keinem Strom $\SI{0}{\ampere}$ genommen worden. Für den
+Betriebspunkt der maximalen Leistung ist zunächst die Leistung mit $P=UI$
+berechnet und von diesen Werten das Maximum genommen worden, um $P_\text{MPP}$
+zu bestimmen, und die Spannung $U_\text{MPP}$ und Strom $I_\text{MPP}$, die
+diese Leistung produzierten, vermerkt worden. Dieses Verfahren ist für die
+verschiedenen Beschaltungen und Belichtungsflächen durchgeführt worden.
 
 \subsubsection{Serienschaltung der beiden Solarzellen}
 \begin{figure}[H]
@@ -789,12 +787,13 @@ Beschaltungen und Belichtungsflächen durchgeführt worden.
 	\caption[Kennlinien Serienschaltung Solarzellen]{Untersuchung der invertierten
 		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
 		Serienschaltung von Solarzellen. Folgende Größen wurden errechnet und, um
-		Effizienz für dieser Konfiguration besser vergleichen zu können, auch angeführt: \\
-		$I_k \dots$ Kurzschlussstrom                                                    \\
-		$U_L \dots$ Leerlaufspannung                                                    \\
-		$P_\text{MPP} \dots$ Leistung am MPP                                            \\
-		$I_\text{MPP} \dots$ Strom am MPP                                               \\
-		$U_\text{MPP} \dots$ Spannung am MPP                                            \\
+		Effizienz für dieser Konfiguration besser vergleichen zu können, auch
+		angeführt:                           \\
+		$I_k \dots$ Kurzschlussstrom         \\
+		$U_L \dots$ Leerlaufspannung         \\
+		$P_\text{MPP} \dots$ Leistung am MPP \\
+		$I_\text{MPP} \dots$ Strom am MPP    \\
+		$U_\text{MPP} \dots$ Spannung am MPP \\
 		$FF \dots$ Füllfaktor der Solarzellenkonfiguration
 	}\label{fig:auws_kennlinie_serie}
 \end{figure}
@@ -806,12 +805,13 @@ Beschaltungen und Belichtungsflächen durchgeführt worden.
 	\caption[Kennlinien Parallelschaltung Solarzellen]{Untersuchung der invertierten
 		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
 		Parallelschaltung von Solarzellen. Folgende Größen wurden errechnet und, um
-		Effizienz für dieser Konfiguration besser vergleichen zu können, auch angeführt: \\
-		$I_k \dots$ Kurzschlussstrom                                                    \\
-		$U_L \dots$ Leerlaufspannung                                                    \\
-		$P_\text{MPP} \dots$ Leistung am MPP                                            \\
-		$I_\text{MPP} \dots$ Strom am MPP                                               \\
-		$U_\text{MPP} \dots$ Spannung am MPP                                            \\
+		Effizienz für dieser Konfiguration besser vergleichen zu können, auch
+		angeführt:                           \\
+		$I_k \dots$ Kurzschlussstrom         \\
+		$U_L \dots$ Leerlaufspannung         \\
+		$P_\text{MPP} \dots$ Leistung am MPP \\
+		$I_\text{MPP} \dots$ Strom am MPP    \\
+		$U_\text{MPP} \dots$ Spannung am MPP \\
 		$FF \dots$ Füllfaktor der Solarzellenkonfiguration
 	}\label{fig:auws_kennlinie_parallel}
 \end{figure}
@@ -823,8 +823,9 @@ Beschaltungen und Belichtungsflächen durchgeführt worden.
 	\includegraphics[width=0.95\textwidth]{figures/serienschaltungAbgedeckt.pdf}
 	\caption[Kennlinien Serienschaltung mit teils bedeckten Solarzellen]{Untersuchung der
 		invertierten Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts)
-		bei einer Serienschaltung mit Teilbedeckung der Solarzellen. Folgende Größen wurden errechnet und, um
-		Effizienz für dieser Konfiguration besser vergleichen zu können, auch angeführt:            \\
+		bei einer Serienschaltung mit Teilbedeckung der Solarzellen. Folgende Größen
+		wurden errechnet und, um Effizienz für dieser Konfiguration besser vergleichen
+		zu können, auch angeführt:           \\
 		$I_k \dots$ Kurzschlussstrom         \\
 		$U_L \dots$ Leerlaufspannung         \\
 		$P_\text{MPP} \dots$ Leistung am MPP \\
@@ -840,8 +841,8 @@ Nun werden die Diodencharakteristik einer Solarzelle bei verschiedenen
 Belichtungsstufen untersucht. Dazu wurde die Strom-Spannung Kennlinien gemessen
 und an die Gleichung für das Zweidioden-Modell gefittet. Um dies zu
 bewerkstelligen wurden folgende Vereinfachungen getroffen: Die implizite
-Anteile werden vernachlässigt, was bewirkt dass die gefittet Funktion höher sein wird als
-wenn die Terme berücksichtigt werden. Beim fitten war der zweite
+Anteile werden vernachlässigt, was bewirkt dass die gefittet Funktion höher
+sein wird als wenn die Terme berücksichtigt werden. Beim fitten war der zweite
 Diodenparameter nahe 0 und deshalb wurde die Fit-Kurve nochmals vereinfacht und
 dieser Term weggelassen. Somit wurde schlussendlich mit folgender Gleichung
 gefittet:
@@ -865,9 +866,9 @@ wiederspiegelt.
 
 Nun wird die Dunkelkennlinie bestimmmt. Dabei wurden bei den aufgenommen Daten
 die Werte mit einer Spannung unter \SI{0.15}{\volt} verworfen, da zunächst der
-Tail zu großen Einfluss auf den Fit hatte. Die Kurve hat viel zu spät zum Steigen
-begonnen und damit den dynamischen Teil nicht richtig beschrieben. Deshalb
-wurde auch nur der interpolierte Bereich geplottet und es wurde nichts
+Tail zu großen Einfluss auf den Fit hatte. Die Kurve hat viel zu spät zum
+Steigen begonnen und damit den dynamischen Teil nicht richtig beschrieben.
+Deshalb wurde auch nur der interpolierte Bereich geplottet und es wurde nichts
 extrapoliert.
 
 \begin{figure}[H]
@@ -875,20 +876,20 @@ extrapoliert.
 	\includegraphics[width=0.95\textwidth]{figures/dunkelkennlinie.pdf}
 	\caption[Dunkelkennlinie einer Solarzelle]{Untersuchung der Strom-Spannungs Kennlinie
 		(links) und Leistungskennlinie (rechts) bei keiner Belichtung der Solarzelle.
-		Folgende Größen wurden errechnet und, um
-		Effizienz für dieser Konfiguration besser vergleichen zu können, auch angeführt: \\
-		$P_\text{MPP} \dots$ Leistung am MPP         \\
-		$I_\text{MPP} \dots$ Strom am MPP            \\
-		$U_\text{MPP} \dots$ Spannung am MPP         \\
-		$P_0 \dots$ Zugeführte Strahlungsfluss       \\
+		Folgende Größen wurden errechnet und, um Effizienz für dieser Konfiguration
+		besser vergleichen zu können, auch angeführt: \\
+		$P_\text{MPP} \dots$ Leistung am MPP          \\
+		$I_\text{MPP} \dots$ Strom am MPP             \\
+		$U_\text{MPP} \dots$ Spannung am MPP          \\
+		$P_0 \dots$ Zugeführte Strahlungsfluss        \\
 		$\eta \dots$ Wirkungsgrad
 	}\label{fig:ausw_kennlinie_dunkel}
 \end{figure}
 
 \subsubsection{Messung der Hellkennlinie und Bestimmung des Wirkungsgrades}
 
-Für die Hellkennlinien musst der Tail nicht weniger gewichtet werden, da die Fits
-auch so zu einem sinnvollen Ergebnis konvergiert sind.
+Für die Hellkennlinien musst der Tail nicht weniger gewichtet werden, da die
+Fits auch so zu einem sinnvollen Ergebnis konvergiert sind.
 
 \begin{figure}[H]
 	\centering
@@ -896,12 +897,12 @@ auch so zu einem sinnvollen Ergebnis konvergiert sind.
 	\caption[Kennlinie durch Halogen-Lampen 1.te Belichtung]{Untersuchung der
 		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
 		Bestrahlungsstärke der Solarzelle von \SI{250(30)}{\watt\per\meter\squared}
-		mittels einer Halogenlampe. Folgende Größen wurden errechnet und, um
-		Effizienz für dieser Konfiguration besser vergleichen zu können, auch angeführt: \\
-		$P_\text{MPP} \dots$ Leistung am MPP                                 \\
-		$I_\text{MPP} \dots$ Strom am MPP                                    \\
-		$U_\text{MPP} \dots$ Spannung am MPP                                 \\
-		$P_0 \dots$ Zugeführte Strahlungsfluss                               \\
+		mittels einer Halogenlampe. Folgende Größen wurden errechnet und, um Effizienz
+		für dieser Konfiguration besser vergleichen zu können, auch angeführt: \\
+		$P_\text{MPP} \dots$ Leistung am MPP                                   \\
+		$I_\text{MPP} \dots$ Strom am MPP                                      \\
+		$U_\text{MPP} \dots$ Spannung am MPP                                   \\
+		$P_0 \dots$ Zugeführte Strahlungsfluss                                 \\
 		$\eta \dots$ Wirkungsgrad
 	}\label{fig:ausw_kennlinie_hell_lampe}
 \end{figure}
@@ -912,12 +913,12 @@ auch so zu einem sinnvollen Ergebnis konvergiert sind.
 	\caption[Kennlinie durch Halogen-Lampen 2.te Belichtung]{Untersuchung der
 		Strom-Spannungs Kennlinie (links) und Leistungskennlinie (rechts) bei einer
 		Bestrahlungsstärke der Solarzelle von \SI{420(60)}{\watt\per\meter\squared}
-		mittels einer Halogenlampe. Folgende Größen wurden errechnet und, um
-		Effizienz für dieser Konfiguration besser vergleichen zu können, auch angeführt: \\
-		$P_\text{MPP} \dots$ Leistung am MPP                                 \\
-		$I_\text{MPP} \dots$ Strom am MPP                                    \\
-		$U_\text{MPP} \dots$ Spannung am MPP                                 \\
-		$P_0 \dots$ Zugeführte Strahlungsfluss                               \\
+		mittels einer Halogenlampe. Folgende Größen wurden errechnet und, um Effizienz
+		für dieser Konfiguration besser vergleichen zu können, auch angeführt: \\
+		$P_\text{MPP} \dots$ Leistung am MPP                                   \\
+		$I_\text{MPP} \dots$ Strom am MPP                                      \\
+		$U_\text{MPP} \dots$ Spannung am MPP                                   \\
+		$P_0 \dots$ Zugeführte Strahlungsfluss                                 \\
 		$\eta \dots$ Wirkungsgrad
 	}\label{fig:ausw_kennlinie_hell_lampe2}
 \end{figure}
@@ -928,12 +929,12 @@ auch so zu einem sinnvollen Ergebnis konvergiert sind.
 	\caption[Kennlinie durch LED-Lampen Belichtung]{Untersuchung der Strom-Spannungs
 		Kennlinie (links) und Leistungskennlinie (rechts) bei einer Bestrahlungsstärke
 		der Solarzelle von \SI{1040(120)}{\watt\per\meter\squared} mittels einer
-		bläulichen LED-Lampe. Folgende Größen wurden errechnet und, um
-		Effizienz für dieser Konfiguration besser vergleichen zu können, auch angeführt: \\
-		$P_\text{MPP} \dots$ Leistung am MPP                             \\
-		$I_\text{MPP} \dots$ Strom am MPP                                \\
-		$U_\text{MPP} \dots$ Spannung am MPP                             \\
-		$P_0 \dots$ Zugeführte Strahlungsfluss                           \\
+		bläulichen LED-Lampe. Folgende Größen wurden errechnet und, um Effizienz für
+		dieser Konfiguration besser vergleichen zu können, auch angeführt: \\
+		$P_\text{MPP} \dots$ Leistung am MPP                               \\
+		$I_\text{MPP} \dots$ Strom am MPP                                  \\
+		$U_\text{MPP} \dots$ Spannung am MPP                               \\
+		$P_0 \dots$ Zugeführte Strahlungsfluss                             \\
 		$\eta \dots$ Wirkungsgrad
 	}\label{fig:ausw_kennlinie_hell_led}
 \end{figure}
@@ -942,17 +943,17 @@ auch so zu einem sinnvollen Ergebnis konvergiert sind.
 
 \subsection{Wärmepumpe}
 
-Beim Betrachten der Grafik in \autoref{fig:druckTemperaturVerlauf} wird klar ersichtlich,
-dass es besser wäre die Flüssigkeit
-immer konstant umzurühren, da sonst, immer wenn umgerührt wird, Spikes in den Temperatur 
-und Druckverläufen entstehen, die vermeiden werden sollten.
+Beim Betrachten der Grafik in \autoref{fig:druckTemperaturVerlauf} wird klar
+ersichtlich, dass es besser wäre die Flüssigkeit immer konstant umzurühren, da
+sonst, immer wenn umgerührt wird, Spikes in den Temperatur und Druckverläufen
+entstehen, die vermeiden werden sollten.
 
 Nach dem Versuch beim Entfernen des Kübels wurde festgestellt, dass sich auf
 der Kalten Seite Eis gebildet hat, wie in \autoref{fig:eis} sichtbar, welches
 natürlich isolierende Auswirkungen hat und somit das Ergebnis verfälscht. Bei
-einer erneuten Durchführung des Versuchs sollte daher die Flüssigkeit, nicht nur
-wegen der Spikes sondern auch gegen die Eisbildung deutlich
-öfter umgerührt werden.
+einer erneuten Durchführung des Versuchs sollte daher die Flüssigkeit, nicht
+nur wegen der Spikes sondern auch gegen die Eisbildung deutlich öfter umgerührt
+werden.
 
 \begin{figure}[H]
 	\centering
@@ -964,8 +965,8 @@ wegen der Spikes sondern auch gegen die Eisbildung deutlich
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
 %todo bsp auch bringen
-Bei einer erneuten Durchführung wäre es wichtig, die Lampe einige Zeit auf 
-die Solarzelle scheinen zu lassen, damit sich eine konstante Betriebstemperatur 
+Bei einer erneuten Durchführung wäre es wichtig, die Lampe einige Zeit auf die
+Solarzelle scheinen zu lassen, damit sich eine konstante Betriebstemperatur
 einstellen kann, bevor die Messung begonnen wird.
 
 Die Solarzelle waren zur Lichtquelle verdreht, deshalb ist die effektive Fläche
@@ -975,9 +976,9 @@ $100(1-\frac{A'}{A})=\SI{0.38}{\percent}$.
 
 \subsubsection{Serienschaltung der beiden Solarzellen}
 
-Ein Vergleich der Werte zeigt, dass die Serienschaltung eine höhere Spannung 
-bei einem niedrigeren Strom liefert, als
-die Parallelschaltung, wie es zu erwarten war.
+Ein Vergleich der Werte zeigt, dass die Serienschaltung eine höhere Spannung
+bei einem niedrigeren Strom liefert, als die Parallelschaltung, wie es zu
+erwarten war.
 
 \subsubsection{Parallelschaltung der beiden Solarzellen}
 
@@ -990,14 +991,14 @@ wahrscheinlich der Grund für die Diskrepanz zum Ohmschen-Model.
 \subsubsection{Serienschaltung der beiden Solarzellen, wobei eine Solarzelle partiell abgeschattet wird}
 
 Bei den teils bedeckten, in Serie geschalteten Solarzellen ist ein enormer
-Abfall in der gewonnene Leistung vonstatten gegangen. Dies lässt sich erklären, 
+Abfall in der gewonnene Leistung vonstatten gegangen. Dies lässt sich erklären,
 da die beschattete Fläche ein parasitärer Widerstand ist.
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
 %?
-Bei der Dunkelkennlinie entsprechen die meisten Parameter null, wie $I_{ph}$, was auch mit der
-Erwartung übereinstimmt
+Bei der Dunkelkennlinie entsprechen die meisten Parameter null, wie $I_{ph}$,
+was auch mit der Erwartung übereinstimmt
 
 Da die Bestrahlungsstärke mit dem Abstand zum Quadrat absinkt, ist der
 gemessene Punkt nur ein Informations Punkt und nicht representative für die
@@ -1007,9 +1008,10 @@ einer Approximation der Abstrahlungsfläche durch Kugelfächen gemacht werden. U
 dies zu machen muss der Sensor ein Paar Punkte abfahren und dann ein
 Flächenmittelwert, für die interessierte Fläche, erstellt werden.
 
-Bei der bläulichen LED Lampe wird Energie schlechter von der Solarzellen aufgenommen. 
-Deshalb wird trotz der hohen Bestrahlungsstärke kaum etwas konvertiert, da
-Solarzellen für das Sonnenabstrahlungsspektrum optimiert werden.
+Bei der bläulichen LED Lampe wird Energie schlechter von der Solarzellen
+aufgenommen. Deshalb wird trotz der hohen Bestrahlungsstärke kaum etwas
+konvertiert, da Solarzellen für das Sonnenabstrahlungsspektrum optimiert
+werden.
 
 \section{Zusammenfassung}\label{sec:zusammenfassung}
 
