@@ -885,7 +885,15 @@ extrapoliert.
 \subsubsection{Messung der Hellkennlinie und Bestimmung des Wirkungsgrades}
 
 Für die Hellkennlinien musst der Tail nicht weniger gewichtet werden, da die
-Fits auch so zu einem sinnvollen Ergebnis konvergiert sind.
+Fits auch so zu einem sinnvollen Ergebnis konvergiert sind. Um die
+Wirkungsgrade berechnen zu können muss die Bestrahlte Leistung der Solarzelle
+gekannt werden, diese wird mittels der Bestrahlungsstärke bestimmt, die jedoch
+durch die gemessene Leistung am Leistungssensor bestimmt wird. Dies wird durch
+das Dividieren der Leistung durch die Fläche des Sensor berechnet.
+
+\begin{equation}
+	P_0 = E A_\text{Solar} = \frac{P_\text{Sensor}}{A_\text{Sensor}}A_\text{Solar}
+\end{equation}
 
 \begin{figure}[H]
 	\centering
