@@ -476,7 +476,6 @@ Geräte verwendet.
 Für die beiden Versuche mit den Solarzellen werden die in
 \autoref{tab:gerate_solar} aufgelisteten Geräte verwendet.
 
-%todo wird mit richtiger zitierung hoffentlich kleiner
 \begin{table}[H]
 	\caption{Verwendete Geräte für die beiden Solarzellen Versuche
 	}
@@ -500,7 +499,6 @@ Für die beiden Versuche mit den Solarzellen werden die in
 		LED-lampe                                     & Hansa               & 41-5010.608  &                      &
 	\end{tblr}\label{tab:gerate_solar}
 \end{table}
-%todo led 4.8 W
 \section{Versuchsdurchführung und Messergebnisse}\label{sec:versuchsdurchfuehrung_messergebnisse}
 
 \subsection{Wärmepumpe}
@@ -534,13 +532,12 @@ Drücke von den entsprechenden Barometern abgelesen, was in folgender
 richtige Zeit zugeordnet bekommen, werden Fotos von den Barometern gemacht und
 mithilfe der erfassten Metadaten des Smartphones die genaue Zeit notiert.
 
-%todo in tab steht p_w und nicht p_h
 \begin{table}[H]
 	\caption[Abgelesene Drücke bei der entsprechenden Zeit]{Abgelesene Drücke bei der
 		entsprechenden Zeit                                            \\
 		$t$ \dots vergangene Zeit seit dem Start des Messvorgangs in s \\
 		$p_k$ \dots abgelesener Druck auf der kalten Seite in bar      \\
-		$p_h$ \dots abgelesener Druck auf der heißen Seite in bar
+		$p_w$ \dots abgelesener Druck auf der heißen Seite in bar
 	}\label{tab:drucke}
 	\centering
 	\include{./tables/messreihe_werte_druck}
@@ -733,7 +730,6 @@ worden. Dies ist gemacht worden um zeitliche Tendenzen besser zu präsentieren.
 
 Nun wird mittels der zeitlichen Änderung der warmen Reservoir-Temperatur der
 Wärmefluss mittels der Masse und Wärmekapazität des Reservoirs errechnet
-%todo kommando das q zusammen bleibt 
 ${\dot{Q}= (m_1) c_w \Delta \dot{T}}$. Hier wurde die Warme Aufgrund des
 stetigeren Temperaturverlaufs gewählt. Schlussendlich wird durch die zugeführte
 elektrische Leistung dividiert um die Leistungszahl zu bekommen, siehe
@@ -964,7 +960,6 @@ werden.
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
-%todo bsp auch bringen
 Bei einer erneuten Durchführung wäre es wichtig, die Lampe einige Zeit auf die
 Solarzelle scheinen zu lassen, damit sich eine konstante Betriebstemperatur
 einstellen kann, bevor die Messung begonnen wird.
@@ -996,9 +991,8 @@ da die beschattete Fläche ein parasitärer Widerstand ist.
 
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
-%?
-Bei der Dunkelkennlinie entsprechen die meisten Parameter null, wie $I_{ph}$,
-was auch mit der Erwartung übereinstimmt
+Bei der Dunkelkennlinie entsprechen die meisten Parameter(e.g.\ wie $I_{ph}$)
+null was auch mit der Erwartung übereinstimmt.
 
 Da die Bestrahlungsstärke mit dem Abstand zum Quadrat absinkt, ist der
 gemessene Punkt nur ein Informations Punkt und nicht representative für die
@@ -1015,7 +1009,19 @@ werden.
 
 \section{Zusammenfassung}\label{sec:zusammenfassung}
 
+Hier werden nochmals alle Ergebnisse dieser Experimentenfolge aufgelistet:
+
 \subsection{Wärmepumpe}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/wirkungsgradVerlauf.pdf}
+	\caption[Dynamischer Gütegradverlauf $\eta$ der Wärmepumpe]{Dynamischer Gütegradverlauf
+		$\eta$ der Wärmepumpe. Der Gütegrad $\eta$ wird bezüglich der
+		Temperaturdifferenz der zwei Reservoirs $\Delta T$ aufgetragen. Die, für diese
+		Graphik errechnete, theoretisch maximale Leistungszahl $\epsilon_\text{max}$
+		ist auch angeführt.
+	}\label{fig:zusammenfassung}
+\end{figure}
 
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
