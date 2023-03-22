@@ -31,7 +31,7 @@
 	dofile("createExtraPDF.lua")
 \end{luacode*}
 
-% \includepdf{./deckblatt.pdf}
+\includepdf{./deckblatt.pdf}
 \tableofcontents
 
 \newpage
@@ -762,6 +762,23 @@ ${\epsilon_\text{max} = \frac{1}{1-\frac{T_k}{T_w}}}$.
 	}\label{fig:wirkungsgradVerlauf}
 \end{figure}
 
+Schlussendlich wird noch ein $\log{p}-H$-Diagramm für den Kreisprozess
+erstellt. Dazu wurden die Equilibrium Temperaturen und Drücke die sich am Ende
+eingestellt haben genommen. Um das Diagramm zu zeichnen wurde die in den
+Unterlagen zur Verfügung gestelltes Referenzdiagramm für das R134a Gas
+verwendet\cite{hohenau_warmepumpe_2014}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/logphdiagramm.png}
+	\caption[Log P-H Diagramm des Kreisprozesses der Wärmepumpe]{ $\log{p}-H$ Diagramm des
+		linkslaufenden Kreisprozesses der Wärmepumpe. Dabei wurden die Equilibrium
+		Temperaturen und Drücke für die Warme und kalte Seite eingezeichnet. Wobei
+		$p_k$ der Druck und $T_k$ die Temperatur der kalten Seite der Wärmepumpe sind.
+		$p_w$ und $T_w$ sind dementsprechend, die der warmen Seite der Wärmepumpe.
+	}\label{fig:logPHDiagramm}
+\end{figure}
+
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 Damit die invertierte Strom-Spannung Kennlinie und die Leistungskennlinie
 leserlich bleiben sind diese in zwei nebeneinanderliegenden Plots gezeichnet
@@ -966,8 +983,6 @@ werden.
 	}\label{fig:eis}
 \end{figure}
 
-Abgesehen von den Spikes folgt die erhaltene Kurve dem erwarteten Verlauf.
-
 \subsection{Kennlinien und Kenndaten von Solarzellen bei Bestrahlung}
 
 Bei einer erneuten Durchführung wäre es wichtig, die Lampe einige Zeit auf die
@@ -978,10 +993,6 @@ Die Solarzelle waren zur Lichtquelle verdreht, deshalb ist die effektive Fläche
 mit dem Cosinus zur ganzen Fläche verbunden ($A' = A \cos(\theta)$). Der
 dadurch entstandene prozentuelle Fehler beträgt somit
 $100(1-\frac{A'}{A})=\SI{0.38}{\percent}$.
-
-Die erhaltenen Kenndaten werden, der besseren Übersicht halber, in 
-\autoref{sec:zusammenfassung} nochmals aufgelistet. Insgesamt wirken
-diese Parameter plausibel.
 
 \subsubsection{Serienschaltung der beiden Solarzellen}
 
@@ -1006,8 +1017,7 @@ da die beschattete Fläche ein parasitärer Widerstand ist.
 \subsection{Diodenparameter und Wirkungsgrad einer Solarzelle}
 
 Bei der Dunkelkennlinie entsprechen die meisten Parameter(e.g.\ wie $I_{ph}$)
-null was auch mit der Erwartung übereinstimmt. Die Hellkennlinien
-folgen allgemein dem erwarteten Verlauf.
+null was auch mit der Erwartung übereinstimmt.
 
 Da die Bestrahlungsstärke mit dem Abstand zum Quadrat absinkt, ist der
 gemessene Punkt nur ein Informations Punkt und nicht representative für die
@@ -1022,12 +1032,10 @@ aufgenommen. Deshalb wird trotz der hohen Bestrahlungsstärke kaum etwas
 konvertiert, da Solarzellen für das Sonnenabstrahlungsspektrum optimiert
 werden.
 
-\newpage
-
 \section{Zusammenfassung}\label{sec:zusammenfassung}
 
 Hier werden nochmals alle Ergebnisse dieser Experimentenfolge aufgelistet.
-Wobei die meisten zu erstellenden Diagramme Aufgrund der Länge
+Wobei die meisten zu erstellenden Diagramme Aufgrund der Länge der
 \autoref{sec:auswertung} entnommen werden sollen.
 
 \subsection{Wärmepumpe}
